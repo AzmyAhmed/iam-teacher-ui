@@ -1,0 +1,7 @@
+<div *ngIf="showFormFalg==1">
+    <app-forms formName="bookDemo" title="" (formSubmit)="handleFormSubmit($event)"></app-forms>
+    <button class="btn btn-success mt-3" (click)="teacherBookDemo()">Book Demo</button>
+</div>
+<div *ngIf="showFormFalg==0">
+    <app-website-demo-confirmation></app-website-demo-confirmation>
+</div>

@@ -1,0 +1,19 @@
+<div>
+    <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="onCloseSidenav()">
+        <span class=" pe-2">
+            <i class="fa fa-close  mr-2 ml-2 t-menu-icon">
+            </i> </span>
+        <span>
+            {{"CLOSE"|translate}} </span>
+    </a>
+    <div *ngFor="let link of websiteLinks">
+        <a class="sidenav-nav-link applyDarkMode" [routerLink]="[link.RoutePath]" routerLinkActive="active"
+            aria-label="Read more about me" href="#" [routerLinkActiveOptions]="{exact:true}">
+            <i class="sidenav-link-icon" [class]="link.ClassName">
+            </i>
+            <span class="sidenav-link-text">
+                {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
+            </span>
+        </a>
+    </div>
+</div>

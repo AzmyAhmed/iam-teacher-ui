@@ -1,0 +1,383 @@
+/***********************body */
+body[dir='rtl'] {
+    text-align: right;
+    direction: rtl;
+
+}
+
+body[dir='ltr'] {
+    text-align: left;
+    direction: ltr;
+
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+
+}
+
+.t-header {
+    top: 0;
+    background: #4d4d4d;
+    border: 1px solid #4e4e4e;
+    z-index: 10000;
+    height: 70px;
+
+}
+
+.t-footer {
+    padding: 10px;
+    z-index: 10000;
+}
+
+.t-body {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 65px;
+
+}
+
+.website-sidenav {
+    margin-top: 10px;
+    z-index: 10000;
+}
+
+
+/* Media query for screens with a max width of 300px */
+@media only screen and (max-width: 450px) {
+    .t-body {
+        margin-top: 125px !important;
+        /* New margin-top for small screens */
+    }
+
+    .website-sidenav {
+        margin-top: 90px !important;
+        /* New margin-top for small screens */
+    }
+}
+
+.t-menu-icon {
+    color: black;
+}
+
+.t-login-icon {
+    color: green;
+}
+
+.t-signup-icon {
+    color: blue;
+}
+
+.t-logo-icon {
+    color: #1f3d36;
+}
+
+.t-lang-icon {
+    color: cadetblu;
+}
+
+.t-mode-icon {
+    color: cornflowerblue;
+}
+
+.website-sidenav {
+    margin-top: 30px;
+    z-index: 10000;
+
+}
+
+/*********************************End Of Body */
+.btn {
+    border: 1px solid #dec8c854;
+    border-radius: 10px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px;
+    height: 35px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out 0s;
+    cursor: pointer;
+}
+
+i {
+    color: #a5a5a5;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out 0s;
+    cursor: pointer;
+}
+
+fa {
+    font-size: 19px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*--------------------------------------------------------------
+    # Header
+    --------------------------------------------------------------*/
+.avatar {
+    border-radius: 60px;
+}
+
+.main-header {
+    background: #333;
+    border: 1px solid #3f3f3f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.home-title {
+    font-size: 17px;
+}
+
+.home-icon {
+    color: #a5a5a5 !important;
+}
+
+.translate-icon {
+    color: #a5a5a5;
+}
+
+.active i {
+    color: #007bff;
+}
+
+.feature-block {
+    background: #333 none repeat scroll 0 0;
+    transition: all 0.5s ease-in-out 0s;
+    padding: 20px;
+    border: 1px solid #4e4e4e;
+    height: 200px;
+    color: white;
+    border-radius: 8px;
+    height: 90%;
+
+}
+
+.feature-block:hover {
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out 0s;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* About Us Section
+    --------------------------------*/
+/* for about  */
+.block-head {
+    font-size: 17px;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+    border: 1px solid #414141;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.block-head span {
+    color: #cccccc;
+}
+
+.section-title {
+    color: rgb(173, 173, 173);
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+/* cores Section
+    --------------------------------*/
+.cores-block {
+    height: 75px;
+    margin: 5px;
+}
+
+/* Project Section
+    --------------------------------*/
+.project-block {
+    padding: 55px !important;
+    height: 230px;
+    margin: 5px;
+
+}
+
+/* My View Section
+    --------------------------------*/
+.my-view-img {
+    border-radius: 60px;
+    width: 200px;
+    height: 200px;
+}
+
+/* Contact Section
+    --------------------------------*/
+.info {
+    color: white;
+}
+
+.info i {
+    font-size: 32px;
+    color: white;
+    float: left;
+    line-height: 0;
+}
+
+.info p {
+    padding: 0 0 10px 50px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    font-size: 14px;
+    color: white;
+}
+
+.info .email p {
+    padding-top: 5px;
+}
+
+.social-links {
+    padding: 20px 0;
+}
+
+.social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #333;
+    color: white;
+    line-height: 1;
+    padding: 6px 0 8px 0;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#contact .social-links a:hover {
+    background: white;
+    color: #fff;
+}
+
+.contact-submit-button {
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #198754;
+
+}
+
+/* sidenav */
+.sidenavs {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border: 1px solid #414141;
+
+}
+
+.fa,
+.bi {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sidenavsopen {
+    width: 250px;
+}
+
+.sidenavs a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenavs a:hover,
+.sidenavs .active,
+.sidenavs .active:focus,
+.sidenavs li:hover>a {
+    color: #007bff !important;
+}
+
+.sidenavs .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    margin-left: 50px;
+}
+
+.closebtn {
+    font-size: 36px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenavs {
+        padding-top: 15px;
+    }
+
+    i {
+        cursor: pointer;
+    }
+}
+
+/* scroll top  area  */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.scroll-to-top :hover {
+    font-size: large;
+}
+
+.show-scrollTop .btn {
+    background-color: #198754;
+    color: white;
+}
+
+.show-scrollTop {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+    z-index: 10000;
+    color: white;
+
+
+}
+
+
+
+.show-scrollTop i {
+    color: white !important;
+    font-size: 16px;
+    margin-left: 0;
+}
+
+/* genral */
+span,
+strong,
+p,
+h1,
+h2,
+h3,
+h4 {
+    color: #cccccc;
+}

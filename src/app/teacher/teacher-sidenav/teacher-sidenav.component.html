@@ -1,0 +1,15 @@
+<div>
+    <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="onCloseSidenav()">
+            <i class="fa fa-close  mr-2 ml-2 ">
+            </i> 
+            {{"CLOSE"|translate}} 
+    </a>
+    <div *ngFor="let link of websiteLinks">
+        <a class="sidenav-nav-link" [routerLink]="[link.RoutePath]" routerLinkActive="active"
+            aria-label="Read more about me" href="#" [routerLinkActiveOptions]="{exact:true}">
+            <i class="sidenav-link-icon" [class]="link.ClassName">
+            </i>
+                {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
+        </a>
+    </div>
+</div>

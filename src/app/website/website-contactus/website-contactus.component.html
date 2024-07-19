@@ -1,0 +1,102 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="padd-section">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+            <h2>Contact</h2>
+            <p class="separator">Send To Us And We Will Contact You Soon
+            </p>
+        </div>
+        <div class="row justify-content-center">
+
+            <div class="col-lg-3 col-md-4">
+
+                <div class="info">
+                    <div>
+                        <i class="bi bi-geo-alt"></i>
+                        <p class="">Location : Tanta , Egypt</p>
+                    </div>
+
+                    <div class="email">
+                        <i class="bi bi-envelope"></i>
+                        <p class="">Gmail : azmyahmedbasuonygmail.com</p>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-phone "></i>
+                        <p class="">Whatsapp : 01004303936</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a aria-label="Read more about me" target="_blank" href="https://x.com/rgfdgvfdyazoma"
+                        class="twitter"><i class="fa fa-twitter social-links-icons"></i></a>
+                    <a aria-label="Read more about me" target="_blank"
+                        href="https://www.facebook.com/profile.php?id=100015169905913" class="facebook"><i
+                            class="fa fa-facebook fa-2x social-links-icons"></i></a>
+                    <a aria-label="Read more about me" target="_blank"
+                        href="https://www.linkedin.com/in/azmy-ahmed-5197bb196/" class="linkedin"><i
+                            class="fa fa-linkedin fa-2x social-links-icons"></i></a>
+                    <a aria-label="Read more about me" target="_blank"
+                        href="https://www.linkedin.com/in/azmy-ahmed-5197bb196/" class="linkedin"><i
+                            class="fa fa-whatsapp fa-2x social-links-icons"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-8">
+                <div class="form">
+                    <form (ngSubmit)="sendEmail($event)" class="php-email-form" #emailForm="ngForm">
+                        <div class="form-group">
+                            <input type="text" name="user_name" class="form-control" id="name" placeholder="Your Name"
+                                required ngModel #userName="ngModel">
+                            <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="userName.errors?.['required']">
+                                    Name is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="email" class="form-control" name="user_email" id="email"
+                                placeholder="Your Email" required ngModel #userEmail="ngModel">
+                            <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="userEmail.errors?.['required']">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="userEmail.errors?.['email']">
+                                    Invalid email format.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required ngModel #subject="ngModel">
+                            <div *ngIf="subject.invalid && (subject.dirty || subject.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="subject.errors?.['required']">
+                                    Subject is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required
+                                ngModel #message="ngModel"></textarea>
+                            <div *ngIf="message.invalid && (message.dirty || message.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="message.errors?.['required']">
+                                    Message is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center m-4"><button type="submit" id="sendMessage" aria-label="sendMessage"
+                                class="btn  contact-submit-button">Send
+                                Message</button></div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

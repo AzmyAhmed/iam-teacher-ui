@@ -1,0 +1,130 @@
+<header
+    class="t-header fixed-top d-flex d-inline-flex align-items-center header-container justify-content-between t-responsive-header"
+    [ngClass]="{'t-teacher-header': fromModule=='teacher'}">
+    <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
+
+    <div class="d-inline-flex t-responsive-header">
+        <a class=" d-inline-flex btn-sm mx-1 mt-3" (click)="onToggleSidenav()">
+            <span class=" pe-2">
+                <i class="fa fa-bars  mr-2 ml-2 t-menu-icon">
+                </i> </span>
+            <span>
+                {{"MENU"|translate}} </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm mx-1" (click)="gotoIamTeacherWebsite()">
+            <h2 class="text-muted"><i class='fa fa-leanpub t-logo-icon'>I'M </i>
+                <strong class="text-muted">Teacher</strong>
+
+            </h2>
+
+        </a>
+        <!--Sof  Website Module  19-7-2024 Azmestics -->
+        <a *ngIf="fromModule=='website'" class="btn btn-success d-inline-flex btn-sm   mx-1 "
+            (click)="openModalTemplate('bookDemo','BOOKDEMO')">
+            {{"BOOKDEMO"|translate}}
+
+        </a>
+        <a *ngIf="fromModule=='website'" class="btn btn-info d-inline-flex btn-sm   mx-1">
+
+            {{"LiveView"|translate}}
+
+        </a>
+        <!--Eof  Website Module  19-7-2024 Azmestics -->
+        <!--Sof  teacher-protofilio Module  19-7-2024 Azmestics User Data Area-->
+        <a *ngIf="fromModule=='teacher-protofilio'" class="btn btn-success d-inline-flex btn-sm   mx-1"
+            (click)="openModalTemplate('bookWithTeacher','BOOKWITHTEACHER')">
+            {{"BOOK With"|translate}}
+        </a>
+        <a *ngIf="fromModule=='teacher-protofilio'" class="btn  d-inline-flex  mx-1 border border-success"
+            aria-label="Read more about me" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')">
+            <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
+            <span> {{translate.currentLang=='ar'?' Welcome To Mr / Mohamed Ahmed':' Welcome To Mr / Mohamed
+                Ahmed'}}</span>
+            <i class="fa fa-calendar home-icon"></i>
+        </a>
+        <!--eof  teacher-protofilio Module  19-7-2024 Azmestics -->
+        <!-- sof Module Teacher  -->
+        <a *ngIf="fromModule=='teacher'" class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2"
+            (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
+            {{"Add Student"|translate}}
+        </a>
+        <a *ngIf="fromModule=='teacher'" class="btn  d-inline-flex  mx-1  border btn-danger mt-2"
+            aria-label="Read more about me">
+            <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
+            Welcome Mr / {{translate.currentLang=='ar'?' Mohamed Ahmed Basuony':'Mohamed Ahmed Basuony'}}
+            <div class="notification-icon mr-2">
+                <i class="fa fa-bell-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                    <span class="notification-count">5</span>
+
+                </i>
+            </div>
+            <div class="notification-icon mr-2">
+                <i class="fa fa fa-calendar" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                </i>
+            </div>
+            <div class="notification-icon mr-2">
+                <i class="fa fa-clock-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                </i>
+            </div>
+        </a>
+        <!-- Eof Module Teacher  -->
+
+    </div>
+    <div class="d-inline-flex t-responsive-header">
+        <a *ngIf="fromModule=='website'" class="btn btn-dark d-inline-flex btn-sm   mx-1" (click)="teacherSignup()">
+            {{"Teacher SignUp"|translate}}
+        </a>
+        <a *ngIf="fromModule=='teacher-protofilio'" class="btn btn-dark d-inline-flex btn-sm   mx-1"
+            (click)="teacherProtofilioLogin(1)">
+
+            {{"Login"|translate}}
+
+        </a>
+        <a *ngIf="fromModule=='teacher'" class="btn btn-dark d-inline-flex btn-sm   mx-1 mt-2"
+            (click)="logoutFromIamTeacher()">
+            {{"LogOut"|translate}}
+        </a>
+        <!-- lang -->
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="toggleLanguage()">
+            <span class=" pe-2">
+                <i class="fa fa-language t-lang-icon"></i>
+            </span>
+            <span>
+                {{"LANG"|translate}} </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="switchTheme()">
+            <span class=" pe-2">
+                <i class="fa fa-moon-o t-mode-icon ">
+                </i> </span>
+            <span>
+                {{"MODE"|translate}} </span>
+
+        </a>
+    </div>
+</header><!-- End Header -->
+<!-- Sof Modal area  19-7-2024-->
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='bookDemo'">
+        <app-website-bookdemo></app-website-bookdemo>
+    </div>
+    <div *ngIf="targetComponent=='liveView'">.
+        <app-website-bookdemo></app-website-bookdemo>
+    </div>
+    <div *ngIf="targetComponent=='bookWithTeacher'">
+        <app-teacher-protofilio-bookwith></app-teacher-protofilio-bookwith>
+    </div>
+    <div *ngIf="targetComponent=='teacherAppointment'">
+        <app-teacher-protofilio-appointment></app-teacher-protofilio-appointment>
+    </div>
+    <div *ngIf="targetComponent=='teacherNotification'">
+        <app-teacher-notification></app-teacher-notification>
+    </div>
+    <div *ngIf="targetComponent=='teacherAddStudent'">.
+        <app-teacher-add-student></app-teacher-add-student>
+    </div>
+    <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
+</ng-template>
+<app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
+<!-- Eof Modal area  19-7-2024-->

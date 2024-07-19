@@ -1,0 +1,86 @@
+[
+    {
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage",
+        "NameAr": "الرئيسية",
+        "NameEn": "Home",
+        "ClassName": "fa fa-sm fa fa-home",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "NameAr": "المواعيد",
+        "NameEn": "Appointments",
+        "ClassName": "fa fa-sm fa fa-home",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "NameAr": "المراجعات",
+        "NameEn": "Reviews",
+        "ClassName": "fa fa-sm fa fa-home",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "NameAr": "الامتحانات",
+        "NameEn": "ُExams",
+        "ClassName": "fa fa-sm fa fa-home",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "NameAr": "التدريبات",
+        "NameEn": "Training",
+        "ClassName": "fa fa-sm fa fa-home",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "NameAr": "اسئلة هامة",
+        "NameEn": "Training",
+        "ClassName": "fa fa-sm fa fa-home",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/website/website-blogs",
+        "NameAr": "المقالات ",
+        "NameEn": "Blogs",
+        "ClassName": "fa fa-book",
+        "Active": 0
+    },
+    {
+        "RoutePath": "/website/website-aboutus",
+        "NameAr": "عن الاستاذ",
+        "NameEn": "About Teacher",
+        "ClassName": "fa fa-share",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/website/website-features",
+        "NameAr": "مميزات الدرس",
+        "NameEn": "Features",
+        "ClassName": "fa fa-cubes",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/website/website-view",
+        "NameAr": "رؤية المدرس ",
+        "NameEn": "Our View",
+        "ClassName": "fa fa-lightbulb-o",
+        "Active": 0
+    },
+    {
+        "RoutePath": "/website/website-team",
+        "NameAr": "اسأل الاستاذ",
+        "NameEn": "FAQs",
+        "ClassName": "fa fa-users",
+        "Active": 1
+    },
+    {
+        "RoutePath": "/website/website-contactus",
+        "NameAr": "تواصل معنا",
+        "NameEn": "Contact Us",
+        "ClassName": "fa fa-envelope-o",
+        "Active": 1
+    }
+]

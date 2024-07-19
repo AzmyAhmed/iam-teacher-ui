@@ -1,0 +1,5 @@
+<!-- <app-teacher-protofilio-header (toggleSidenav)="toggleSidenav()"></app-teacher-protofilio-header>
+<app-teacher-protofilio-sidenav [class]="sideNavClass" (closeSidenav)="closeSidenav()"></app-teacher-protofilio-sidenav> -->
+<app-header   [fromModule]="'teacher-protofilio'" (toggleSidenav)="toggleSidenav()"></app-header>
+<app-side-nav [fromModule]="'teacher-protofilio'" [fromJson]="fromJson" [class]="sideNavClass"
+    (closeSidenav)="closeSidenav()"></app-side-nav>

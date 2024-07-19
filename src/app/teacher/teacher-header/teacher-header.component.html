@@ -1,0 +1,89 @@
+<header
+    class="t-header fixed-top d-flex d-inline-flex align-items-center header-container justify-content-between t-responsive-header">
+    <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
+    <div class="d-inline-flex t-responsive-header">
+        <a class=" d-inline-flex btn-sm mx-1 mt-3" (click)="onToggleSidenav()">
+            <span class=" pe-2">
+                <i class="fa fa-bars applyDarkMode mr-2 ml-2 t-menu-icon">
+                </i> </span>
+            <span>
+                {{"MENU"|translate}} </span>
+
+        </a>
+
+
+        <a class=" d-inline-flex btn-sm mx-1" (click)="gotoIamTeacherWebsite()" target="_blank">
+            <h2 class="text-muted"><i class='fa fa-leanpub t-logo-icon'>I'M </i>
+                <strong class="text-muted">Teacher (TMIS)</strong>
+
+            </h2>
+
+        </a>
+        <a class="btn btn-primary d-inline-flex btn-sm   mx-1 mt-2" (click)="gotoTeacherWebsite()">
+            {{"Go To Website"|translate}}
+        </a>
+        <a class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2"
+            (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
+
+            {{"Add Student"|translate}}
+
+        </a>
+        <a 
+            class="btn  d-inline-flex  mx-1  border btn-danger mt-2" *ngIf="teacherId == 1"
+            aria-label="Read more about me">
+            <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
+            Welcome Mr / {{translate.currentLang=='ar'?' Mohamed Ahmed Basuony':'Mohamed Ahmed Basuony'}}
+            <div class="notification-icon mr-2">
+                <i class="fa fa-bell-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                    <span class="notification-count">5</span>
+
+
+                </i>
+            </div>
+            <div class="notification-icon mr-2">
+                <i class="fa fa fa-calendar" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                </i>
+            </div>
+            <div class="notification-icon mr-2">
+                <i class="fa fa-info-circle" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                </i>
+            </div>
+        </a>
+    </div>
+
+    <div class="d-inline-flex t-responsive-header">
+
+        <!-- lang -->
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="toggleLanguage()">
+            <span class=" pe-2">
+                <i class="fa fa-language t-lang-icon"></i>
+            </span>
+            <span>
+                {{"LANG"|translate}} </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="switchTheme()">
+            <span class=" pe-2">
+                <i class="fa fa-moon-o t-mode-icon ">
+                </i> </span>
+            <span>
+                {{"MODE"|translate}} </span>
+
+        </a>
+        <a class="btn btn-dark d-inline-flex btn-sm   mx-1 mt-2" (click)="logoutFromIamTeacher()">
+            {{"LogOut"|translate}}
+        </a>
+
+    </div>
+
+</header><!-- End Header -->
+
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='teacherNotification'">
+        <app-teacher-notification></app-teacher-notification>
+    </div>
+    <div *ngIf="targetComponent=='teacherAddStudent'">.
+        <app-teacher-add-student></app-teacher-add-student>
+    </div>
+</ng-template>
+<app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>

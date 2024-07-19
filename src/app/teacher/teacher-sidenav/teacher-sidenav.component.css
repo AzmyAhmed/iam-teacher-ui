@@ -1,0 +1,12 @@
+a{
+    border: 1px solid rgb(215, 215, 215);
+    cursor: pointer !important;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+a:hover{
+    background-color: #198754;
+    font-size: larger;
+    color: white !important;
+
+}

@@ -1,0 +1,85 @@
+<header
+    class="t-header fixed-top d-flex d-inline-flex align-items-center header-container justify-content-between t-responsive-header">
+    <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
+    <div class="d-inline-flex t-responsive-header">
+        <a class=" d-inline-flex btn-sm mx-1 mt-3" (click)="onToggleSidenav()">
+            <span class=" pe-2">
+                <i class="fa fa-bars applyDarkMode mr-2 ml-2 t-menu-icon">
+                </i> </span>
+            <span>
+                {{"MENU"|translate}} </span>
+
+        </a>
+
+        <a class=" d-inline-flex btn-sm mx-1" (click)="gotoIamTeacherWebsite()">
+            <h2 class="text-muted"><i class='fa fa-leanpub t-logo-icon'>I'M </i>
+                <strong class="text-muted">Teacher</strong>
+
+            </h2>
+
+        </a>
+        <a class="btn btn-success d-inline-flex btn-sm   mx-1"
+            (click)="openModalTemplate('bookWithTeacher','BOOKWITHTEACHER')">
+
+            {{"BOOK With"|translate}}
+
+        </a>
+        <a class="btn  d-inline-flex  mx-1 border border-success" aria-label="Read more about me"
+            (click)="openModalTemplate('bookWithTeacher','TEACHERAPPOINTMENT')">
+            <strong>
+                Welcome To
+            </strong>
+            <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
+            <strong *ngIf="teacherId == 1"> {{translate.currentLang=='ar'?' Mr / Mohamed Ahmed Basuony':' Mr / Mohamed
+                Ahmed
+                Basuony'}}
+            </strong>
+            <strong *ngIf="teacherId == 2"> {{translate.currentLang=='ar'?' Mr / Azmy Ahmed Basuony':' Mr / Azmy
+                Ahmed
+                Basuony'}}
+            </strong>
+            <strong *ngIf="teacherId == 3"> {{translate.currentLang=='ar'?' Mrs / manar Ahmed Basuony':' Mr / manar
+                Ahmed
+                Basuony'}}
+            </strong>
+            <i class="fa fa-calendar home-icon"></i>
+
+        </a>
+    </div>
+
+    <div class="d-inline-flex t-responsive-header">
+
+        <!-- lang -->
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="toggleLanguage()">
+            <span class=" pe-2">
+                <i class="fa fa-language t-lang-icon"></i>
+            </span>
+            <span>
+                {{"LANG"|translate}} </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="switchTheme()">
+            <span class=" pe-2">
+                <i class="fa fa-moon-o t-mode-icon ">
+                </i> </span>
+            <span>
+                {{"MODE"|translate}} </span>
+
+        </a>
+        <a class="btn btn-dark d-inline-flex btn-sm   mx-1" (click)="teacherProtofilioLogin(this.teacherId)">
+
+            {{"Login"|translate}}
+
+        </a>
+    </div>
+
+</header><!-- End Header -->
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='bookWithTeacher'">
+        <app-teacher-protofilio-bookwith></app-teacher-protofilio-bookwith>
+    </div>
+    <div *ngIf="targetComponent=='teacherAppointment'">
+        <app-teacher-protofilio-appointment></app-teacher-protofilio-appointment>
+    </div>
+</ng-template>
+<app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>

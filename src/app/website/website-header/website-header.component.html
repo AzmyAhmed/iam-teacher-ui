@@ -1,0 +1,71 @@
+<header
+    class="t-header fixed-top d-flex d-inline-flex align-items-center header-container justify-content-between t-responsive-header">
+    <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
+
+    <div class="d-inline-flex t-responsive-header">
+        <a class=" d-inline-flex btn-sm mx-1 mt-3" (click)="onToggleSidenav()">
+            <span class=" pe-2">
+                <i class="fa fa-bars  mr-2 ml-2 t-menu-icon">
+                </i> </span>
+            <span>
+                {{"MENU"|translate}} </span>
+
+        </a>
+
+
+        <a class=" d-inline-flex btn-sm mx-1" (click)="gotoIamTeacherWebsite()">
+            <h2 class="text-muted"><i class='fa fa-leanpub t-logo-icon'>I'M </i>
+                <strong class="text-muted">Teacher</strong>
+
+            </h2>
+
+        </a>
+        <a class="btn btn-success d-inline-flex btn-sm   mx-1 " (click)="openModalTemplate('bookDemo','BOOKDEMO')">
+
+            {{"BOOKDEMO"|translate}}
+
+        </a>
+        <a class="btn btn-info d-inline-flex btn-sm   mx-1">
+
+            {{"LiveView"|translate}}
+
+        </a>
+    </div>
+
+    <div class="d-inline-flex t-responsive-header">
+
+        <!-- lang -->
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="toggleLanguage()">
+            <span class=" pe-2">
+                <i class="fa fa-language t-lang-icon"></i>
+            </span>
+            <span>
+                {{"LANG"|translate}} </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="switchTheme()">
+            <span class=" pe-2">
+                <i class="fa fa-moon-o t-mode-icon ">
+                </i> </span>
+            <span>
+                {{"MODE"|translate}} </span>
+
+        </a>
+        <a class="btn btn-dark d-inline-flex btn-sm   mx-1" (click)="teacherSignup()">
+
+            {{"Teacher SignUp"|translate}}
+
+        </a>
+
+    </div>
+
+</header><!-- End Header -->
+
+
+
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='bookDemo'">
+        <app-website-bookdemo></app-website-bookdemo>
+    </div>
+</ng-template>
+<app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
