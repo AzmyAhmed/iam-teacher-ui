@@ -23,6 +23,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WebsiteBookdemoComponent } from './website-bookdemo/website-bookdemo.component';
 import { WebsiteSidenaveHeaderContainerComponent } from './website-sidenave-header-container/website-sidenave-header-container.component';
 import { FormsComponent } from "../shared/component/forms/forms.component";
+import { WebsiteSignupConfirmationComponent } from "./website-signup-confirmation/website-signup-confirmation.component";
+import { WebsiteTermsConditionComponent } from "./website-terms-condition/website-terms-condition.component";
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { FormsComponent } from "../shared/component/forms/forms.component";
     WebsiteContactusComponent,
     WebsiteClientsComponent,
     WebsiteProjectsComponent,
-    WebsiteSidenaveHeaderContainerComponent
+    WebsiteSidenaveHeaderContainerComponent,
+    WebsiteSignupConfirmationComponent
 
   ],
   imports: [
@@ -53,7 +56,8 @@ import { FormsComponent } from "../shared/component/forms/forms.component";
     ReactiveFormsModule,
     FormsModule,
     WebsiteBookdemoComponent,
-    FormsComponent
+    FormsComponent,
+    WebsiteTermsConditionComponent
 ],
   exports: []
 })

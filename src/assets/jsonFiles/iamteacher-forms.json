@@ -2,20 +2,6 @@
     "login": {
         "fields": [
             {
-                "name": "phoneNumber",
-                "label": "Phone Number",
-                "type": "input",
-                "inputType": "text",
-                "required": true
-            },
-            {
-                "name": "password",
-                "label": "Password",
-                "type": "input",
-                "inputType": "password",
-                "required": true
-            },
-            {
                 "name": "signAs",
                 "label": "Sign As",
                 "type": "radio",
@@ -24,6 +10,27 @@
                     "student",
                     "guardian"
                 ],
+                "required": true
+            },
+            {
+                "name": "phoneNumber",
+                "label": "Phone Number",
+                "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
+                "name": "studentId",
+                "label": "Student Id",
+                "type": "input",
+                "inputType": "number",
+                "required": true
+            },
+            {
+                "name": "password",
+                "label": "Password",
+                "type": "input",
+                "inputType": "password",
                 "required": true
             },
             {
@@ -36,6 +43,13 @@
     "signUp": {
         "fields": [
             {
+                "name": "fullname",
+                "label": "Full Name",
+                "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
                 "name": "phoneNumber",
                 "label": "Phone Number",
                 "type": "input",
@@ -50,8 +64,8 @@
                 "required": true
             },
             {
-                "name": "fullname",
-                "label": "Full Name",
+                "name": "address",
+                "label": "Full Address",
                 "type": "input",
                 "inputType": "text",
                 "required": true
@@ -64,19 +78,83 @@
                 "required": true
             },
             {
+                "name": "confirmPassword",
+                "label": "Confirm Password",
+                "type": "input",
+                "inputType": "password",
+                "required": true
+            },
+            {
                 "name": "followUp",
                 "label": "Follow Up",
                 "type": "radio",
                 "options": [
-                    "school",
-                    "center",
-                    "own"
+                    "School",
+                    "Center",
+                    "Own"
+                ],
+                "required": true
+            },
+            {
+                "name": "schoolName",
+                "label": "School Name ",
+                "type": "input",
+                "inputType": "text",
+                "required": false
+            },
+            {
+                "name": "centerName",
+                "label": "Center Name ",
+                "type": "input",
+                "inputType": "text",
+                "required": false
+            }
+        ]
+    },
+    "bookDemo": {
+        "fields": [
+            {
+                "name": "fullName",
+                "label": "Full Name",
+                "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
+                "name": "phoneNumber",
+                "label": "Phone Number",
+                "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
+                "name": "email",
+                "label": "Email",
+                "type": "input",
+                "inputType": "email",
+                "required": false
+            },
+            {
+                "name": "address",
+                "label": "Address",
+                "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
+                "name": "demoBookBy",
+                "label": "Booking By",
+                "type": "radio",
+                "options": [
+                    "Teacher",
+                    "School",
+                    "Center"
                 ],
                 "required": true
             }
         ]
     },
-    "bookDemo": {
+    "bookWithTeacher": {
         "fields": [
             {
                 "name": "phoneNumber",
@@ -90,12 +168,77 @@
                 "label": "Email",
                 "type": "input",
                 "inputType": "email",
+                "required": false
+            },
+            {
+                "name": "fullName",
+                "label": "Full Name",
+                "type": "input",
+                "inputType": "text",
                 "required": true
             },
             {
-                "name": "fullname",
+                "name": "address",
+                "label": "Address",
+                "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
+                "name": "classBookBy",
+                "label": "Booking By",
+                "type": "radio",
+                "options": [
+                    "Guardian",
+                    "Student",
+                    "Center",
+                    "School"
+                ],
+                "required": true
+            },
+            {
+                "name": "bookFor",
+                "label": "Booking For",
+                "type": "radio",
+                "options": [
+                    "Group",
+                    "Private"
+                ],
+                "required": true
+            }
+        ]
+    },
+    "messagetToTeacher": {
+        "fields": [
+            {
+                "name": "fullName",
                 "label": "Full Name",
                 "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
+                "name": "messageToTeacher",
+                "label": "Message",
+                "type": "textarea",
+                "inputType": "tex",
+                "required": true
+            }
+        ]
+    },
+    "messagetToGuardian": {
+        "fields": [
+            {
+                "name": "phoneNumber",
+                "label": "Phone Number ",
+                "type": "input",
+                "inputType": "number",
+                "required": true
+            },
+            {
+                "name": "messageToGuardian",
+                "label": "Message",
+                "type": "textarea",
                 "inputType": "text",
                 "required": true
             }

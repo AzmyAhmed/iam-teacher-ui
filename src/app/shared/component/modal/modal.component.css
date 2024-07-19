@@ -1,12 +1,12 @@
 .shared-modal {
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 25%;
     width: 50%;
     height: 100%;
 }
 .modal-content{
-    padding: 30px;
+    padding:8px;
 }
 .close {
     position: absolute;

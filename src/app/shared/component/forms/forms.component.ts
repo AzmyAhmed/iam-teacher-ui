@@ -18,12 +18,15 @@ import { CommonModule } from '@angular/common';
 export class FormsComponent implements OnInit {
   @Input() formName!: string;
   @Input() title!: string;
+  @Input() iconClass!: string;
+  @Input() gridClass: string = 'col-sm-6 mb-3';
+
   @Output() formSubmit = new EventEmitter<any>();
 
   form!: FormGroup;
   fields: any[] = [];
 
-  constructor(private fb: FormBuilder, private formConfigService: IamteacherFormsService) {}
+  constructor(private fb: FormBuilder, private formConfigService: IamteacherFormsService) { }
 
   ngOnInit(): void {
     this.formConfigService.getFormConfig(this.formName).subscribe(config => {

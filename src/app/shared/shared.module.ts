@@ -13,6 +13,10 @@ import { TeacherProtofilioBookwithComponent } from "../teacher-protofilio/teache
 import { TeacherNotificationComponent } from "../teacher/teacher-notification/teacher-notification.component";
 import { TeacherAddStudentComponent } from "../teacher/teacher-add-student/teacher-add-student.component";
 import { FormsComponent } from './component/forms/forms.component';
+import { TeacherProtofilioSendMessageComponent } from "../teacher-protofilio/teacher-protofilio-send-message/teacher-protofilio-send-message.component";
+import { TeacherSendMessageComponent } from "../teacher/teacher-send-message/teacher-send-message.component";
+import { TeacherRecievedMessagesComponent } from "../teacher/teacher-recieved-messages/teacher-recieved-messages.component";
+import { TeacherClassSchdulingComponent } from "../teacher/teacher-class-schduling/teacher-class-schduling.component";
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import { FormsComponent } from './component/forms/forms.component';
     TeacherProtofilioBookwithComponent,
     TeacherNotificationComponent,
     TeacherAddStudentComponent,
-    FormsComponent
+    FormsComponent,
+    TeacherProtofilioSendMessageComponent,
+    TeacherSendMessageComponent,
+    TeacherRecievedMessagesComponent,
+    TeacherClassSchdulingComponent
 ],
     exports: [HeaderComponent, FooterComponent,
         SideNavComponent, ModalComponent]

@@ -36,12 +36,17 @@
             (click)="openModalTemplate('bookWithTeacher','BOOKWITHTEACHER')">
             {{"BOOK With"|translate}}
         </a>
+
         <a *ngIf="fromModule=='teacher-protofilio'" class="btn  d-inline-flex  mx-1 border border-success"
             aria-label="Read more about me" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')">
             <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
             <span> {{translate.currentLang=='ar'?' Welcome To Mr / Mohamed Ahmed':' Welcome To Mr / Mohamed
                 Ahmed'}}</span>
             <i class="fa fa-calendar home-icon"></i>
+        </a>
+        <a *ngIf="fromModule=='teacher-protofilio'" class="btn btn-primary d-inline-flex btn-sm   mx-1"
+            (click)="openModalTemplate('sendMessageToTeacher','SENDMESSAGE')">
+            {{"Send Message"|translate}}
         </a>
         <!--eof  teacher-protofilio Module  19-7-2024 Azmestics -->
         <!-- sof Module Teacher  -->
@@ -60,13 +65,23 @@
                 </i>
             </div>
             <div class="notification-icon mr-2">
-                <i class="fa fa fa-calendar" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                <i class="fa fa fa-calendar" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')">
                 </i>
             </div>
             <div class="notification-icon mr-2">
-                <i class="fa fa-clock-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                <i class="fa fa-clock-o" (click)="openModalTemplate('classeSchduling','CLASSSSCHDULING')">
                 </i>
             </div>
+            <div class="notification-icon mr-2">
+                <i class="fa fa-commenting-o" (click)="openModalTemplate('teacherMessages','MESSAGES')">
+                    <span class="notification-count">5</span>
+
+                </i>
+            </div>
+        </a>
+        <a *ngIf="fromModule=='teacher'" class="btn btn-primary d-inline-flex btn-sm   mx-1 mt-2"
+            (click)="openModalTemplate('sendMessageToGuardianOrStudent','SENDMESSAGE')">
+            {{"Send Message"|translate}}
         </a>
         <!-- Eof Module Teacher  -->
 
@@ -107,24 +122,40 @@
 <!-- Sof Modal area  19-7-2024-->
 <ng-template #modalTemplate>
     <div *ngIf="targetComponent=='bookDemo'">
+        <!-- ======================================website area======================================= -->
         <app-website-bookdemo></app-website-bookdemo>
     </div>
     <div *ngIf="targetComponent=='liveView'">.
         <app-website-bookdemo></app-website-bookdemo>
     </div>
+    <!-- ======================================teacher-protofilio area============================= -->
     <div *ngIf="targetComponent=='bookWithTeacher'">
         <app-teacher-protofilio-bookwith></app-teacher-protofilio-bookwith>
     </div>
     <div *ngIf="targetComponent=='teacherAppointment'">
         <app-teacher-protofilio-appointment></app-teacher-protofilio-appointment>
     </div>
+    <div *ngIf="targetComponent=='sendMessageToTeacher'">.
+        <app-teacher-protofilio-send-message></app-teacher-protofilio-send-message>
+    </div>
+    <!-- =========================teacher area===================================================== -->
     <div *ngIf="targetComponent=='teacherNotification'">
         <app-teacher-notification></app-teacher-notification>
     </div>
+    <div *ngIf="targetComponent=='classeSchduling'">
+        <app-teacher-class-schduling></app-teacher-class-schduling>
+    </div>
+
     <div *ngIf="targetComponent=='teacherAddStudent'">.
         <app-teacher-add-student></app-teacher-add-student>
     </div>
-    <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
+    <div *ngIf="targetComponent=='sendMessageToGuardianOrStudent'">
+        <app-teacher-send-message></app-teacher-send-message>
+    </div>
+    <div *ngIf="targetComponent=='teacherMessages'">
+        <app-teacher-recieved-messages></app-teacher-recieved-messages>
+    </div>
 </ng-template>
 <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
+
 <!-- Eof Modal area  19-7-2024-->

@@ -1,6 +1,10 @@
-<form [formGroup]="form" class="container mt-3">
-    <h2 class="mb-4">{{ title }}</h2>
-    <div *ngFor="let field of fields" class="mb-3">
+<form [formGroup]="form" class="container mt-3 row">
+    <div class="text-center">
+        <h2 class="mb-4">{{ title }}
+            <i [class]="iconClass"></i>
+        </h2>
+    </div>
+    <div *ngFor="let field of fields" [class]="gridClass">
         <ng-container [ngSwitch]="field.type">
             <div *ngSwitchCase="'input'" class="form-group">
                 <label class="form-label">{{field.label}}</label>
@@ -10,7 +14,7 @@
                     {{field.label}} is required.
                 </div>
             </div>
-            <div *ngSwitchCase="'radio'" class="form-group">
+            <div *ngSwitchCase="'radio'" class="form-group " style="display: inline-block;">
                 <label class="form-label">{{field.label}}</label>
                 <div *ngFor="let option of field.options" class="form-check">
                     <input type="radio" [value]="option" formControlName="{{field.name}}" class="form-check-input"
@@ -26,6 +30,16 @@
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
                 <label class="form-check-label">{{field.label}}</label>
             </div>
+            <div *ngSwitchCase="'textarea'" class="form-group form-check">
+                <textarea class="form-control" id="exampleTextarea" rows="5" formControlName="{{field.name}}"
+                    [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched"></textarea>
+                <label class="form-check-label">{{field.label}}</label>
+    
+                <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
+                    {{field.label}} is required.
+                </div>
+            </div>
+
         </ng-container>
     </div>
 </form>

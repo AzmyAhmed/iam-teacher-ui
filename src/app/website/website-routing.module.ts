@@ -12,6 +12,7 @@ import { WebsiteViewComponent } from './website-view/website-view.component';
 import { WebsiteFeaturesComponent } from './website-features/website-features.component';
 import { WebsiteTeamComponent } from './website-team/website-team.component';
 import { WebsiteSignupComponent } from './website-signup/website-signup.component';
+import { WebsiteSignupConfirmationComponent } from './website-signup-confirmation/website-signup-confirmation.component';
 const routes: Routes = [
   { path: '', redirectTo: 'website-landingpage', pathMatch: 'full' },
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
       { path: 'website-contactus', component: WebsiteContactusComponent, data: { description: 'azmy ahmed software engineer' } },
       { path: 'website-team', component: WebsiteTeamComponent, data: { description: 'azmy ahmed software engineer' } },
       { path: 'website-signup', component: WebsiteSignupComponent, data: { description: 'azmy ahmed software engineer' } },
-
+      { path: 'website-signup-confirmation', component: WebsiteSignupConfirmationComponent, data: { description: 'azmy ahmed software engineer' } },
     ]
   }
   ,

@@ -1,6 +1,32 @@
 <div *ngIf="showFormFalg==1">
-    <app-forms formName="bookDemo" title="" (formSubmit)="handleFormSubmit($event)"></app-forms>
-    <button class="btn btn-success mt-3" (click)="teacherBookDemo()">Book Demo</button>
+
+
+
+
+
+
+
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row">
+            <!-- Image Column -->
+
+            <!-- Form Column -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <app-forms formName="bookDemo" title="Book Demo" (formSubmit)="handleFormSubmit($event)"
+                            [gridClass]="'col-sm-6 mb-3'" iconClass="fa fa fa-bookmark-o"></app-forms>
+                        <div class="m-1 text-center">
+                            <button class="btn btn-success mt-3" (click)="teacherBookDemo()">Book Demo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+
 </div>
 <div *ngIf="showFormFalg==0">
     <app-website-demo-confirmation></app-website-demo-confirmation>

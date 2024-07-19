@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { ThemeService } from '../../shared/service/theme.service';
 import { FormsComponent } from '../../shared/component/forms/forms.component';
+import { ModalComponent } from '../../shared/component/modal/modal.component';
 
 @Component({
   selector: 'app-website-signup',
@@ -11,12 +11,32 @@ import { FormsComponent } from '../../shared/component/forms/forms.component';
 })
 export class WebsiteSignupComponent {
   teacherId: any;
+  isReadTerms: boolean = false;
   constructor(
     public translate: TranslateService, private router: Router) {
     this.teacherId = localStorage.getItem('teacherId');
     if (!this.teacherId) {
       this.teacherId = 1;
     }
+  }
+
+  //Sof  Modal Area =====================================19-7-2024 Azmestic============================
+  @ViewChild(ModalComponent) modal!: ModalComponent;
+  @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
+  targetComponent: string = '';
+  componentTitle: string = '';
+  openModalTemplate(targetComponent: string, componentTitle: string) {
+    this.targetComponent = targetComponent;
+    this.componentTitle = componentTitle;
+    if (this.modal) {
+      this.modal.content = this.modalTemplate;
+      this.modal.open();
+    } else {
+      console.error(' Modal component is not available');
+    }
+  }
+  acceptTerms() {
+    this.isReadTerms = !this.isReadTerms
   }
   @ViewChild(FormsComponent) dynamicForm!: FormsComponent;
   handleFormSubmit(formData: any): void {
@@ -25,7 +45,6 @@ export class WebsiteSignupComponent {
   }
   confirmTeacherSignUp(): void {
     this.dynamicForm.submitForm();
-    this.router.navigate(['/teacher-protofilio/teacher-protofilio-landingpage/' + this.teacherId])
-
+    this.router.navigate(['/website/website-signup-confirmation'])
   }
 }
