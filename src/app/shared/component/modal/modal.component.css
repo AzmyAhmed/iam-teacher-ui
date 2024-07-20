@@ -1,23 +1,27 @@
 .shared-modal {
-    position: fixed;
-    top: 15%;
-    left: 25%;
-    width: 50%;
-    height: 100%;
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  width: 50%;
+  height: 100%;
 }
-.modal-content{
-    padding:8px;
+
+.modal-content {
+  padding: 8px;
 }
+
 .close {
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-  .modal h2 {
-    margin-top: 0;
-    text-align: center; /* Adjust styling as needed */
-  }
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-top: 0;
+  text-align: center;
+  /* Adjust styling as needed */
+}
