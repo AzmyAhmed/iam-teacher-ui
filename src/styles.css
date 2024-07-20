@@ -2,12 +2,15 @@
 
 /* Bootstrap Icons */
 @import url("assets/css/bootstrap/css/bootstrap.min.css");
+
 ::-webkit-scrollbar {
-    width: 8px;
-  }
-  a{
-    text-decoration: none;
-  }
+  width: 8px;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Style the scrollbar track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -28,9 +31,11 @@
 /* Style the scrollbar itself */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 10px; /* for horizontal scrollbars */
+  height: 10px;
+  /* for horizontal scrollbars */
 }
-  /**
+
+/**
 * Template Name: eStartup - v4.9.1
 * Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
 * Author: BootstrapMade.com
@@ -464,6 +469,23 @@ span {
   background-size: 100%;
   position: relative;
   margin-top: 40px;
+}
+
+.card-img-top {
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+
+}
+
+.teacher-section-header {
+  text-align: center;
+  background-color: rgb(220 229 223);
+  color: black;
+  h5{
+    color: #000 !important;
+    font-size: large;
+  }
 }
 
 @media (min-width: 1025px) {

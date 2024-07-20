@@ -1,1 +1,12 @@
-<p>teacher-attendance works!</p>
+<div class="row">
+    <ng-container *ngFor="let section of sections">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <!-- <img [src]="section.ImageSrc" class="card-img-top" alt="{{ section.NameAr }}"> -->
+                <div class="card-body teacher-section-header">
+                    <h5 >{{ section.NameAr }}</h5>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

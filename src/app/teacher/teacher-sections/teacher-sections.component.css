@@ -1,14 +1,18 @@
 .header {
-    background-color: #f8f9fa; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Add some padding */
-    margin-bottom: 20px; /* Space below the header */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .header h1 {
-    color: #343a40; /* Darker text color */
-    font-size: 2.5rem; /* Larger font size */
-    margin: 0; /* Remove default margin */
-    font-family: cursive;
-  }
+  background-color: #198754;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+  box-shadow: 15px 14px 13px rgba(0, 0, 0, 0.1);
+}
+
+.header h3 {
+  color: white;
+  /* Darker text color */
+  /* Larger font size */
+  margin: 0;
+  /* Remove default margin */
+  font-family: cursive;
+}

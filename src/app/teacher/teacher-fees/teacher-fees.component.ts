@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-teacher-fees',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './teacher-fees.component.css'
 })
 export class TeacherFeesComponent {
-
+@Input() sections :any=[];
 }

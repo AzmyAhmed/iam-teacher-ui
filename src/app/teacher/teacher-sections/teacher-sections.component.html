@@ -1,50 +1,43 @@
 <!-- teacher-sections.component.html -->
-<div class="fluid-container mt-4">
-    <div *ngIf="currentLinkData.NameAr" class="header">
-        <h1>{{ currentLinkData.NameAr }}</h1>
+<div class="fluid-container row mt-4 header">
+    <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Search by  NameAr, or NameEn" [(ngModel)]="searchTerm">
     </div>
-    <div class="row">
-        <ng-container *ngFor="let section of sections">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img [src]="section.ImageSrc" class="card-img-top" alt="{{ section.NameAr }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ section.NameAr }}</h5>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
+    <div *ngIf="currentLinkData.NameAr" class="col-md-4">
+        <h3>{{ currentLinkData.NameAr }} <i [class]="currentLinkData.ClassName"></i>
+        </h3>
     </div>
+
 </div>
 
 <div *ngIf="currentLinkData.Serial == 2">
-    <app-teacher-classrooms [sections]="sections"></app-teacher-classrooms>
+    <app-teacher-classrooms [sections]="filteredSections()"></app-teacher-classrooms>
 </div>
 <div *ngIf="currentLinkData.Serial == 3">
-    <app-teacher-students [sections]="sections"></app-teacher-students>
+    <app-teacher-students [sections]="filteredSections()"></app-teacher-students>
 
 </div>
 <div *ngIf="currentLinkData.Serial == 4">
-    <app-teacher-exams [sections]="sections"></app-teacher-exams>
+    <app-teacher-exams [sections]="filteredSections()"></app-teacher-exams>
 
 </div>
 <div *ngIf="currentLinkData.Serial == 5">
-    <app-teacher-attendance [sections]="sections"></app-teacher-attendance>
+    <app-teacher-attendance [sections]="filteredSections()"></app-teacher-attendance>
 
 </div>
 <div *ngIf="currentLinkData.Serial == 6">
-    <app-teacher-fees [sections]="sections"></app-teacher-fees>
+    <app-teacher-fees [sections]="filteredSections()"></app-teacher-fees>
 
 </div>
 <div *ngIf="currentLinkData.Serial == 7">
-    <app-teacher-reports [sections]="sections"></app-teacher-reports>
+    <app-teacher-reports [sections]="filteredSections()"></app-teacher-reports>
 
 </div>
 <div *ngIf="currentLinkData.Serial == 8">
-    <app-teacher-statics [sections]="sections"></app-teacher-statics>
+    <app-teacher-statics [sections]="filteredSections()"></app-teacher-statics>
 
 </div>
 <div *ngIf="currentLinkData.Serial == 9">
-    <app-teacher-expenses-revenues [sections]="sections"></app-teacher-expenses-revenues>
+    <app-teacher-expenses-revenues [sections]="filteredSections()"></app-teacher-expenses-revenues>
 
 </div>

@@ -36,8 +36,8 @@ export class SideNavComponent implements OnInit, OnDestroy {
     this.closeSidenav.emit();
   }
 
-  onLinkClick(link: { Serial: number, NameAr: string, NameEn: string }) {
-    this.sharedService.changeLinkData(link.Serial, link.NameAr, link.NameEn);
+  onLinkClick(link: { Serial: number, NameAr: string, NameEn: string, ClassName: string }) {
+    this.sharedService.changeLinkData(link.Serial, link.NameAr, link.NameEn, link.ClassName);
   }
   ngOnDestroy() {
     this.ngUnsubscribe.next();

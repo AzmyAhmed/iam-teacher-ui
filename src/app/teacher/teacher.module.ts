@@ -22,6 +22,7 @@ import { TeacherAddStudentComponent } from "./teacher-add-student/teacher-add-st
 import { TeacherStudentsComponent } from "./teacher-students/teacher-students.component";
 import { TeacherAttendanceComponent } from "./teacher-attendance/teacher-attendance.component";
 import { TeacherExpensesRevenuesComponent } from "./teacher-expenses-revenues/teacher-expenses-revenues.component";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { TeacherExpensesRevenuesComponent } from "./teacher-expenses-revenues/te
     TeacherRoutingModule,
     TranslateModule,
     SharedModule,
+    FormsModule,
     TeacherNotificationComponent,
     TeacherAddStudentComponent,
     TeacherStudentsComponent,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-teacher-statics',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './teacher-statics.component.css'
 })
 export class TeacherStaticsComponent {
-
+@Input () sections:any=[];
 }
