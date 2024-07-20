@@ -1,0 +1,148 @@
+
+[data-aos][data-aos][data-aos-duration="400"],
+body[data-aos-duration="400"] [data-aos] {
+    transition-duration: .4s
+}
+
+[data-aos][data-aos][data-aos-delay="400"],
+body[data-aos-delay="400"] [data-aos] {
+    transition-delay: 0s
+}
+
+[data-aos][data-aos][data-aos-delay="400"].aos-animate,
+body[data-aos-delay="400"] [data-aos].aos-animate {
+    transition-delay: .4s
+}
+
+[data-aos][data-aos][data-aos-duration="450"],
+body[data-aos-duration="450"] [data-aos] {
+    transition-duration: .45s
+}
+
+[data-aos][data-aos][data-aos-delay="450"],
+body[data-aos-delay="450"] [data-aos] {
+    transition-delay: 0s
+}
+
+[data-aos][data-aos][data-aos-delay="450"].aos-animate,
+body[data-aos-delay="450"] [data-aos].aos-animate {
+    transition-delay: .45s
+}
+
+[data-aos][data-aos][data-aos-duration="500"],
+body[data-aos-duration="500"] [data-aos] {
+    transition-duration: .5s
+}
+
+[data-aos][data-aos][data-aos-delay="500"],
+body[data-aos-delay="500"] [data-aos] {
+    transition-delay: 0s
+}
+
+[data-aos][data-aos][data-aos-delay="500"].aos-animate,
+body[data-aos-delay="500"] [data-aos].aos-animate {
+    transition-delay: .5s
+}
+
+[data-aos][data-aos][data-aos-duration="550"],
+body[data-aos-duration="550"] [data-aos] {
+    transition-duration: .55s
+}
+
+[data-aos][data-aos][data-aos-delay="550"],
+body[data-aos-delay="550"] [data-aos] {
+    transition-delay: 0s
+}
+
+[data-aos][data-aos][data-aos-delay="550"].aos-animate,
+body[data-aos-delay="550"] [data-aos].aos-animate {
+    transition-delay: .55s
+}
+
+[data-aos][data-aos][data-aos-duration="1000"],
+body[data-aos-duration="1000"] [data-aos] {
+    transition-duration: 1s
+}
+
+[data-aos][data-aos][data-aos-delay="1000"],
+body[data-aos-delay="1000"] [data-aos] {
+    transition-delay: 0s
+}
+
+[data-aos][data-aos][data-aos-delay="1000"].aos-animate,
+body[data-aos-delay="1000"] [data-aos].aos-animate {
+    transition-delay: 1s
+}
+
+@media screen {
+    html:not(.no-js) [data-aos^=zoom][data-aos^=zoom] {
+        opacity: 0;
+        transition-property: opacity, -webkit-transform;
+        transition-property: opacity, transform;
+        transition-property: opacity, transform, -webkit-transform
+    }
+
+    html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
+        opacity: 1;
+        -webkit-transform: translateZ(0) scale(1);
+        transform: translateZ(0) scale(1)
+    }
+
+    html:not(.no-js) [data-aos=zoom-in] {
+        -webkit-transform: scale(.6);
+        transform: scale(.6)
+    }
+
+    html:not(.no-js) [data-aos=zoom-in-up] {
+        -webkit-transform: translate3d(0, 100px, 0) scale(.6);
+        transform: translate3d(0, 100px, 0) scale(.6)
+    }
+
+    html:not(.no-js) [data-aos=zoom-in-down] {
+        -webkit-transform: translate3d(0, -100px, 0) scale(.6);
+        transform: translate3d(0, -100px, 0) scale(.6)
+    }
+    html:not(.no-js) [data-aos=zoom-out] {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2)
+    }
+    html:not(.no-js) [data-aos=zoom-out-up] {
+        -webkit-transform: translate3d(0, 100px, 0) scale(1.2);
+        transform: translate3d(0, 100px, 0) scale(1.2)
+    }
+    html:not(.no-js) [data-aos=zoom-out-down] {
+        -webkit-transform: translate3d(0, -100px, 0) scale(1.2);
+        transform: translate3d(0, -100px, 0) scale(1.2)
+    }
+    html:not(.no-js) [data-aos^=slide][data-aos^=slide] {
+        transition-property: -webkit-transform;
+        transition-property: transform;
+        transition-property: transform, -webkit-transform;
+        visibility: hidden
+    }
+
+    html:not(.no-js) [data-aos^=slide][data-aos^=slide].aos-animate {
+        visibility: visible;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    html:not(.no-js) [data-aos=slide-up] {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0)
+    }
+
+    html:not(.no-js) [data-aos=slide-down] {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0)
+    }
+
+
+  
+    
+  
+ 
+
+  
+ 
+}
