@@ -8,6 +8,7 @@ interface TeacherMessages {
   message: string;
   address: string;
   phoneNumber: string;
+  isReadFlag: boolean;
 }
 
 @Component({
@@ -25,5 +26,8 @@ export class TeacherRecievedMessagesComponent {
     this.http.get<TeacherMessages[]>('assets/jsonFiles/teacher-messages.json').subscribe(data => {
       this.teacherMessages = data;
     });
+  }
+  readTeacherMessage(message:any){
+    message.isReadFlag=true
   }
 }

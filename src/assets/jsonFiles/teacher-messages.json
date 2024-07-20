@@ -4,104 +4,133 @@
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Hi Mr Mohamed",
     "address": "Tanta",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
   },
   {
     "sender": "Mohamed Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Good Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Azmi Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Hi Mr Mohamed",
     "address": "Tanta",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Mohamed Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Good Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Azmi Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Hi Mr Mohamed",
     "address": "Tanta",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Mohamed Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Good Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Azmi Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Hi Mr Mohamed",
     "address": "Tanta",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Mohamed Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Good Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Azmi Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Hi Mr Mohamed",
     "address": "Tanta",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Mohamed Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Good Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Azmi Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Hi Mr Mohamed",
     "address": "Tanta",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Mohamed Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Good Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Azmi Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Hi Mr Mohamed",
     "address": "Tanta",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Mohamed Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Good Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   },
   {
     "sender": "Manar Ahmed",
     "timeOfSend": "2024-07-20 10:00 AM",
     "message": "Excellent Mr Mohamed",
     "address": "Cairo",
-    "phoneNumber": "01004303936"
+    "phoneNumber": "01004303936",
+    "isReadFlag":false
+
   }
 ]

@@ -11,19 +11,19 @@ import { ThemeService } from '../../service/theme.service';
 })
 export class SideNavComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
-  websiteLinks: any = [];
+  sidNavLinks: any = [];
   @Input() fromModule: string = '';
-  @Input() fromJson: string = 'assets/jsonFiles/website-links.json';
+  @Input() fromJson: string = '';
   constructor(
     public translate: TranslateService, private accessToJsonService: AccessToJsonService) {
   }
   ngOnInit(): void {
-    this.getWebsiteLinks();
+    this.getSidNavLinks();
   }
-  getWebsiteLinks() {
+  getSidNavLinks() {
     this.accessToJsonService.getLinks(this.fromJson).subscribe(
       (data) => {
-        this.websiteLinks = data.filter((ele: { Active: number; }) => ele.Active == 1);
+        this.sidNavLinks = data.filter((ele: { Active: number; }) => ele.Active == 1);
       },
       (error) => {
         console.error('Error fetching JSON data', error);

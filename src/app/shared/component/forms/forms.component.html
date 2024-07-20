@@ -1,9 +1,9 @@
-<form [formGroup]="form" class="container mt-3 row">
-    <div class="text-center">
+<form [formGroup]="form" class="container mt-1 row">
+    <!-- <div class="text-center">
         <h2 class="mb-4">{{ title }}
             <i [class]="iconClass"></i>
         </h2>
-    </div>
+    </div> -->
     <div *ngFor="let field of fields" [class]="gridClass">
         <ng-container [ngSwitch]="field.type">
             <div *ngSwitchCase="'input'" class="form-group">
@@ -30,16 +30,25 @@
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
                 <label class="form-check-label">{{field.label}}</label>
             </div>
-            <div *ngSwitchCase="'textarea'" class="form-group form-check">
+            <div *ngSwitchCase="'textarea'" class="form-group form-check col-12">
                 <textarea class="form-control" id="exampleTextarea" rows="5" formControlName="{{field.name}}"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched"></textarea>
                 <label class="form-check-label">{{field.label}}</label>
-    
+
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
                     {{field.label}} is required.
                 </div>
             </div>
+            <div *ngSwitchCase="'select'" >
+                <div class="form-check-label mb-1">{{field.label}}</div>
 
+                <select [formControlName]="field.name" class="form-select" aria-label="Default select example" [required]="field.required">
+                    <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
+                </select>
+                <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
+                    {{field.label}} is required.
+                </div>
+            </div>
         </ng-container>
     </div>
 </form>

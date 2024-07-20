@@ -1,4 +1,4 @@
-<div>
+<div [ngClass]="{'t-teacher-sidnav': fromModule=='teacher'}">
     <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="onCloseSidenav()">
         <span class=" pe-2">
             <i class="fa fa-close  mr-2 ml-2 t-menu-icon">
@@ -6,7 +6,7 @@
         <span>
             {{"CLOSE"|translate}} </span>
     </a>
-    <div *ngFor="let link of websiteLinks">
+    <div *ngFor="let link of sidNavLinks">
         <a class="sidenav-nav-link applyDarkMode" [routerLink]="[link.RoutePath]" routerLinkActive="active"
             aria-label="Read more about me" href="#" [routerLinkActiveOptions]="{exact:true}">
             <i class="sidenav-link-icon" [class]="link.ClassName">

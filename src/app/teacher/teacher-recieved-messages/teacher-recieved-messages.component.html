@@ -12,13 +12,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let message of teacherMessages">
+            <tr *ngFor="let message of teacherMessages"
+             [ngClass]="{'messageReaded': message.isReadFlag==true}">
                 <td>{{ message.sender }}</td>
                 <td class="message">{{ message.message }}</td>
                 <td>{{ message.address }}</td>
                 <td>{{ message.phoneNumber }}</td>
                 <td>{{ message.timeOfSend }}</td>
-                <td> <a class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2">
+                <td> <a class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2" (click)="readTeacherMessage(message)">
                         {{"Read"|translate}}
                     </a></td>
                 <td><a class="btn btn-primary d-inline-flex btn-sm   mx-1 mt-2">

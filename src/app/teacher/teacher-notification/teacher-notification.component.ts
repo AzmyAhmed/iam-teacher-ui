@@ -6,6 +6,7 @@ interface TeacherNotification {
   visitor: string;
   timeOfVisit: string;
   type: string;
+  isReadFlag:boolean;
 }
 
 @Component({
@@ -24,5 +25,8 @@ export class TeacherNotificationComponent {
     this.http.get<TeacherNotification[]>('assets/jsonFiles/teacher-notifications.json').subscribe(data => {
       this.notifications = data;
     });
+  }
+  readTeacherNotification(notification:any){
+    notification.isReadFlag=true
   }
 }

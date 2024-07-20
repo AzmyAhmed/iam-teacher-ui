@@ -9,10 +9,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let notification of notifications">
+        <tr *ngFor="let notification of notifications" [ngClass]="{'notificationReaded': notification.isReadFlag==true}">
           <td>{{ notification.visitor }}</td>
           <td>{{ notification.timeOfVisit }}</td>
-          <td>  <a class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2">
+          <td>  <a class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2" (click)="readTeacherNotification(notification)">
             {{"Read"|translate}}
         </a></td>
         

@@ -1,1 +1,16 @@
-<p>teacher-add-student works!</p>
+<div class="container mt-1" data-aos="zoom-out" data-aos-delay="30">
+    <div class="row">
+        <div>
+            <div class="card">
+                <div class="card-body">
+                    <app-forms formName="addStudent" title="" [gridClass]="'col-sm-6 mb-3'"
+                        iconClass="fa fa-user-plus" (formSubmit)="handleFormSubmit($event)"></app-forms>
+                    <div class="m-1 text-center">
+                        <button (click)="bookWithTeacher()"
+                            class="btn btn-success ml-5 mr-5">Add Student</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
