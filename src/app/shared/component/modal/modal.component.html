@@ -1,7 +1,10 @@
 <div class="shared-modal " data-aos="slide-up" data-aos-delay="30" *ngIf="isOpen">
   <div class="modal-content">
     <button class="close" (click)="close()">X</button>
-    <h2>{{ title }}</h2>  <!-- Display the title -->
+    <h2>{{ title }} 
+<i [class]="iconClass"></i>
+
+    </h2>  <!-- Display the title -->
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </div>
 </div>

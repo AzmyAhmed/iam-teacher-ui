@@ -78,6 +78,11 @@
 
                 </i>
             </div>
+            <div class="notification-icon mr-2">
+                <i class="fa fa-refresh" (click)="refreshTeacherApp()">
+
+                </i>
+            </div>
         </a>
         <a *ngIf="fromModule=='teacher'" class="btn btn-primary d-inline-flex btn-sm   mx-1 mt-2"
             (click)="openModalTemplate('sendMessageToGuardianOrStudent','SENDMESSAGE')">

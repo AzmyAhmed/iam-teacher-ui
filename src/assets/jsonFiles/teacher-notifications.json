@@ -1,0 +1,122 @@
+[
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    },
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    },
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    },
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    },
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    },
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    },
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    },
+    {
+        "visitor": "John Doe",
+        "timeOfVisit": "2024-07-20 10:00 AM",
+        "type": "Visitor"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Booking"
+    },
+    {
+        "visitor": "Jane Smith",
+        "timeOfVisit": "2024-07-20 11:00 AM",
+        "type": "Enroll Online Class"
+    }
+]

@@ -1,1 +1,30 @@
-<p>teacher-recieved-messages works!</p>
+<div class="container mt-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Sender</th>
+                <th scope="col">Message</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Time</th>
+                <th scope="col">Read</th>
+                <th scope="col">Reply</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let message of teacherMessages">
+                <td>{{ message.sender }}</td>
+                <td class="message">{{ message.message }}</td>
+                <td>{{ message.address }}</td>
+                <td>{{ message.phoneNumber }}</td>
+                <td>{{ message.timeOfSend }}</td>
+                <td> <a class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2">
+                        {{"Read"|translate}}
+                    </a></td>
+                <td><a class="btn btn-primary d-inline-flex btn-sm   mx-1 mt-2">
+                        {{"Reply"|translate}}
+                    </a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

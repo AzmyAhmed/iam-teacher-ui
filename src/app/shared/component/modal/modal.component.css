@@ -2,8 +2,9 @@
   position: fixed;
   top: 15%;
   left: 25%;
-  width: 50%;
-  height: 100%;
+  width: 60%;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 .modal-content {
@@ -24,4 +25,8 @@
   margin-top: 0;
   text-align: center;
   /* Adjust styling as needed */
+}
+
+h2{
+  direction: ltr; 
 }

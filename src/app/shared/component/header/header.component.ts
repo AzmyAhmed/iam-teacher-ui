@@ -83,6 +83,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.logout();
     this.router.navigate(['/teacher-protofilio/teacher-protofilio-landingpage/', 1]);
   }
+  refreshTeacherApp() {
+    this.router.navigate(['/teacher/iamteacher/', 1]);
+  }
   ngOnDestroy() {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();

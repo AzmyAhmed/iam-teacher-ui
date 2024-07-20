@@ -1,1 +1,20 @@
-<p>teacher-class-schduling works!</p>
+<div class="container mt-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Class Name</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+                <th scope="col">State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sch of teacherClassSchduling">
+                <td>{{ sch.calssName }}</td>
+                <td >{{ sch.startClassTime }}</td>
+                <td>{{ sch.endClassTime }}</td>
+                <td>{{ sch.state }}</td>               
+            </tr>
+        </tbody>
+    </table>
+</div>

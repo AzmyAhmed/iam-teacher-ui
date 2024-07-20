@@ -9,7 +9,7 @@ export class ModalComponent {
   @Input() content!: TemplateRef<any>;
   isOpen = false;
   @Input() title: string = '';  // Add a title input
-
+  @Input() iconClass: string = ''
   open() {
     if (this.content) {
       this.isOpen = true;

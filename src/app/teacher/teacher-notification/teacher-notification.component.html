@@ -1,1 +1,22 @@
-<p>teacher-notification works!</p>
+
+  <div class="container mt-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Visitor</th>
+          <th scope="col">Time of Visit</th>
+          <th scope="col">Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let notification of notifications">
+          <td>{{ notification.visitor }}</td>
+          <td>{{ notification.timeOfVisit }}</td>
+          <td>  <a class="btn btn-success d-inline-flex btn-sm   mx-1 mt-2">
+            {{"Read"|translate}}
+        </a></td>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>

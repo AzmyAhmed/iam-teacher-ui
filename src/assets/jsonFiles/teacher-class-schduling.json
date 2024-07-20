@@ -1,0 +1,20 @@
+[
+    {
+        "calssName": "1ft",
+        "startClassTime": "2024-07-20 10:00 AM",
+        "endClassTime": "2024-07-20 11:00 AM",
+        "state": "Prev"
+    },
+    {
+        "calssName": "1st",
+        "startClassTime": "2024-07-20 11:00 AM",
+        "endClassTime": "2024-07-20 12:00 AM",
+        "state": "Current"
+    },
+    {
+        "calssName": "1th",
+        "startClassTime": "2024-07-20 12:00 AM",
+        "endClassTime": "2024-07-20 01:00 PM",
+        "state": "Next"
+    }
+]

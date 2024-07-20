@@ -1,1 +1,23 @@
-<p>teacher-protofilio-appointment works!</p>
+<div class="container mt-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Class</th>
+          <th scope="col">Day</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="appointments">
+          <tr *ngFor="let className of ['one', 'two', 'three', 'four', 'five', 'six']">
+            <ng-container *ngFor="let appointment of appointments[className]">
+              <td>{{ className | titlecase }}</td>
+              <td>{{ appointment.day }}</td>
+              <td>{{ appointment.time }}</td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,27 @@
+{
+    "one": [
+      { "day": "Monday", "time": "10:00 AM - 11:00 AM" },
+      { "day": "Wednesday", "time": "10:00 AM - 11:00 AM" }
+    ],
+    "two": [
+      { "day": "Tuesday", "time": "11:00 AM - 12:00 PM" },
+      { "day": "Thursday", "time": "11:00 AM - 12:00 PM" }
+    ],
+    "three": [
+      { "day": "Monday", "time": "1:00 PM - 2:00 PM" },
+      { "day": "Wednesday", "time": "1:00 PM - 2:00 PM" }
+    ],
+    "four": [
+      { "day": "Tuesday", "time": "2:00 PM - 3:00 PM" },
+      { "day": "Thursday", "time": "2:00 PM - 3:00 PM" }
+    ],
+    "five": [
+      { "day": "Friday", "time": "9:00 AM - 10:00 AM" },
+      { "day": "Friday", "time": "10:00 AM - 11:00 AM" }
+    ],
+    "six": [
+      { "day": "Monday", "time": "3:00 PM - 4:00 PM" },
+      { "day": "Wednesday", "time": "3:00 PM - 4:00 PM" }
+    ]
+  }
+  
