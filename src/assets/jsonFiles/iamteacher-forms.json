@@ -210,6 +210,7 @@
     },
     "messagetToTeacher": {
         "fields": [
+           
             {
                 "name": "fullName",
                 "label": "Full Name",
@@ -228,6 +229,16 @@
     },
     "messagetToGuardian": {
         "fields": [
+            {
+                "name": "sendTo",
+                "label": "Send To",
+                "type": "radio",
+                "options": [
+                    "Student",
+                    "Guardian"
+                ],
+                "required": true
+            },
             {
                 "name": "phoneNumber",
                 "label": "Phone Number ",
