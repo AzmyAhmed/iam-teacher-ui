@@ -8,7 +8,7 @@
     </a>
     <div *ngFor="let link of sidNavLinks">
         <a class="sidenav-nav-link applyDarkMode" [routerLink]="[link.RoutePath]" routerLinkActive="active"
-            aria-label="Read more about me" href="#" [routerLinkActiveOptions]="{exact:true}">
+            aria-label="Read more about me" [routerLinkActiveOptions]="{exact:true}" (click)="onLinkClick(link)">
             <i class="sidenav-link-icon" [class]="link.ClassName">
             </i>
             <span class="sidenav-link-text">

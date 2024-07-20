@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { AccessToJsonService } from '../../service/access-to-json.service';
 import { ThemeService } from '../../service/theme.service';
+import { SharedService } from '../../service/shared.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -15,7 +16,7 @@ export class SideNavComponent implements OnInit, OnDestroy {
   @Input() fromModule: string = '';
   @Input() fromJson: string = '';
   constructor(
-    public translate: TranslateService, private accessToJsonService: AccessToJsonService) {
+    public translate: TranslateService, private accessToJsonService: AccessToJsonService, private sharedService: SharedService) {
   }
   ngOnInit(): void {
     this.getSidNavLinks();
@@ -23,7 +24,7 @@ export class SideNavComponent implements OnInit, OnDestroy {
   getSidNavLinks() {
     this.accessToJsonService.getLinks(this.fromJson).subscribe(
       (data) => {
-        this.sidNavLinks = data.filter((ele: { Active: number; }) => ele.Active == 1);
+        this.sidNavLinks = data.filter((ele: { IsActive: number; }) => ele.IsActive == 1);
       },
       (error) => {
         console.error('Error fetching JSON data', error);
@@ -33,6 +34,10 @@ export class SideNavComponent implements OnInit, OnDestroy {
   @Output() closeSidenav = new EventEmitter<void>();
   onCloseSidenav() {
     this.closeSidenav.emit();
+  }
+
+  onLinkClick(link: { Serial: number, NameAr: string, NameEn: string }) {
+    this.sharedService.changeLinkData(link.Serial, link.NameAr, link.NameEn);
   }
   ngOnDestroy() {
     this.ngUnsubscribe.next();

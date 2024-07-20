@@ -1,9 +1,9 @@
-<form [formGroup]="form" class="container mt-1 row">
-    <!-- <div class="text-center">
+<form [formGroup]="form" class="container mt-1 row" data-aos="zoom-in" data-aos-delay="100">
+    <div class="text-center">
         <h2 class="mb-4">{{ title }}
             <i [class]="iconClass"></i>
         </h2>
-    </div> -->
+    </div>
     <div *ngFor="let field of fields" [class]="gridClass">
         <ng-container [ngSwitch]="field.type">
             <div *ngSwitchCase="'input'" class="form-group">
@@ -39,10 +39,11 @@
                     {{field.label}} is required.
                 </div>
             </div>
-            <div *ngSwitchCase="'select'" >
+            <div *ngSwitchCase="'select'">
                 <div class="form-check-label mb-1">{{field.label}}</div>
 
-                <select [formControlName]="field.name" class="form-select" aria-label="Default select example" [required]="field.required">
+                <select [formControlName]="field.name" class="form-select" aria-label="Default select example"
+                    [required]="field.required">
                     <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
                 </select>
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">

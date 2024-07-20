@@ -1,1 +1,18 @@
-<p>teacher-sections works!</p>
+<!-- teacher-sections.component.html -->
+<div class="container mt-4">
+    <div *ngIf="currentLinkData.NameAr">
+        <h1>{{ currentLinkData.NameAr }}</h1>
+    </div>
+    <div class="row">
+        <ng-container *ngFor="let section of sections">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img [src]="section.ImageSrc" class="card-img-top" alt="{{ section.NameAr }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ section.NameAr }}</h5>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
