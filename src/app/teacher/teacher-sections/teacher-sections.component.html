@@ -1,6 +1,6 @@
 <!-- teacher-sections.component.html -->
-<div class="container mt-4">
-    <div *ngIf="currentLinkData.NameAr">
+<div class="fluid-container mt-4">
+    <div *ngIf="currentLinkData.NameAr" class="header">
         <h1>{{ currentLinkData.NameAr }}</h1>
     </div>
     <div class="row">
@@ -15,4 +15,36 @@
             </div>
         </ng-container>
     </div>
+</div>
+
+<div *ngIf="currentLinkData.Serial == 2">
+    <app-teacher-classrooms [sections]="sections"></app-teacher-classrooms>
+</div>
+<div *ngIf="currentLinkData.Serial == 3">
+    <app-teacher-students [sections]="sections"></app-teacher-students>
+
+</div>
+<div *ngIf="currentLinkData.Serial == 4">
+    <app-teacher-exams [sections]="sections"></app-teacher-exams>
+
+</div>
+<div *ngIf="currentLinkData.Serial == 5">
+    <app-teacher-attendance [sections]="sections"></app-teacher-attendance>
+
+</div>
+<div *ngIf="currentLinkData.Serial == 6">
+    <app-teacher-fees [sections]="sections"></app-teacher-fees>
+
+</div>
+<div *ngIf="currentLinkData.Serial == 7">
+    <app-teacher-reports [sections]="sections"></app-teacher-reports>
+
+</div>
+<div *ngIf="currentLinkData.Serial == 8">
+    <app-teacher-statics [sections]="sections"></app-teacher-statics>
+
+</div>
+<div *ngIf="currentLinkData.Serial == 9">
+    <app-teacher-expenses-revenues [sections]="sections"></app-teacher-expenses-revenues>
+
 </div>

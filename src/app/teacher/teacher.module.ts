@@ -19,6 +19,9 @@ import { TeacherGeneralChartComponent } from './teacher-general-chart/teacher-ge
 import { SharedModule } from '../shared/shared.module';
 import { TeacherNotificationComponent } from "./teacher-notification/teacher-notification.component";
 import { TeacherAddStudentComponent } from "./teacher-add-student/teacher-add-student.component";
+import { TeacherStudentsComponent } from "./teacher-students/teacher-students.component";
+import { TeacherAttendanceComponent } from "./teacher-attendance/teacher-attendance.component";
+import { TeacherExpensesRevenuesComponent } from "./teacher-expenses-revenues/teacher-expenses-revenues.component";
 
 
 @NgModule({
@@ -44,8 +47,10 @@ import { TeacherAddStudentComponent } from "./teacher-add-student/teacher-add-st
     TranslateModule,
     SharedModule,
     TeacherNotificationComponent,
-    TeacherAddStudentComponent
-
-  ]
+    TeacherAddStudentComponent,
+    TeacherStudentsComponent,
+    TeacherAttendanceComponent,
+    TeacherExpensesRevenuesComponent
+]
 })
 export class TeacherModule { }
