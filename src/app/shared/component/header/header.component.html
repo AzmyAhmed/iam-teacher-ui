@@ -40,7 +40,7 @@
         <a *ngIf="fromModule=='teacher-protofilio'" class="btn  d-inline-flex  mx-1 border border-success"
             aria-label="Read more about me" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')">
             <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
-            <span> {{translate.currentLang=='ar'?' Welcome To Mr / Mohamed Ahmed':' Welcome To Mr / Mohamed
+            <span> {{translate.currentLang=='ar'?'  Mr / Mohamed Ahmed':' Mr / Mohamed
                 Ahmed'}}</span>
             <i class="fa fa-calendar home-icon"></i>
         </a>
@@ -54,10 +54,14 @@
             (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
             {{"Add Student"|translate}}
         </a>
+        <a *ngIf="fromModule=='teacher'" class="btn btn-info d-inline-flex btn-sm   mx-1 mt-2"
+            (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
+            {{"Create Account"|translate}}
+        </a>
         <a *ngIf="fromModule=='teacher'" class="btn  d-inline-flex  mx-1  border btn-danger mt-2"
             aria-label="Read more about me">
             <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
-            Welcome Mr / {{translate.currentLang=='ar'?' Mohamed Ahmed Basuony':'Mohamed Ahmed Basuony'}}
+           Mr / {{translate.currentLang=='ar'?' Mohamed  Basuony':'Mohamed  Basuony'}}
             <div class="notification-icon mr-2">
                 <i class="fa fa-bell-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
                     <span class="notification-count">5</span>

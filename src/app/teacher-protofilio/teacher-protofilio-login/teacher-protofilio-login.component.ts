@@ -3,16 +3,32 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TeacherAuthService } from '../../teacher/services/teacher-auth.service';
 import { FormsComponent } from "../../shared/component/forms/forms.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-teacher-protofilio-login',
   standalone: true,
-  imports: [FormsComponent],
+  imports: [FormsComponent, CommonModule],
   templateUrl: './teacher-protofilio-login.component.html',
   styleUrl: './teacher-protofilio-login.component.css'
 })
 export class TeacherProtofilioLoginComponent {
   teacherId: any;
+  options: any = [
+    {
+      "value": 1,
+      "label": "Teacher"
+    },
+    {
+      "value": 2,
+      "label": "Student"
+    },
+    {
+      "value": 3,
+      "label": "Guardian"
+    }
+
+  ]
   constructor(
     public translate: TranslateService, private router: Router, private authService: TeacherAuthService) {
     this.teacherId = localStorage.getItem('teacherId');

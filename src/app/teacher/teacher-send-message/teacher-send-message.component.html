@@ -3,6 +3,36 @@
         <div>
             <div class="card">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-5 m-4">
+                            <strong class="m-2">
+                                Send To
+                            </strong>
+                            <div>
+                                <select class="form-select" aria-label="Default select example" (change)="selectUserType($event)">
+                                    <option *ngFor="let option of options" [value]="option.value">
+                                        <strong>{{ option.label }}</strong>
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-5 m-4">
+                            <strong class="m-2" *ngIf="userType == 1">
+                                Choose Guradian
+                            </strong>
+                            <strong class="m-2" *ngIf="userType == 2">
+                                Choose Student
+                            </strong>
+                            <div>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option *ngFor="let option of options" [value]="option.value">
+                                        <strong> {{ option.label }}</strong>
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <app-forms formName="messagetToGuardian" title="Send Message to Guardian"
                         [gridClass]="'col-sm-6 mb-3'" iconClass="fa fa-commenting-o"
                         (formSubmit)="handleFormSubmit($event)"></app-forms>

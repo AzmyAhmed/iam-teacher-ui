@@ -3,6 +3,18 @@
         <div>
             <div class="card">
                 <div class="card-body">
+                    <div class="col-11 m-4">
+                        <strong class="m-2">
+                          Booking By
+                        </strong>
+                        <div>
+                          <select class="form-select" aria-label="Default select example">
+                            <option *ngFor="let option of options" [value]="option.value">
+                              <strong> {{ option.label }}</strong>
+                            </option>
+                          </select>
+                        </div>
+                      </div>
                     <app-forms formName="bookWithTeacher" title="Book With Teacher" [gridClass]="'col-sm-6 mb-3'"
                         iconClass="fa fa-user-plus" (formSubmit)="handleFormSubmit($event)"></app-forms>
                     <div class="m-1 text-center">

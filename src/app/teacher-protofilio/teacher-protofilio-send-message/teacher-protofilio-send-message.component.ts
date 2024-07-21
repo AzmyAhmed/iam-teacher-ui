@@ -11,6 +11,16 @@ import { CommonModule } from '@angular/common';
 })
 export class TeacherProtofilioSendMessageComponent {
   sendMessageFlag:boolean=false;
+  options: any = [
+    {
+      "value": 2,
+      "label": "Student"
+    },
+    {
+      "value": 2,
+      "label": "Guardian"
+    }
+ ]
   handleFormSubmit(formData: any): void {
     console.log('Form Data:', formData);
     // Handle the form data, e.g., send it to the server

@@ -7,4 +7,7 @@ import { Component, Input, input } from '@angular/core';
 })
 export class TeacherClassroomsComponent {
   @Input() sections: any = [];
+  addClassRoom(){
+    
+  }
 }

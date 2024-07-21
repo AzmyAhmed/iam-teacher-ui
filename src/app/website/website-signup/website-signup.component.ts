@@ -12,6 +12,25 @@ import { ModalComponent } from '../../shared/component/modal/modal.component';
 export class WebsiteSignupComponent {
   teacherId: any;
   isReadTerms: boolean = false;
+  options: any = [
+    {
+      "value": 1,
+      "label": "Teacher"
+    },
+    {
+      "value": 2,
+      "label": "School"
+    },
+    {
+      "value": 3,
+      "label": "Center"
+    },
+    {
+      "value": 4,
+      "label": "Kinder"
+    }
+
+  ]
   constructor(
     public translate: TranslateService, private router: Router) {
     this.teacherId = localStorage.getItem('teacherId');

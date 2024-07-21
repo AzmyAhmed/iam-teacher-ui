@@ -12,6 +12,23 @@ import { WebsiteDemoConfirmationComponent } from "../website-demo-confirmation/w
 })
 export class WebsiteBookdemoComponent {
   showFormFalg: number = 1;
+  options: any = [
+    {
+      "value": 1,
+      "label": "Teacher"
+    },
+    {
+      "value": 2,
+      "label": "School"
+    },
+    {
+      "value": 3,
+      "label": "Center"
+    },
+    {
+      "value": 4,
+      "label": "Kinder"
+    }]
   handleFormSubmit(formData: any): void {
     console.log('Form Data:', formData);
     // Handle the form data, e.g., send it to the server

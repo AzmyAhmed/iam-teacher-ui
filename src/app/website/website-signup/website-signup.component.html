@@ -1,39 +1,58 @@
+<div class="fluid-container mt-5" data-aos="zoom-out" data-aos-delay="100">
+  <div class="row mt-5">
+    <!-- Image Column -->
 
-
-
-<div class="container mt-5" data-aos="zoom-out" data-aos-delay="100">
-    <div class="row">
-      <!-- Image Column -->
-    
-      <!-- Form Column -->
-      <div class="col-md-5">
-        <div class="card">
-          <div class="card-body">
-            <app-forms formName="signUp" title="Sign Up" [gridClass]="'col-sm-6 mb-3'"
-              iconClass="fa fa-user-plus" (formSubmit)="handleFormSubmit($event)"></app-forms>
-              <div>
-                <input type="checkbox" class="form-check-input m-3" [(ngModel)]="isReadTerms" (click)="acceptTerms()">
-                <a class="btn btn-primary" (click)="openModalTemplate('termsAndCondition','TERMSANDCONDITION')">I Have Read Terms
-                    and
-                    Condition</a>
-            </div>
-            <div class="m-1 text-center">
-                <button (click)="confirmTeacherSignUp()" [disabled]="isReadTerms==false ||  this.dynamicForm.form.invalid"
-                class="btn btn-success ml-5 mr-5">SignUp</button>            </div>
+    <!-- Form Column -->
+    <div class=" col-md-5 card">
+      <div class="card-body">
+        <div class="text-center">
+          <h2 class="mb-4">SignUp
+            <i class="fa fa-user-plus"></i>
+          </h2>
+        </div>
+        <div class="col-10 m-4">
+          <strong class="m-2">
+            SignUp As
+          </strong>
+          <div>
+            <select class="form-select" aria-label="Default select example">
+              <option *ngFor="let option of options" [value]="option.value">
+                <strong> {{ option.label }}</strong>
+              </option>
+            </select>
           </div>
         </div>
-      </div>
-      <div class="col-md-7">
-        <img src="assets/images/slider/silde1.png"  class="img-fluid" alt="Image">
+        <app-forms formName="signUp" title="Sign Up" [gridClass]="'col-sm-6 mb-3'" iconClass="fa fa-user-plus"
+          (formSubmit)="handleFormSubmit($event)"></app-forms>
+        <div>
+          <input type="checkbox" class="form-check-input m-3" [(ngModel)]="isReadTerms" (click)="acceptTerms()">
+          <a class="btn btn-primary" (click)="openModalTemplate('termsAndCondition','TERMSANDCONDITION')">
+            <strong style="color: white;">
+              I Have Read Terms
+              and
+              Condition
+            </strong>
+          </a>
+        </div>
+        <div class="m-1 text-center">
+          <button (click)="confirmTeacherSignUp()" [disabled]="isReadTerms==false ||  this.dynamicForm.form.invalid"
+            class="btn btn-success ml-5 mr-5">
+            SignUp
+          </button>
+        </div>
       </div>
     </div>
+    <div class="col-md-7">
+      <img src="assets/images/slider/silde1.png" class="img-fluid" alt="Image">
+    </div>
   </div>
+</div>
 
 
 <ng-template #modalTemplate>
-    <div *ngIf="targetComponent=='termsAndCondition'">
-        <app-website-terms-condition></app-website-terms-condition>
-    </div>
-    <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
+  <div *ngIf="targetComponent=='termsAndCondition'">
+    <app-website-terms-condition></app-website-terms-condition>
+  </div>
+  <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
 </ng-template>
 <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
