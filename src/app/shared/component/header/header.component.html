@@ -5,31 +5,30 @@
     <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
 
     <div class="d-inline-flex t-responsive-header">
-        <a class=" d-inline-flex btn-sm mx-1 mt-3 mobileMode " (click)="onToggleSidenav()">
-            <span class=" pe-2">
+        <a class="  mt-2 mobileMode " (click)="onToggleSidenav()">
+            <span class=" pe-1">
                 <i class="fa fa-bars  mr-2 ml-2 t-menu-icon">
                 </i> </span>
-            <span>
-                {{"MENU"|translate}} </span>
-
+          
         </a>
-        <a class=" d-inline-flex btn-sm mx-1" (click)="gotoIamTeacherWebsite()">
+        <a class=" d-inline-flex btn-sm " (click)="gotoIamTeacherWebsite()">
             <h2 class="text-muted"><i class='fa fa-leanpub t-logo-icon'>I'M </i>
                 <strong class="text-muted">Teacher</strong>
 
             </h2>
 
         </a>
-        <a *ngFor="let link of sidNavLinks" class="mt-3 desktopMode">
+        <a *ngFor="let link of sidNavLinks" class=" desktopMode navbar navbar-expand-lg navbar-light bg-light">
             <a [routerLink]="[link.RoutePath]" routerLinkActive="active"
                 aria-label="Read more about me" [routerLinkActiveOptions]="{exact:true}" >
-                <i class="sidenav-link-icon" [class]="link.ClassName">
-                </i>
-                <strong class="sidenav-link-text">
+                <!-- <i class="sidenav-link-icon" [class]="link.ClassName">
+                </i> -->
+                <span class="sidenav-link-text">
                     {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
-                </strong>
+                </span>
             </a>
         </a>
+     
         <!--Sof  Website Module  19-7-2024 Azmestics -->
         <!-- <a *ngIf="fromModule=='website'" class="btn btn-success d-inline-flex btn-sm   mx-1 "
             (click)="openModalTemplate('bookDemo','BOOKDEMO')">
@@ -115,17 +114,33 @@
     <div class="d-inline-flex t-responsive-header">
       
 
-        <a  *ngIf="fromModule=='website'" 
-        class=" d-inline-flex btn-sm   mx-1 mt-3 mobileMode" (click)="teacherSignup()">
-            <span class=" pe-2">
-                <i class="fa fa-user-plus t-signup-icon"></i>
+      
+        <!-- lang -->
+        <a class=" mt-3  desktopMode" (click)="toggleLanguage()">
+            <span class=" pe-1">
+                <i class="fa fa-language t-lang-icon"></i>
             </span>
+            <span >
+                {{"LANG"|translate}} </span>
+
+        </a>
+        <a class="mt-3 desktopMode" (click)="switchTheme()">
+            <span class=" pe-1">
+                <i class="fa fa-moon-o t-mode-icon ">
+                </i> </span>
             <span>
+                {{"MODE"|translate}} </span>
+
+        </a>
+        <a  *ngIf="fromModule=='website'" 
+        class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="teacherSignup()">
+          
+            <span >
                 {{"SignUp"|translate}} </span>
 
         </a>
         <a *ngIf="fromModule=='teacher-protofilio'"
-         class="d-inline-flex btn-sm   mx-1 mt-3"
+         class="d-inline-flex btn-sm   mx-1 mt-3 "
             (click)="teacherProtofilioLogin(1)">
 
             <span class=" pe-2">
@@ -138,23 +153,6 @@
         <a *ngIf="fromModule=='teacher'" class="btn btn-dark d-inline-flex btn-sm   mx-1 mt-2"
             (click)="logoutFromIamTeacher()">
             {{"LogOut"|translate}}
-        </a>
-        <!-- lang -->
-        <a class=" mt-3  desktopMode" (click)="toggleLanguage()">
-            <span class=" pe-2">
-                <i class="fa fa-language t-lang-icon"></i>
-            </span>
-            <span >
-                {{"LANG"|translate}} </span>
-
-        </a>
-        <a class=" d-inline-flex btn-sm   mx-1 mt-3 " (click)="switchTheme()">
-            <span class=" pe-2">
-                <i class="fa fa-moon-o t-mode-icon ">
-                </i> </span>
-            <span>
-                {{"MODE"|translate}} </span>
-
         </a>
     </div>
 </header><!-- End Header -->

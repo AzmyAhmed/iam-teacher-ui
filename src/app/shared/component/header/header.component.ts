@@ -24,7 +24,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Input() fromJson: string = '';
   sidNavLinks:any=[];
   constructor(
-    private themeService: ThemeService,private accessToJsonService :AccessToJsonService, public translate: TranslateService, private router: Router, private authService: TeacherAuthService) {
+    private themeService: ThemeService,private accessToJsonService :AccessToJsonService,
+     public translate: TranslateService, private router: Router, private authService: TeacherAuthService) {
     this.translate.setDefaultLang(this.currentLang);
   }
   ngOnInit(): void {

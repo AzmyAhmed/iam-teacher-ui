@@ -40,21 +40,30 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
-.desktopMode{
+
+.desktopMode {
   display: none !important;
 }
-.mobileMode{
+
+.mobileMode {
   display: inline-flex !important;
 }
+
 @media only screen and (min-width: 1241px) {
-  .desktopMode{
-      display: inline-flex !important;
-    }
-    .laptopMode{
-      display: none !important;
-    }
+  .desktopMode {
+    display: inline-flex !important;
+  }
+
+  .mobileMode {
+    display: none !important;
+  }
+
+  .sidenavsopen {
+    width: 250px !important;
+  }
 
 }
+
 .website-sidenav {
   z-index: 10000;
   height: 100%;
@@ -93,6 +102,7 @@ body {
   }
 
 }
+
 @media only screen and (max-width: 320px) {
   .t-body {
     margin-top: 240px !important;
@@ -100,8 +110,9 @@ body {
   }
 
 }
+
 .t-menu-icon {
-  color: black;
+  color: #737373;
 }
 
 .t-login-icon {
@@ -324,12 +335,12 @@ a {
 
 .fa,
 .bi {
-  font-size: 22px;
+  font-size: 27px !important;
   font-weight: bold;
 }
 
 .sidenavsopen {
-  width: 250px;
+  width: 320px;
 }
 
 .sidenavs a {
@@ -408,10 +419,12 @@ h4 {
   font-family: cursive !important;
 
 }
-button{
+
+button {
   font-family: cursive !important;
 
 }
-.card{
-  background-color:#f4f4f4 !important
+
+.card {
+  background-color: #f4f4f4 !important
 }
