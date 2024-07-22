@@ -5,7 +5,7 @@
     <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
 
     <div class="d-inline-flex t-responsive-header">
-        <a class=" d-inline-flex btn-sm mx-1 mt-3 laptopMode " (click)="onToggleSidenav()">
+        <a class=" d-inline-flex btn-sm mx-1 mt-3 mobileMode " (click)="onToggleSidenav()">
             <span class=" pe-2">
                 <i class="fa fa-bars  mr-2 ml-2 t-menu-icon">
                 </i> </span>
@@ -116,7 +116,7 @@
       
 
         <a  *ngIf="fromModule=='website'" 
-        class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="teacherSignup()">
+        class=" d-inline-flex btn-sm   mx-1 mt-3 mobileMode" (click)="teacherSignup()">
             <span class=" pe-2">
                 <i class="fa fa-user-plus t-signup-icon"></i>
             </span>
@@ -140,15 +140,15 @@
             {{"LogOut"|translate}}
         </a>
         <!-- lang -->
-        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="toggleLanguage()">
+        <a class=" mt-3  desktopMode" (click)="toggleLanguage()">
             <span class=" pe-2">
                 <i class="fa fa-language t-lang-icon"></i>
             </span>
-            <span>
+            <span >
                 {{"LANG"|translate}} </span>
 
         </a>
-        <a class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="switchTheme()">
+        <a class=" d-inline-flex btn-sm   mx-1 mt-3 " (click)="switchTheme()">
             <span class=" pe-2">
                 <i class="fa fa-moon-o t-mode-icon ">
                 </i> </span>

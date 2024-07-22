@@ -40,7 +40,21 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
+.desktopMode{
+  display: none !important;
+}
+.mobileMode{
+  display: inline-flex !important;
+}
+@media only screen and (min-width: 1241px) {
+  .desktopMode{
+      display: inline-flex !important;
+    }
+    .laptopMode{
+      display: none !important;
+    }
 
+}
 .website-sidenav {
   z-index: 10000;
   height: 100%;
