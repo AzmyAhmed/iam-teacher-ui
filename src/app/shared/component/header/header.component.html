@@ -1,5 +1,6 @@
 <header
-    class="t-header fixed-top d-flex d-inline-flex align-items-center header-container justify-content-between t-responsive-header"
+    class="t-header fixed-top d-flex d-inline-flex
+     align-items-center header-container justify-content-between t-responsive-header"
     [ngClass]="{'t-teacher-header': fromModule=='teacher'}">
     <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
 
@@ -38,11 +39,17 @@
         </a>
 
         <a *ngIf="fromModule=='teacher-protofilio'" class="btn  d-inline-flex  mx-1 border border-success"
-            aria-label="Read more about me" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')">
+            aria-label="Read more about me" >
             <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
             <span> {{translate.currentLang=='ar'?'  Mr / Mohamed Ahmed':' Mr / Mohamed
                 Ahmed'}}</span>
-            <i class="fa fa-calendar home-icon"></i>
+            <i class="fa fa-calendar home-icon" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')"></i>
+            <div class="notification-icon mr-2">
+                <i class="fa fa-bell-o home-icon" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                    <span class="notification-count">5</span>
+
+                </i>
+            </div>
         </a>
         <a *ngIf="fromModule=='teacher-protofilio'" class="btn btn-primary d-inline-flex btn-sm   mx-1"
             (click)="openModalTemplate('sendMessageToTeacher','SENDMESSAGE')">
@@ -96,13 +103,26 @@
 
     </div>
     <div class="d-inline-flex t-responsive-header">
-        <a *ngIf="fromModule=='website'" class="btn btn-dark d-inline-flex btn-sm   mx-1" (click)="teacherSignup()">
-            {{"Teacher SignUp"|translate}}
+      
+
+        <a  *ngIf="fromModule=='website'" 
+        class=" d-inline-flex btn-sm   mx-1 mt-3" (click)="teacherSignup()">
+            <span class=" pe-2">
+                <i class="fa fa-user-plus t-signup-icon"></i>
+            </span>
+            <span>
+                {{"SignUp"|translate}} </span>
+
         </a>
-        <a *ngIf="fromModule=='teacher-protofilio'" class="btn btn-dark d-inline-flex btn-sm   mx-1"
+        <a *ngIf="fromModule=='teacher-protofilio'"
+         class="d-inline-flex btn-sm   mx-1 mt-3"
             (click)="teacherProtofilioLogin(1)">
 
-            {{"Login"|translate}}
+            <span class=" pe-2">
+                <i class="fa fa-user-o t-signup-icon"></i>
+            </span>
+            <span>
+                {{"LOGIN"|translate}} </span>
 
         </a>
         <a *ngIf="fromModule=='teacher'" class="btn btn-dark d-inline-flex btn-sm   mx-1 mt-2"

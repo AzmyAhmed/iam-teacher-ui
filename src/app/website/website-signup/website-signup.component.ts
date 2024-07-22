@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { FormsComponent } from '../../shared/component/forms/forms.component';
 import { ModalComponent } from '../../shared/component/modal/modal.component';
+import { AccessToJsonService } from '../../shared/service/access-to-json.service';
 
 @Component({
   selector: 'app-website-signup',
@@ -12,31 +13,15 @@ import { ModalComponent } from '../../shared/component/modal/modal.component';
 export class WebsiteSignupComponent {
   teacherId: any;
   isReadTerms: boolean = false;
-  options: any = [
-    {
-      "value": 1,
-      "label": "Teacher"
-    },
-    {
-      "value": 2,
-      "label": "School"
-    },
-    {
-      "value": 3,
-      "label": "Center"
-    },
-    {
-      "value": 4,
-      "label": "Kinder"
-    }
-
-  ]
+  options: any = []
   constructor(
-    public translate: TranslateService, private router: Router) {
+    public translate: TranslateService, private router: Router,private accessToJsonService: AccessToJsonService) {
     this.teacherId = localStorage.getItem('teacherId');
     if (!this.teacherId) {
       this.teacherId = 1;
     }
+    this.getUserTypes();
+
   }
 
   //Sof  Modal Area =====================================19-7-2024 Azmestic============================
@@ -65,5 +50,16 @@ export class WebsiteSignupComponent {
   confirmTeacherSignUp(): void {
     this.dynamicForm.submitForm();
     this.router.navigate(['/website/website-signup-confirmation'])
+  }
+  fromJson: string = 'assets/jsonFiles/userTypeStp.json'
+  getUserTypes() {
+    this.accessToJsonService.getLinks(this.fromJson).subscribe(
+      (data) => {
+        this.options = data.filter((ele: { IsActive: number; }) => ele.IsActive == 1);
+      },
+      (error) => {
+        console.error('Error fetching JSON data', error);
+      }
+    );
   }
 }

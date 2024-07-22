@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TeacherAuthService } from '../../teacher/services/teacher-auth.service';
 import { FormsComponent } from "../../shared/component/forms/forms.component";
 import { CommonModule } from '@angular/common';
+import { AccessToJsonService } from '../../shared/service/access-to-json.service';
 
 @Component({
   selector: 'app-teacher-protofilio-login',
@@ -14,27 +15,14 @@ import { CommonModule } from '@angular/common';
 })
 export class TeacherProtofilioLoginComponent {
   teacherId: any;
-  options: any = [
-    {
-      "value": 1,
-      "label": "Teacher"
-    },
-    {
-      "value": 2,
-      "label": "Student"
-    },
-    {
-      "value": 3,
-      "label": "Guardian"
-    }
-
-  ]
+  options: any = []
   constructor(
-    public translate: TranslateService, private router: Router, private authService: TeacherAuthService) {
+    public translate: TranslateService, private accessToJsonService: AccessToJsonService, private router: Router, private authService: TeacherAuthService) {
     this.teacherId = localStorage.getItem('teacherId');
     if (!this.teacherId) {
       this.teacherId = 1;
     }
+    this.getUserTypes();
   }
 
   // form area
@@ -49,5 +37,15 @@ export class TeacherProtofilioLoginComponent {
     this.authService.login();
     this.router.navigate(['/teacher/iamteacher/' + this.teacherId])
   }
-
+  fromJson: string = 'assets/jsonFiles/userTypeStp.json'
+  getUserTypes() {
+    this.accessToJsonService.getLinks(this.fromJson).subscribe(
+      (data) => {
+        this.options = data.filter((ele: { IsActive: number; }) => ele.IsActive == 1);
+      },
+      (error) => {
+        console.error('Error fetching JSON data', error);
+      }
+    );
+  }
 }

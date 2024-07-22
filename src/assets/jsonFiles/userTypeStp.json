@@ -1,0 +1,44 @@
+[
+    {
+        "Serial": 1,
+        "NameEn": "Teacher",
+        "IsOrgization": 0,
+        "Sort": 1,
+        "IsActive": 1
+    },
+    {
+        "Serial": 2,
+        "NameEn": "Student",
+        "IsOrgization": 0,
+        "Sort": 2,
+        "IsActive": 1
+    },
+    {
+        "Serial": 3,
+        "NameEn": "Guardian",
+        "IsOrgization": 0,
+        "Sort": 3,
+        "IsActive": 1
+    },
+    {
+        "Serial": 4,
+        "NameEn": "School",
+        "IsOrgization": 1,
+        "Sort": 4,
+        "IsActive": 1
+    },
+    {
+        "Serial": 5,
+        "NameEn": "Center",
+        "IsOrgization": 1,
+        "Sort": 5,
+        "IsActive": 1
+    },
+    {
+        "Serial": 6,
+        "NameEn": "Kinder",
+        "IsOrgization": 1,
+        "Sort": 6,
+        "IsActive": 1
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "Serial": 1,
+        "NameEn": "Group",
+        "IsActive": 1,
+        "Sort": 1
+    },
+    {
+        "Serial": 2,
+        "NameEn": "Private",
+        "IsActive": 1,
+        "Sort": 1
+    }
+]

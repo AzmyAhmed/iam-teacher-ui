@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { AccessToJsonService } from '../../service/access-to-json.service';
-import { ThemeService } from '../../service/theme.service';
 import { SharedService } from '../../service/shared.service';
 
 @Component({

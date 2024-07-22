@@ -4,62 +4,62 @@
         "NameAr": "الرئيسية",
         "NameEn": "Home",
         "ClassName": "fa fa-sm fa fa-home",
-        "Active": 1
+        "IsActive": 1
     },
     {
         "RoutePath": "/website/website-aboutus",
         "NameAr": "من نحن ",
         "NameEn": "About Us",
         "ClassName": "fa fa-share",
-        "Active": 1
+        "IsActive": 1
     },
     {
         "RoutePath": "/website/website-features",
         "NameAr": "مميزات البرنامج",
         "NameEn": "Features",
         "ClassName": "fa fa-cubes",
-        "Active": 1
+        "IsActive": 1
     },
     {
         "RoutePath": "/website/website-clients",
         "NameAr": "عملائنا ",
         "NameEn": "Our Clients",
         "ClassName": "fa fa-address-book-o",
-        "Active": 1
+        "IsActive": 1
     },
     {
         "RoutePath": "/website/website-projects",
         "NameAr": "مشاريعنا",
         "NameEn": "Our Projects",
         "ClassName": "fa fa-product-hunt",
-        "Active": 0
+        "IsActive": 0
     },
     {
         "RoutePath": "/website/website-blogs",
         "NameAr": "المقالات ",
         "NameEn": "Blogs",
         "ClassName": "fa fa-book",
-        "Active": 0
+        "IsActive": 0
     },
     {
         "RoutePath": "/website/website-view",
         "NameAr": "رؤيتنا ",
         "NameEn": "Our View",
         "ClassName": "fa fa-lightbulb-o",
-        "Active": 0
+        "IsActive": 0
     },
     {
         "RoutePath": "/website/website-team",
         "NameAr": "الفريق والاسئلة الشائعة",
         "NameEn": "Our Team & FAQs",
         "ClassName": "fa fa-users",
-        "Active": 1
+        "IsActive": 1
     },
     {
         "RoutePath": "/website/website-contactus",
         "NameAr": "تواصل معنا",
         "NameEn": "Contact Us",
         "ClassName": "fa fa-envelope-o",
-        "Active": 1
+        "IsActive": 1
     }
 ]
