@@ -1,5 +1,5 @@
 <!-- <app-website-header (toggleSidenav)="toggleSidenav()"></app-website-header>
 <app-website-sidenav [class]="sideNavClass" (closeSidenav)="closeSidenav()"></app-website-sidenav> -->
-<app-header   [fromModule]="'website'" (toggleSidenav)="toggleSidenav()"></app-header>
+<app-header   [fromModule]="'website'"  [fromJson]="fromJson" (toggleSidenav)="toggleSidenav()"></app-header>
 <app-side-nav [fromModule]="'website'" [fromJson]="fromJson" [class]="sideNavClass"
     (closeSidenav)="closeSidenav()"></app-side-nav>

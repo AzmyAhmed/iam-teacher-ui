@@ -5,7 +5,7 @@
     <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
 
     <div class="d-inline-flex t-responsive-header">
-        <a class=" d-inline-flex btn-sm mx-1 mt-3" (click)="onToggleSidenav()">
+        <a class=" d-inline-flex btn-sm mx-1 mt-3 laptopMode " (click)="onToggleSidenav()">
             <span class=" pe-2">
                 <i class="fa fa-bars  mr-2 ml-2 t-menu-icon">
                 </i> </span>
@@ -20,8 +20,18 @@
             </h2>
 
         </a>
+        <a *ngFor="let link of sidNavLinks" class="mt-3 desktopMode">
+            <a [routerLink]="[link.RoutePath]" routerLinkActive="active"
+                aria-label="Read more about me" [routerLinkActiveOptions]="{exact:true}" >
+                <i class="sidenav-link-icon" [class]="link.ClassName">
+                </i>
+                <strong class="sidenav-link-text">
+                    {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
+                </strong>
+            </a>
+        </a>
         <!--Sof  Website Module  19-7-2024 Azmestics -->
-        <a *ngIf="fromModule=='website'" class="btn btn-success d-inline-flex btn-sm   mx-1 "
+        <!-- <a *ngIf="fromModule=='website'" class="btn btn-success d-inline-flex btn-sm   mx-1 "
             (click)="openModalTemplate('bookDemo','BOOKDEMO')">
             {{"BOOKDEMO"|translate}}
 
@@ -30,7 +40,7 @@
 
             {{"LiveView"|translate}}
 
-        </a>
+        </a> -->
         <!--Eof  Website Module  19-7-2024 Azmestics -->
         <!--Sof  teacher-protofilio Module  19-7-2024 Azmestics User Data Area-->
         <a *ngIf="fromModule=='teacher-protofilio'" class="btn btn-success d-inline-flex btn-sm   mx-1"

@@ -1,5 +1,5 @@
 <!-- <app-teacher-header (toggleSidenav)="toggleSidenav()"></app-teacher-header>
 <app-teacher-sidenav [class]="sideNavClass" (closeSidenav)="closeSidenav()"></app-teacher-sidenav> -->
-<app-header (toggleSidenav)="toggleSidenav()" [fromModule]="'teacher'"></app-header>
+<app-header  [fromJson]="fromJson" (toggleSidenav)="toggleSidenav()" [fromModule]="'teacher'"></app-header>
 <app-side-nav [class]="sideNavClass" (closeSidenav)="closeSidenav()" [fromModule]="'teacher'"
     [fromJson]="fromJson"></app-side-nav>

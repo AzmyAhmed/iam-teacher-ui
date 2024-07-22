@@ -21,11 +21,13 @@ body {
 .t-header {
   position: fixed;
   top: 0;
-  background: #fcfcfc;
-  border: 1px solid #e7e7e7;
+  background: #fdfdfd;
+  /* border: 1px solid #e7e7e7; */
   z-index: 10000;
   height: max-content;
   padding: 10px;
+  border-bottom: 5px solid #9cbaa7;
+  height: 85.6667px;
 }
 
 .t-footer {

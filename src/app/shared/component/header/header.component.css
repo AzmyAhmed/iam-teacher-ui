@@ -26,3 +26,19 @@
     font-size: 13px;
     font-weight: bold;
 }
+
+@media only screen and (min-width: 1241px) {
+    .desktopMode{
+        display: inline-flex !important;
+      }
+      .laptopMode{
+        display: none !important;
+      }
+  
+  }
+  .desktopMode{
+    display: none;
+  }
+  .laptopMode{
+    display: inline-flex;
+  }

@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { TeacherAuthService } from '../../../teacher/services/teacher-auth.service';
+import { AccessToJsonService } from '../../service/access-to-json.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -20,13 +21,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isDarkTheme = false;
   userData: any = {}
   @Input() fromModule: string = '';
+  @Input() fromJson: string = '';
+  sidNavLinks:any=[];
   constructor(
-    private themeService: ThemeService, public translate: TranslateService, private router: Router, private authService: TeacherAuthService) {
+    private themeService: ThemeService,private accessToJsonService :AccessToJsonService, public translate: TranslateService, private router: Router, private authService: TeacherAuthService) {
     this.translate.setDefaultLang(this.currentLang);
   }
   ngOnInit(): void {
+    this.getSidNavLinks();
   }
-
+  getSidNavLinks() {
+    this.accessToJsonService.getLinks(this.fromJson).subscribe(
+      (data) => {
+        this.sidNavLinks = data.filter((ele: { IsActive: number; }) => ele.IsActive == 1);
+      },
+      (error) => {
+        console.error('Error fetching JSON data', error);
+      }
+    );
+  }
   toggleLanguage() {
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
     this.translate.use(this.currentLang);
