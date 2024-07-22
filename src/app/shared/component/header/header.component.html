@@ -120,16 +120,14 @@
             <span class=" pe-1">
                 <i class="fa fa-language t-lang-icon"></i>
             </span>
-            <span >
-                {{"LANG"|translate}} </span>
+           
 
         </a>
-        <a class="mt-3 desktopMode" (click)="switchTheme()">
+        <a class="mt-3  desktopMode" (click)="switchTheme()">
             <span class=" pe-1">
                 <i class="fa fa-moon-o t-mode-icon ">
                 </i> </span>
-            <span>
-                {{"MODE"|translate}} </span>
+            
 
         </a>
         <a  *ngIf="fromModule=='website'" 
@@ -140,12 +138,8 @@
 
         </a>
         <a *ngIf="fromModule=='teacher-protofilio'"
-         class="d-inline-flex btn-sm   mx-1 mt-3 "
+         class="d-inline-flex btn-sm  border mx-1 mt-3 "
             (click)="teacherProtofilioLogin(1)">
-
-            <span class=" pe-2">
-                <i class="fa fa-user-o t-signup-icon"></i>
-            </span>
             <span>
                 {{"LOGIN"|translate}} </span>
 
