@@ -1,6 +1,5 @@
 .t-teacher-header {
-    border: 2px solid #d0d0d0;
-    border-radius: 5px;
+    border: 1px solid #d0d0d0;
 }
 
 .notification-icon {
@@ -31,11 +30,11 @@
     a {
         border: 1px solid rgb(183, 183, 183);
         margin: 5px;
+        width: 290Px !important;
     }
 }
 
 .t-teacher-sidnav :hover {
-    background-color: skyblue;
     font-size: large;
 }
 

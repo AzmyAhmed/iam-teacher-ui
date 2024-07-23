@@ -51,6 +51,9 @@ export class WebsiteSignupComponent {
     this.dynamicForm.submitForm();
     this.router.navigate(['/website/website-signup-confirmation'])
   }
+  gotoIamTeacherWebsite() {
+    this.router.navigate(['/website/website-landingpage'])
+  }
   fromJson: string = 'assets/jsonFiles/userTypeStp.json'
   getUserTypes() {
     this.accessToJsonService.getLinks(this.fromJson).subscribe(
@@ -61,5 +64,8 @@ export class WebsiteSignupComponent {
         console.error('Error fetching JSON data', error);
       }
     );
+  }
+  onSelectedOptionChange(selectedOption: any) {
+    console.log('Selected option:', selectedOption);
   }
 }

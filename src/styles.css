@@ -51,7 +51,7 @@ body {
 }
 
 .card-body {
-  border: 2px solid rgb(202, 216, 209);
+  /* border: 2px solid rgb(202, 216, 209); */
   border-radius: 5px;
   margin: 3px;
   height: 100%;
@@ -103,12 +103,13 @@ a {
   letter-spacing: 2px;
   text-decoration: none;
   color: #718697 !important;
- 
+
 }
 
 a:hover {
   color: #175774;
-  span{
+
+  span {
     color: #175774 !important;
   }
 }
@@ -165,7 +166,6 @@ span {
   text-decoration: none;
   font-size: 20px;
   /* margin: 2px; */
-  margin-left: 8px;
 }
 
 /*--------------------------------------------------------------
@@ -1558,3 +1558,5 @@ section {
   letter-spacing: 0;
   color: #198754;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

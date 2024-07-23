@@ -1,0 +1,18 @@
+<mat-form-field style="width: 100%;">
+    <input
+      type="text"
+      placeholder="Select an option"
+      aria-label="Option"
+      matInput
+      [formControl]="optionControl"
+      [matAutocomplete]="auto"
+   
+    >
+    <i class="fa fa-chevron-circle-down dropdown-icon" (click)="onFocus()"></i>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.NameEn">
+        {{ option.NameEn }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  

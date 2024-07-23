@@ -4,11 +4,12 @@ import { SharedModule } from "../../shared/shared.module";
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ModalComponent } from '../../shared/component/modal/modal.component';
+import { WebsiteLiveViewComponent } from "../website-live-view/website-live-view.component";
 
 @Component({
   selector: 'app-website-first-content',
   standalone: true,
-  imports: [WebsiteBookdemoComponent, SharedModule, CommonModule, TranslateModule],
+  imports: [WebsiteBookdemoComponent, SharedModule, CommonModule, TranslateModule, WebsiteLiveViewComponent],
   templateUrl: './website-first-content.component.html',
   styleUrl: './website-first-content.component.css'
 })

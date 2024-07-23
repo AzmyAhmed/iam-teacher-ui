@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   targetComponent: string = '';
   componentTitle: string = '';
   sideNavClass: string = 'sidenavs website-sidenav';
+  headerIsHiddenFlag: boolean = false;
   constructor(
     private themeService: ThemeService, private accessToJsonService: AccessToJsonService,
     public translate: TranslateService, private router: Router, private authService: TeacherAuthService, private sharedService: SharedService) {
@@ -75,6 +76,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['/website/website-landingpage'])
   }
   teacherSignup() {
+    this.headerIsHiddenFlag = true;
     this.router.navigate(['/website/website-signup'])
   }
   //Sof  Modal Area =====================================18-7-2024 Azmestic============================

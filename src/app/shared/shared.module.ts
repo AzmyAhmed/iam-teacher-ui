@@ -16,6 +16,9 @@ import { TeacherProtofilioSendMessageComponent } from "../teacher-protofilio/tea
 import { TeacherSendMessageComponent } from "../teacher/teacher-send-message/teacher-send-message.component";
 import { TeacherRecievedMessagesComponent } from "../teacher/teacher-recieved-messages/teacher-recieved-messages.component";
 import { TeacherClassSchdulingComponent } from "../teacher/teacher-class-schduling/teacher-class-schduling.component";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -30,6 +33,10 @@ import { TeacherClassSchdulingComponent } from "../teacher/teacher-class-schduli
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
     WebsiteBookdemoComponent,
     TeacherProtofilioAppointmentComponent,
     TeacherProtofilioBookwithComponent,

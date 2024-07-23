@@ -29,6 +29,7 @@ import { WebsiteFirstContentComponent } from "./website-first-content/website-fi
 import { WebsiteFeaturesComponent } from "./website-features/website-features.component";
 import { WebsiteTeamComponent } from "./website-team/website-team.component";
 import { WebsiteFaqsComponent } from "./website-faqs/website-faqs.component";
+import { SelectOptionComponent } from "../shared/component/select-option/select-option.component";
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { WebsiteFaqsComponent } from "./website-faqs/website-faqs.component";
     WebsiteFirstContentComponent,
     WebsiteFeaturesComponent,
     WebsiteTeamComponent,
-    WebsiteFaqsComponent
+    WebsiteFaqsComponent,
+    SelectOptionComponent
 ],
   exports: []
 })
