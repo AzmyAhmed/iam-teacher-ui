@@ -21,10 +21,14 @@ import { SharedModule } from '../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WebsiteBookdemoComponent } from './website-bookdemo/website-bookdemo.component';
-import { WebsiteSidenaveHeaderContainerComponent } from './website-sidenave-header-container/website-sidenave-header-container.component';
 import { FormsComponent } from "../shared/component/forms/forms.component";
 import { WebsiteSignupConfirmationComponent } from "./website-signup-confirmation/website-signup-confirmation.component";
 import { WebsiteTermsConditionComponent } from "./website-terms-condition/website-terms-condition.component";
+import { WebsiteLastContentComponent } from "./website-last-content/website-last-content.component";
+import { WebsiteFirstContentComponent } from "./website-first-content/website-first-content.component";
+import { WebsiteFeaturesComponent } from "./website-features/website-features.component";
+import { WebsiteTeamComponent } from "./website-team/website-team.component";
+import { WebsiteFaqsComponent } from "./website-faqs/website-faqs.component";
 
 
 @NgModule({
@@ -44,7 +48,6 @@ import { WebsiteTermsConditionComponent } from "./website-terms-condition/websit
     WebsiteContactusComponent,
     WebsiteClientsComponent,
     WebsiteProjectsComponent,
-    WebsiteSidenaveHeaderContainerComponent,
     WebsiteSignupConfirmationComponent
 
   ],
@@ -57,7 +60,12 @@ import { WebsiteTermsConditionComponent } from "./website-terms-condition/websit
     FormsModule,
     WebsiteBookdemoComponent,
     FormsComponent,
-    WebsiteTermsConditionComponent
+    WebsiteTermsConditionComponent,
+    WebsiteLastContentComponent,
+    WebsiteFirstContentComponent,
+    WebsiteFeaturesComponent,
+    WebsiteTeamComponent,
+    WebsiteFaqsComponent
 ],
   exports: []
 })

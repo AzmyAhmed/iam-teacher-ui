@@ -14,7 +14,6 @@ import { TeacherReportsComponent } from './teacher-reports/teacher-reports.compo
 import { TeacherStaticsComponent } from './teacher-statics/teacher-statics.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { TeacherSidenaveHeaderContainerComponent } from './teacher-sidenave-header-container/teacher-sidenave-header-container.component';
 import { TeacherGeneralChartComponent } from './teacher-general-chart/teacher-general-chart.component';
 import { SharedModule } from '../shared/shared.module';
 import { TeacherNotificationComponent } from "./teacher-notification/teacher-notification.component";
@@ -38,7 +37,7 @@ import { FormsModule } from '@angular/forms';
     TeacherReportsComponent,
     TeacherStaticsComponent,
     TeacherDashboardComponent,
-    TeacherSidenaveHeaderContainerComponent,
+  
     TeacherGeneralChartComponent
 
   ],

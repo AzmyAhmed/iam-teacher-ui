@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './teacher.component.css'
 })
 export class TeacherComponent {
-
+  fromJson: string = 'assets/jsonFiles/iamteacher-teacher-links.json'
+  fromModule = "teacher"
 }

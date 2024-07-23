@@ -9,7 +9,6 @@ import { TeacherProtofilioHeaderComponent } from './teacher-protofilio-header/te
 import { TeacherProtofilioFooterComponent } from "./teacher-protofilio-footer/teacher-protofilio-footer.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeacherProtofilioLandingpageComponent } from './teacher-protofilio-landingpage/teacher-protofilio-landingpage.component';
-import { TeacherProtofilioSidenaveHeaderContainerComponent } from './teacher-protofilio-sidenave-header-container/teacher-protofilio-sidenave-header-container.component';
 import { SharedModule } from "../shared/shared.module";
 import { TeacherProtofilioAppointmentComponent } from "./teacher-protofilio-appointment/teacher-protofilio-appointment.component";
 import { TeacherProtofilioBookwithComponent } from './teacher-protofilio-bookwith/teacher-protofilio-bookwith.component';
@@ -22,7 +21,6 @@ import { TeacherProtofilioBookwithComponent } from './teacher-protofilio-bookwit
     TeacherProtofilioHeaderComponent,
     TeacherProtofilioLandingpageComponent,
     TeacherProtofilioFooterComponent,
-    TeacherProtofilioSidenaveHeaderContainerComponent
 
 
   ],

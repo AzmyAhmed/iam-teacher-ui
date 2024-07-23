@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './website.component.css'
 })
 export class WebsiteComponent {
-
+  fromJson: string = 'assets/jsonFiles/website-links.json';
+  fromModule: string = 'website';
 }

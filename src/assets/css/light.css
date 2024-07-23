@@ -26,7 +26,7 @@ body {
   z-index: 10000;
   height: max-content;
   padding: 10px;
-  border-bottom: 5px solid #9cbaa7;
+  border-bottom: 3px solid #055;
   height: 85.6667px;
 }
 
@@ -34,6 +34,40 @@ body {
   padding: 10px;
   z-index: 10000;
 }
+
+.t-first-section {
+  background: linear-gradient(329deg, rgb(27 73 65 / 10%), rgb(28 64 36 / 52%) 0%, #055160);
+  height: 60vh;
+  ;
+  height: 80vh;
+  
+  h1,
+  h2,
+  a {
+    color: white !important;
+  }
+}
+
+.t-last-section {
+  background: linear-gradient(329deg, rgb(27 73 65 / 10%), rgb(28 64 36 / 52%) 0%, #055160);
+  height: 60vh;
+
+  h1,
+  h2,
+  a {
+    color: white !important;
+  }
+}
+.preview-container {
+  width: 789px;
+  height: 466px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url(https://d2h7f5bl7e7n5c.cloudfront.net/b3b1cdf9-cd8c-47da-afae-2e719e432f9c/assets/images/mac-book.png);
+
+}
+
 
 .t-body {
   margin-top: 65px;
@@ -44,6 +78,7 @@ body {
 .desktopMode {
   display: none !important;
 }
+
 
 .mobileMode {
   display: inline-flex !important;
@@ -340,7 +375,7 @@ a {
 }
 
 .sidenavsopen {
-  width: 270px;
+  width: 400px;
 }
 
 .sidenavs a {
@@ -351,11 +386,17 @@ a {
   transition: 0.3s;
 }
 
-.sidenavs a:hover,
+.sidenavs  a:hover,
 .sidenavs .active,
 .sidenavs .active:focus,
 .sidenavs li:hover>a {
-  color: #198754 !important;
+  color: #871983 !important;
+}
+.navbar  a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #871983 !important;
 }
 
 .sidenavs .closebtn {

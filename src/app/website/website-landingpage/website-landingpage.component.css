@@ -1,15 +1,1 @@
-.preview-container{
-    width: 789px;
-    height: 466px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-image: url(https://d2h7f5bl7e7n5c.cloudfront.net/b3b1cdf9-cd8c-47da-afae-2e719e432f9c/assets/images/mac-book.png);
 
-
-}
-.slide{
-    flex-flow: row nowrap;
-    margin-top: 65px;
-    padding: 0 12px;
-}

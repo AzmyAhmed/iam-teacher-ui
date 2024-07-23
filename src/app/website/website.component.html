@@ -1,7 +1,5 @@
-
-
 <div class="t-header">
-    <app-website-sidenave-header-container></app-website-sidenave-header-container>
+    <app-header [fromModule]="fromModule" [fromJson]="fromJson"></app-header>
 </div>
 <div data-aos="zoom-out" data-aos-delay="100">
     <div class="t-body">
@@ -12,6 +10,6 @@
     </div>
     <div class="t-footer">
         <!-- <app-website-footer></app-website-footer> -->
-        <app-footer [fromModule]="'website'"></app-footer>
+        <app-footer [fromModule]="fromModule"></app-footer>
     </div>
 </div>

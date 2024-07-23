@@ -102,11 +102,15 @@ h5 {
 a {
   letter-spacing: 2px;
   text-decoration: none;
-  color: #198754;
+  color: #718697 !important;
+ 
 }
 
 a:hover {
   color: #92d283;
+  span{
+    color: white !important;
+  }
 }
 
 ul {
@@ -465,7 +469,7 @@ span {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 40px);
+  height: calc(80vh - 40px);
   /* background: url(../img/hero-bg.png) center bottom no-repeat; */
   background-size: 100%;
   position: relative;
@@ -483,7 +487,8 @@ span {
   text-align: center;
   background-color: rgb(220 229 223);
   color: black;
-  h5{
+
+  h5 {
     color: #000 !important;
     font-size: large;
   }
@@ -497,13 +502,13 @@ span {
 
 @media (min-width: 1025px) and (max-height: 768px) {
   #hero {
-    height: 100vh;
+    height: 80vh;
   }
 }
 
 @media (max-height: 600px) {
   #hero {
-    height: 100vh;
+    height: 80vh;
   }
 }
 

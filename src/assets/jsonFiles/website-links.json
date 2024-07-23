@@ -61,5 +61,12 @@
         "NameEn": "Contact Us",
         "ClassName": "fa fa-envelope-o",
         "IsActive": 1
+    },
+    {
+        "RoutePath": "/website/website-pricing",
+        "NameAr": "الأسعار",
+        "NameEn": "Pricing",
+        "ClassName": "fa fa-envelope-o",
+        "IsActive": 1
     }
 ]

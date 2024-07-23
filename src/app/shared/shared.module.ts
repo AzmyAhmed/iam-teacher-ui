@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
@@ -23,7 +22,6 @@ import { TeacherClassSchdulingComponent } from "../teacher/teacher-class-schduli
     declarations: [
         HeaderComponent,
         FooterComponent,
-        SideNavComponent,
         ModalComponent
     ],
     imports: [
@@ -43,7 +41,6 @@ import { TeacherClassSchdulingComponent } from "../teacher/teacher-class-schduli
     TeacherRecievedMessagesComponent,
     TeacherClassSchdulingComponent
 ],
-    exports: [HeaderComponent, FooterComponent,
-        SideNavComponent, ModalComponent]
+    exports: [HeaderComponent, FooterComponent, ModalComponent]
 })
 export class SharedModule { }

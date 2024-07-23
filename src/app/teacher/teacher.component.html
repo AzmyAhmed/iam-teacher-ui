@@ -1,5 +1,5 @@
 <div class="t-header">
-    <app-teacher-sidenave-header-container></app-teacher-sidenave-header-container>
+    <app-header [fromJson]="fromJson" [fromModule]="fromModule"></app-header>
 </div>
 <div data-aos="zoom-out" data-aos-delay="100">
     <div class="t-body">
@@ -11,6 +11,5 @@
 
 </div>
 <div>
-    <!-- <app-teacher-footer></app-teacher-footer> -->
     <app-footer [fromModule]="'teacher'"></app-footer>
 </div>

@@ -13,6 +13,8 @@ export class TeacherProtofilioComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
   screenWidth: number = 0;
   teacherId: any;
+   fromJson: string = 'assets/jsonFiles/teacher-protofilio-links.json'
+   fromModule="teacher-protofilio"
   constructor(
     private themeService: ThemeService, public translate: TranslateService, private route: ActivatedRoute) {
     this.screenWidth = window.innerWidth;

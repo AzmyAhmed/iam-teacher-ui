@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { TeacherAuthService } from '../../../teacher/services/teacher-auth.service';
 import { AccessToJsonService } from '../../service/access-to-json.service';
+import { SharedService } from '../../service/shared.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -22,10 +23,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userData: any = {}
   @Input() fromModule: string = '';
   @Input() fromJson: string = '';
-  sidNavLinks:any=[];
+  sidNavLinks: any = [];
+  @ViewChild(ModalComponent) modal!: ModalComponent;
+  @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
+  targetComponent: string = '';
+  componentTitle: string = '';
+  sideNavClass: string = 'sidenavs website-sidenav';
   constructor(
-    private themeService: ThemeService,private accessToJsonService :AccessToJsonService,
-     public translate: TranslateService, private router: Router, private authService: TeacherAuthService) {
+    private themeService: ThemeService, private accessToJsonService: AccessToJsonService,
+    public translate: TranslateService, private router: Router, private authService: TeacherAuthService, private sharedService: SharedService) {
     this.translate.setDefaultLang(this.currentLang);
   }
   ngOnInit(): void {
@@ -40,6 +46,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         console.error('Error fetching JSON data', error);
       }
     );
+  }
+  onLinkClick(link: { Serial: number, NameAr: string, NameEn: string, ClassName: string }) {
+    this.sharedService.changeLinkData(link.Serial, link.NameAr, link.NameEn, link.ClassName);
   }
   toggleLanguage() {
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
@@ -69,10 +78,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['/website/website-signup'])
   }
   //Sof  Modal Area =====================================18-7-2024 Azmestic============================
-  @ViewChild(ModalComponent) modal!: ModalComponent;
-  @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
-  targetComponent: string = '';
-  componentTitle: string = '';
   openModalTemplate(targetComponent: string, componentTitle: string) {
     this.targetComponent = targetComponent;
     this.componentTitle = componentTitle;
@@ -84,9 +89,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
   //Eof  Modal Area =====================================18-7-2024 Azmestic============================
-  @Output() toggleSidenav = new EventEmitter<void>();
-  onToggleSidenav() {
-    this.toggleSidenav.emit();
+  onOpenSideNav() {
+    this.sideNavClass = 'sidenavs  website-sidenav sidenavsopen'
+
+  }
+  onCloseSidenav() {
+    this.sideNavClass = 'sidenavs website-sidenav'
+
   }
   // login area
   teacherProtofilioLogin(teacher_id: any) {
