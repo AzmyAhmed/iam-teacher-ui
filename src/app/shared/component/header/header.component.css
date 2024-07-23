@@ -64,6 +64,7 @@
 }
 
 .navbar:hover {
-    background-color: #216154 !important;
+    background-color: #769c85 !important;
     color: white !important;
+    border-radius: 5px;
 }
