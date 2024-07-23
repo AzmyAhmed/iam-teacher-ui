@@ -370,7 +370,7 @@ a {
 
 .fa,
 .bi {
-  font-size: 27px !important;
+  font-size: 22px !important;
   font-weight: bold;
 }
 
@@ -390,13 +390,7 @@ a {
 .sidenavs .active,
 .sidenavs .active:focus,
 .sidenavs li:hover>a {
-  color: #871983 !important;
-}
-.navbar  a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-  color: #871983 !important;
+  color: #175774 !important;
 }
 
 .sidenavs .closebtn {

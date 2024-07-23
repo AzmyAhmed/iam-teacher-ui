@@ -107,9 +107,9 @@ a {
 }
 
 a:hover {
-  color: #92d283;
+  color: #175774;
   span{
-    color: white !important;
+    color: #175774 !important;
   }
 }
 
