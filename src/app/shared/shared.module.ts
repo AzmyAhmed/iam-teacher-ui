@@ -19,13 +19,16 @@ import { TeacherClassSchdulingComponent } from "../teacher/teacher-class-schduli
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ToastService } from './service/toast.service';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 
 @NgModule({
     declarations: [
         HeaderComponent,
         FooterComponent,
-        ModalComponent
+        ModalComponent,
+        SpinnerComponent
     ],
     imports: [
     RouterModule,
@@ -48,6 +51,7 @@ import { MatInputModule } from '@angular/material/input';
     TeacherRecievedMessagesComponent,
     TeacherClassSchdulingComponent
 ],
-    exports: [HeaderComponent, FooterComponent, ModalComponent]
+    exports: [HeaderComponent, FooterComponent, ModalComponent,SpinnerComponent],
+    providers:[ToastService]
 })
 export class SharedModule { }

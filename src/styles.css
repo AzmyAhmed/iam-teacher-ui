@@ -4,7 +4,7 @@
 @import url("assets/css/bootstrap/css/bootstrap.min.css");
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width:3px;
 }
 
 a {
@@ -14,13 +14,13 @@ a {
 /* Style the scrollbar track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 /* Style the scrollbar handle (thumb) */
 ::-webkit-scrollbar-thumb {
   background: #6ab493;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 /* Style the scrollbar handle on hover */
@@ -30,8 +30,8 @@ a {
 
 /* Style the scrollbar itself */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   /* for horizontal scrollbars */
 }
 

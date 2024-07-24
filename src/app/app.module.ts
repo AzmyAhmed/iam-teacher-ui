@@ -4,14 +4,22 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpErrorInterceptor } from './shared/service/httperrorinterceptor.service';
+import { GeneralService } from './shared/service/general.service';
+import { NotificationService } from './shared/service/notification.service';
+import { AuthenticationService } from './shared/service/authentication.service';
+import { ExceptionService } from './shared/service/exception.service';
+import { SpinnerService } from './shared/service/spinner.service';
+import { ToastService } from './shared/service/toast.service';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -28,6 +36,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-left', // Set position to bottom-left
+      // Other global options if needed
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -38,7 +50,15 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    ExceptionService,
+    NotificationService, GeneralService, SpinnerService,
+    ExceptionService, TranslateService, ToastService, SpinnerService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

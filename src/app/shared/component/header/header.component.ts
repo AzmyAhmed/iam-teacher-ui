@@ -7,6 +7,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { TeacherAuthService } from '../../../teacher/services/teacher-auth.service';
 import { AccessToJsonService } from '../../service/access-to-json.service';
 import { SharedService } from '../../service/shared.service';
+import { ToastService } from '../../service/toast.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -30,7 +31,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   componentTitle: string = '';
   sideNavClass: string = 'sidenavs website-sidenav';
   headerIsHiddenFlag: boolean = false;
-  constructor(
+  linkNameAr: string = 'لوحة التحكم'
+  linkNameEn: string = 'Dashboard'
+  className: string = ''
+  constructor(private _toaster: ToastService,
     private themeService: ThemeService, private accessToJsonService: AccessToJsonService,
     public translate: TranslateService, private router: Router, private authService: TeacherAuthService, private sharedService: SharedService) {
     this.translate.setDefaultLang(this.currentLang);
@@ -48,8 +52,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     );
   }
+
   onLinkClick(link: { Serial: number, NameAr: string, NameEn: string, ClassName: string }) {
     this.sharedService.changeLinkData(link.Serial, link.NameAr, link.NameEn, link.ClassName);
+    this.linkNameAr = link.NameAr;
+    this.linkNameEn = link.NameEn;
+    this.className = link.ClassName;
   }
   toggleLanguage() {
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
@@ -114,6 +122,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // teacher area
   logoutFromIamTeacher() {
     this.authService.logout();
+    this._toaster.toastMsg("U Are Logged Out ", "Log Out", "Warn")
     this.router.navigate(['/teacher-protofilio/teacher-protofilio-landingpage/', 1]);
   }
   refreshTeacherApp() {

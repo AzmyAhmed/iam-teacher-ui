@@ -45,8 +45,13 @@
         width: 110px !important;
     }
 }
-.t-logout{
-    color: white !important;
+
+.t-logout {
+
+    span {
+        color: white !important;
+    }
+
 }
 
 .t-teacher-sidnav :hover {
@@ -82,7 +87,8 @@
     color: white !important;
     border-radius: 5px;
 }
-.t-header-icons{
+
+.t-header-icons {
     height: auto;
-    
+
 }

@@ -127,11 +127,21 @@
             </div>
 
         </a>
+       
 
         <!-- Eof Module Teacher  -->
 
     </div>
     <div class="d-inline-flex t-responsive-header">
+
+        <a *ngIf="fromModule=='teacher'" class="btn  mx-1 mt-3  border" aria-label="Read more about me">
+            <span>
+                {{translate.currentLang=='ar'?this.linkNameAr:this.linkNameEn}}
+                <i [class]="this.className">
+                </i>
+            </span>
+        </a>
+
         <a *ngIf="fromModule=='website'" class=" d-inline-flex btn-sm   m-3 border mobileMode"
             (click)="teacherSignup()">
 
@@ -152,10 +162,10 @@
 
 
         </a>
-        <a *ngIf="fromModule=='teacher'" class="btn btn-danger d-inline-flex btn-sm m-3  mobileMode"
+        <a *ngIf="fromModule=='teacher'" class="btn btn-danger btn-sm m-3  t-logout desktopMode"
             (click)="logoutFromIamTeacher()">
 
-            <span class="t-logout">
+            <span>
                 {{"LogOut"|translate}} <i class="fa fa-sign-out">
                 </i>
 
@@ -207,7 +217,9 @@
                     {{"MODE"|translate}} </span>
 
             </a>
+
         </div>
+
         <!-- user data -->
         <div class="mobileMode">
             <a *ngIf="fromModule=='teacher-protofilio'" class=" mx-1 border" aria-label="Read more about me">
@@ -225,10 +237,11 @@
 
         </div>
         <div class="mobileMode">
-            <a *ngIf="fromModule=='teacher'" class="btn    mx-1 mt-3  border t-header-icons"  aria-label="Read more about me">
-             <span>
-                Mr / {{translate.currentLang=='ar'?' Mohamed Basuony':'Mohamed Basuony'}}
-             </span> 
+            <a *ngIf="fromModule=='teacher'" class="btn    mx-1 mt-3  border t-header-icons"
+                aria-label="Read more about me">
+                <span>
+                    Mr / {{translate.currentLang=='ar'?' Mohamed Basuony':'Mohamed Basuony'}}
+                </span>
                 <div class="notification-icon mx-2">
                     <i class="fa fa-bell-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
                         <span class="notification-count">5</span>
@@ -283,6 +296,14 @@
                 </i>
                 <span class="sidenav-link-text">
                     {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
+                </span>
+            </a>
+        </div>
+        <div *ngIf="fromModule=='teacher'">
+            <a class="btn btn-danger btn-sm  mobileMode t-logout" (click)="logoutFromIamTeacher()">
+                <span class="d-flex justify-content-between w-100">
+                    <span>{{"LogOut" | translate}}</span>
+                    <i class="fa fa-sign-out"></i>
                 </span>
             </a>
         </div>

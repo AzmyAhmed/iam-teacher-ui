@@ -1,11 +1,4 @@
-.shared-modal {
-  position: fixed;
-  top: 15%;
-  left: 25%;
-  width: 60%;
-  max-height: 500px;
-  overflow-y: scroll;
-}
+
 
 .modal-content {
   padding: 8px;

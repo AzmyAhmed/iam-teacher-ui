@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Controller } from '../connection/wejiCallApi';
 import { GeneralService } from './general.service';
-const userAuthUrl = Controller.apiController.userAuth;
+import { Controller } from '../../../assets/controllers/controllerApi';
+const userAuthUrl = Controller.controllerApi.userAuth;
 export interface IMsgControl {
   serial?: number;
   userSerial?: number;
