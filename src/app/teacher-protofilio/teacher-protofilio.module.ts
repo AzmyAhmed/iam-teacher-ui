@@ -12,6 +12,11 @@ import { TeacherProtofilioLandingpageComponent } from './teacher-protofilio-land
 import { SharedModule } from "../shared/shared.module";
 import { TeacherProtofilioAppointmentComponent } from "./teacher-protofilio-appointment/teacher-protofilio-appointment.component";
 import { TeacherProtofilioBookwithComponent } from './teacher-protofilio-bookwith/teacher-protofilio-bookwith.component';
+import { TeacherProtofilioFirstContentComponent } from "./teacher-protofilio-first-content/teacher-protofilio-first-content.component";
+import { TeacherProtofilioAboutComponent } from "./teacher-protofilio-about/teacher-protofilio-about.component";
+import { TeacherProtofilioClassroomsComponent } from "./teacher-protofilio-classrooms/teacher-protofilio-classrooms.component";
+import { TeacherProtofilioLastContentComponent } from "./teacher-protofilio-last-content/teacher-protofilio-last-content.component";
+import { TeacherProtofilioClassFeaturesComponent } from "./teacher-protofilio-class-features/teacher-protofilio-class-features.component";
 
 
 @NgModule({
@@ -32,8 +37,13 @@ import { TeacherProtofilioBookwithComponent } from './teacher-protofilio-bookwit
     FormsModule,
     SharedModule,
     TeacherProtofilioAppointmentComponent,
-    TeacherProtofilioBookwithComponent
-  ],
+    TeacherProtofilioBookwithComponent,
+    TeacherProtofilioFirstContentComponent,
+    TeacherProtofilioAboutComponent,
+    TeacherProtofilioClassroomsComponent,
+    TeacherProtofilioLastContentComponent,
+    TeacherProtofilioClassFeaturesComponent
+],
   exports: []
 })
 export class TeacherProtofilioModule { }

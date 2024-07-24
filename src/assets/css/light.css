@@ -122,14 +122,13 @@ body {
   }
 
 }
-
+/* 
 @media only screen and (max-width: 450px) and (min-width: 350px) {
   .t-body {
     margin-top: 165px !important;
-    /* New margin-top for small screens */
   }
 
-}
+} */
 
 @media only screen and (max-width: 350px) {
   .t-body {
@@ -149,9 +148,13 @@ body {
 
 .t-menu-icon {
   color: #737373;
-  color: #737373;
   font-size: 27px !important;
   margin-top: 12px;
+}
+
+.t-close-icon {
+  color: #737373;
+  font-size: 27px !important;
 }
 
 .t-login-icon {
@@ -168,12 +171,12 @@ body {
 
 .t-lang-icon {
   color: #2f5859;
-  font-size: 30px !important;
+  font-size: 27px !important;
 }
 
 .t-mode-icon {
   color: #466d7e;
-  font-size: 30px !important;
+  font-size: 27px !important;
 
 }
 

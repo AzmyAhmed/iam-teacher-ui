@@ -10,22 +10,23 @@
                     <h2>
                         Discover simple procedures to make your classroom run more efficiently
                     </h2>
-                    <a class="btn btn-sm btn-success m-2" (click)="openModalTemplate('bookDemo','BOOKDEMO')"><i
-                            class="fa fa-play-circle-o" aria-hidden="true"></i>
+                    <a class="btn btn-sm btn-success m-2"
+                        (click)="openModalTemplate('bookWithTeacher','BOOKWITHTEACHER')"><i class="fa fa-play-circle-o"
+                            aria-hidden="true"></i>
 
-                        Book Demo
+                        Book With Teacher
                     </a>
 
-                    <a class="btn btn-sm btn-primary " (click)="openModalTemplate('liveView','LiveView')"> <i
+                    <a class="btn btn-sm btn-primary " (click)="openModalTemplate('classView','ClassView')"> <i
                             class="fa fa-desktop" aria-hidden="true"></i>
 
-                        Live View
+                        Class View
                     </a>
 
 
                 </div>
 
-             
+
 
             </div>
 
@@ -44,14 +45,14 @@
 
 <!-- Sof Modal area  23-7-2024-->
 <ng-template #modalTemplate>
-    <!-- ======================================website area======================================= -->
+    <!-- ======================================teacher-protofilio area============================= -->
+    <div *ngIf="targetComponent=='bookWithTeacher'">
+        <app-teacher-protofilio-bookwith></app-teacher-protofilio-bookwith>
+    </div>
+    <div *ngIf="targetComponent=='classView'">
+        <app-teacher-protofilio-class-view></app-teacher-protofilio-class-view>
+    </div>
 
-    <div *ngIf="targetComponent=='bookDemo'">
-        <app-website-bookdemo></app-website-bookdemo>
-    </div>
-    <div *ngIf="targetComponent=='liveView'">
-        <app-website-live-view></app-website-live-view>
-    </div>
 </ng-template>
 <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
 <!-- Eof Modal area  19-7-2024-->

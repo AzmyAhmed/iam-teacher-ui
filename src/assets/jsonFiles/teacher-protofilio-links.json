@@ -1,27 +1,27 @@
 [
     {
-        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
         "NameAr": "الرئيسية",
         "NameEn": "Home",
         "ClassName": "fa fa-sm fa fa-home",
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
-        "NameAr": "المواعيد",
-        "NameEn": "Appointments",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
+        "NameAr": "الصفوف الدراسية",
+        "NameEn": "Class Rooms",
         "ClassName": "fa fa-sm fa fa-home",
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
         "NameAr": "المراجعات",
         "NameEn": "Reviews",
         "ClassName": "fa fa-sm fa fa-home",
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
         "NameAr": "الامتحانات",
         "NameEn": "ُExams",
         "ClassName": "fa fa-sm fa fa-home",
@@ -35,7 +35,7 @@
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
         "NameAr": "عن الاستاذ",
         "NameEn": "about",
         "ClassName": "fa fa-sm fa fa-home",
