@@ -13,20 +13,20 @@ import { TeacherProtofilioSessionsComponent } from './teacher-protofilio-session
 import { TeacherProtofilioAboutComponent } from './teacher-protofilio-about/teacher-protofilio-about.component';
 import { TeacherProtofilioFinalreviewsComponent } from './teacher-protofilio-finalreviews/teacher-protofilio-finalreviews.component';
 import { TeacherProtofilioTrainingComponent } from './teacher-protofilio-training/teacher-protofilio-training.component';
+import { TeacherProtofilioClassFeaturesComponent } from './teacher-protofilio-class-features/teacher-protofilio-class-features.component';
 const routes: Routes = [
   {
     path: '', component: TeacherProtofilioComponent, children: [
       { path: 'teacher-protofilio-landingpage/:id', component: TeacherProtofilioLandingpageComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-login/:id', component: TeacherProtofilioLoginComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-signup/:id', component: TeacherProtofilioSignupComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-exams/:id', component: TeacherProtofilioExamsComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-appointments/:id', component: TeacherProtofilioAppointmentComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-classrooms/:id', component: TeacherProtofilioClassroomsComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-blogs/:id', component: TeacherProtofilioBlogsComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-sessions/:id', component: TeacherProtofilioSessionsComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-about/:id', component: TeacherProtofilioAboutComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-finalreviews/:id', component: TeacherProtofilioFinalreviewsComponent, data: { description: 'azmy ahmed software engineer' } },
-      { path: 'teacher-protofilio-training/:id', component: TeacherProtofilioTrainingComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-login', component: TeacherProtofilioLoginComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-signup', component: TeacherProtofilioSignupComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-exams', component: TeacherProtofilioExamsComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-classrooms', component: TeacherProtofilioClassroomsComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-sessions', component: TeacherProtofilioSessionsComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-about', component: TeacherProtofilioAboutComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-finalreviews', component: TeacherProtofilioFinalreviewsComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'teacher-protofilio-class-features', component: TeacherProtofilioClassFeaturesComponent, data: { description: 'azmy ahmed software engineer' } },
+
     ]
   }
   ,

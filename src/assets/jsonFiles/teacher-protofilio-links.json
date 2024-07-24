@@ -7,35 +7,35 @@
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-classrooms",
         "NameAr": "الصفوف الدراسية",
         "NameEn": "Class Rooms",
         "ClassName": "fa fa-sm fa fa-home",
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-finalreviews",
         "NameAr": "المراجعات",
         "NameEn": "Reviews",
         "ClassName": "fa fa-sm fa fa-home",
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-exams",
         "NameAr": "الامتحانات",
         "NameEn": "ُExams",
         "ClassName": "fa fa-sm fa fa-home",
         "IsActive": 1
     },
     {
-        "RoutePath": "/website/website-features",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-class-features",
         "NameAr": "مميزات الدرس",
         "NameEn": "Features",
         "ClassName": "fa fa-cubes",
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-protofilio/teacher-protofilio-landingpage/1",
+        "RoutePath": "/teacher-protofilio/teacher-protofilio-about",
         "NameAr": "عن الاستاذ",
         "NameEn": "about",
         "ClassName": "fa fa-sm fa fa-home",

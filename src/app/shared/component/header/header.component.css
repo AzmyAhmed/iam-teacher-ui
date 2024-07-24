@@ -32,6 +32,21 @@
         margin: 5px;
         width: 290Px !important;
     }
+
+    .t-close {
+        width: 45px !important;
+    }
+
+    .t-lang {
+        width: 110px !important;
+    }
+
+    .t-mode {
+        width: 110px !important;
+    }
+}
+.t-logout{
+    color: white !important;
 }
 
 .t-teacher-sidnav :hover {
@@ -66,4 +81,8 @@
     background-color: #769c85 !important;
     color: white !important;
     border-radius: 5px;
+}
+.t-header-icons{
+    height: auto;
+    
 }

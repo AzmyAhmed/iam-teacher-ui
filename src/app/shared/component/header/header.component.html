@@ -71,49 +71,63 @@
 
         <!--eof  teacher-protofilio Module  19-7-2024 Azmestics -->
         <!-- sof Module Teacher  -->
-        <a *ngIf="fromModule=='teacher'" class="btn btn-success d-inline-flex btn-sm   mx-1 "
-            (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
-            {{"Add Student"|translate}}
-        </a>
-        <a *ngIf="fromModule=='teacher'" class="btn btn-info d-inline-flex btn-sm   mx-1 "
-            (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
-            {{"Create Account"|translate}}
-        </a>
-        <a *ngIf="fromModule=='teacher'" class="btn  d-inline-flex  mx-1  border btn-danger "
-            aria-label="Read more about me">
-            <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
-            Mr / {{translate.currentLang=='ar'?' Mohamed Basuony':'Mohamed Basuony'}}
-            <div class="notification-icon mr-2">
+        <a *ngIf="fromModule=='teacher'" class="btn    mx-1 mt-3  border desktopMode" aria-label="Read more about me">
+
+            <span (click)="goTeacherProtofilio()">
+                Mr / {{translate.currentLang=='ar'?' Mohamed Basuony':'Mohamed Basuony'}}
+
+            </span>
+
+
+
+            <div class="notification-icon mx-2">
                 <i class="fa fa-bell-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
                     <span class="notification-count">5</span>
 
                 </i>
             </div>
-            <div class="notification-icon mr-2">
+            <div class="notification-icon mx-2">
                 <i class="fa fa fa-calendar" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')">
                 </i>
             </div>
-            <div class="notification-icon mr-2">
+            <div class="notification-icon mx-2">
                 <i class="fa fa-clock-o" (click)="openModalTemplate('classeSchduling','CLASSSSCHDULING')">
                 </i>
             </div>
-            <div class="notification-icon mr-2">
-                <i class="fa fa-commenting-o" (click)="openModalTemplate('teacherMessages','MESSAGES')">
+            <div class="notification-icon mx-2">
+                <i class="fa fa-envelope-o" (click)="openModalTemplate('teacherMessages','MESSAGES')">
                     <span class="notification-count">5</span>
 
                 </i>
             </div>
 
-            <div class="notification-icon mr-2">
+            <div class="notification-icon mx-2">
                 <i class="fa fa-refresh" (click)="refreshTeacherApp()">
 
                 </i>
             </div>
+            <div class="notification-icon mx-2">
+                <i class="fa fa-commenting-o"
+                    (click)="openModalTemplate('sendMessageToGuardianOrStudent','SENDMESSAGE')">
+                </i>
+            </div>
+
+            <div class="notification-icon mx-2">
+                <i class="fa fa-user-circle-o" (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
+                </i>
+            </div>
+            <div class="notification-icon mx-2">
+                <i class="fa fa-user-plus" (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
+                </i>
+            </div>
+
+            <div class="notification-icon mx-2">
+                <i class="fa fa-globe" (click)="goToWebsite()">
+                </i>
+            </div>
+
         </a>
-        <a *ngIf="fromModule=='teacher'" class="btn btn-primary d-inline-flex btn-sm   mx-1 "
-            (click)="openModalTemplate('sendMessageToGuardianOrStudent','SENDMESSAGE')">
-            {{"Send Message"|translate}}
-        </a>
+
         <!-- Eof Module Teacher  -->
 
     </div>
@@ -138,10 +152,10 @@
 
 
         </a>
-        <a *ngIf="fromModule=='teacher'" class="btn btn-dark d-inline-flex btn-sm m-3 mobileMode"
+        <a *ngIf="fromModule=='teacher'" class="btn btn-danger d-inline-flex btn-sm m-3  mobileMode"
             (click)="logoutFromIamTeacher()">
 
-            <span>
+            <span class="t-logout">
                 {{"LogOut"|translate}} <i class="fa fa-sign-out">
                 </i>
 
@@ -172,12 +186,12 @@
 <section [class]="sideNavClass">
     <div [ngClass]="{'t-teacher-sidnav': fromModule=='teacher'}">
         <div class="d-inline-flex btn-sm">
-            <a class=" d-inline-flex btn-sm   mx-1 " (click)="onCloseSidenav()">
+            <a class=" d-inline-flex btn-sm   mx-1 t-close" (click)="onCloseSidenav()">
                 <span class=" pe-1">
                     <i class="fa fa-close  mr-2 ml-2 t-close-icon">
                     </i> </span>
             </a>
-            <a class=" mobileMode" (click)="toggleLanguage()">
+            <a class=" mobileMode t-lang" (click)="toggleLanguage()">
                 <span class=" pe-1">
                     <i class="fa fa-language t-lang-icon"></i>
                 </span>
@@ -185,7 +199,7 @@
                     {{"LANG"|translate}} </span>
 
             </a>
-            <a class="mobileMode" (click)="switchTheme()">
+            <a class="mobileMode t-mode" (click)="switchTheme()">
                 <span class=" pe-1">
                     <i class="fa fa-moon-o t-mode-icon">
                     </i> </span>
@@ -209,6 +223,58 @@
                 <i class="fa fa-comments-o  " (click)="openModalTemplate('sendMessageToTeacher','SENDMESSAGE')"></i>
             </a>
 
+        </div>
+        <div class="mobileMode">
+            <a *ngIf="fromModule=='teacher'" class="btn    mx-1 mt-3  border t-header-icons"  aria-label="Read more about me">
+             <span>
+                Mr / {{translate.currentLang=='ar'?' Mohamed Basuony':'Mohamed Basuony'}}
+             </span> 
+                <div class="notification-icon mx-2">
+                    <i class="fa fa-bell-o" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                        <span class="notification-count">5</span>
+
+                    </i>
+                </div>
+                <div class="notification-icon m-2">
+                    <i class="fa fa fa-calendar" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')">
+                    </i>
+                </div>
+                <div class="notification-icon m-2">
+                    <i class="fa fa-clock-o" (click)="openModalTemplate('classeSchduling','CLASSSSCHDULING')">
+                    </i>
+                </div>
+                <div class="notification-icon mx-2">
+                    <i class="fa fa-envelope-o" (click)="openModalTemplate('teacherMessages','MESSAGES')">
+                        <span class="notification-count">5</span>
+
+                    </i>
+                </div>
+
+                <div class="notification-icon m-2">
+                    <i class="fa fa-refresh" (click)="refreshTeacherApp()">
+
+                    </i>
+                </div>
+                <div class="notification-icon m-2">
+                    <i class="fa fa-commenting-o"
+                        (click)="openModalTemplate('sendMessageToGuardianOrStudent','SENDMESSAGE')">
+                    </i>
+                </div>
+
+                <div class="notification-icon m-2">
+                    <i class="fa fa-user-circle-o" (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
+                    </i>
+                </div>
+                <div class="notification-icon mx-2">
+                    <i class="fa fa-user-plus" (click)="openModalTemplate('teacherAddStudent','ADDSTUDENT')">
+                    </i>
+                </div>
+
+                <div class="notification-icon mx-2">
+                    <i class="fa fa-globe" (click)="goToWebsite()">
+                    </i>
+                </div>
+            </a>
         </div>
         <div *ngFor="let link of sidNavLinks">
             <a class="sidenav-nav-link applyDarkMode" [routerLink]="[link.RoutePath]" routerLinkActive="active"

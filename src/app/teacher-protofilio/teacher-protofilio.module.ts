@@ -17,6 +17,8 @@ import { TeacherProtofilioAboutComponent } from "./teacher-protofilio-about/teac
 import { TeacherProtofilioClassroomsComponent } from "./teacher-protofilio-classrooms/teacher-protofilio-classrooms.component";
 import { TeacherProtofilioLastContentComponent } from "./teacher-protofilio-last-content/teacher-protofilio-last-content.component";
 import { TeacherProtofilioClassFeaturesComponent } from "./teacher-protofilio-class-features/teacher-protofilio-class-features.component";
+import { TeacherProtofilioExamsComponent } from "./teacher-protofilio-exams/teacher-protofilio-exams.component";
+import { TeacherProtofilioFinalreviewsComponent } from "./teacher-protofilio-finalreviews/teacher-protofilio-finalreviews.component";
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { TeacherProtofilioClassFeaturesComponent } from "./teacher-protofilio-cl
     TeacherProtofilioAboutComponent,
     TeacherProtofilioClassroomsComponent,
     TeacherProtofilioLastContentComponent,
-    TeacherProtofilioClassFeaturesComponent
+    TeacherProtofilioClassFeaturesComponent,
+    TeacherProtofilioExamsComponent,
+    TeacherProtofilioFinalreviewsComponent
 ],
   exports: []
 })

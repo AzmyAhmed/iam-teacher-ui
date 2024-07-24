@@ -73,7 +73,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   gotoIamTeacherWebsite() {
+    if (this.fromModule != 'teacher') {
+      this.router.navigate(['/website/website-landingpage'])
+    }
+  }
+  goToWebsite() {
     this.router.navigate(['/website/website-landingpage'])
+  }
+  goTeacherProtofilio() {
+    this.router.navigate(['/teacher-protofilio/teacher-protofilio-landingpage/1'])
   }
   teacherSignup() {
     this.headerIsHiddenFlag = true;
@@ -101,7 +109,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   // login area
   teacherProtofilioLogin(teacher_id: any) {
-    this.router.navigate(['/teacher-protofilio/teacher-protofilio-login', teacher_id]);
+    this.router.navigate(['/teacher-protofilio/teacher-protofilio-login']);
   }
   // teacher area
   logoutFromIamTeacher() {

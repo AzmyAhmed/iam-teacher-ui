@@ -10,19 +10,27 @@
                     <h2>
                         Discover simple procedures to make your classroom run more efficiently
                     </h2>
-                    <a class="btn btn-sm btn-success m-2"
-                        (click)="openModalTemplate('bookWithTeacher','BOOKWITHTEACHER')"><i class="fa fa-play-circle-o"
-                            aria-hidden="true"></i>
+                    <div class="t-inline-elementvvvv">
+                        <a class="  m-1  btn btn-sm btn-success "
+                            (click)="openModalTemplate('bookWithTeacher','BOOKWITHTEACHER')"><i
+                                class="fa fa-play-circle-o" aria-hidden="true"></i>
 
-                        Book With Teacher
-                    </a>
+                            Book With Teacher
+                        </a>
 
-                    <a class="btn btn-sm btn-primary " (click)="openModalTemplate('classView','ClassView')"> <i
-                            class="fa fa-desktop" aria-hidden="true"></i>
+                        <a class=" m-1 btn btn-sm btn-primary " (click)="openModalTemplate('classView','ClassView')"> <i
+                                class="fa fa-desktop" aria-hidden="true"></i>
 
-                        Class View
-                    </a>
+                            Class View
+                        </a>
 
+                        <a class=" m-1 btn btn-sm btn-danger "
+                            (click)="openModalTemplate('teacherProtofilioGuide','TeacherProtofilioGuide')"> <i
+                                class="fa fa-desktop" aria-hidden="true"></i>
+
+                            Teacher Guide
+                        </a>
+                    </div>
 
                 </div>
 
@@ -51,6 +59,10 @@
     </div>
     <div *ngIf="targetComponent=='classView'">
         <app-teacher-protofilio-class-view></app-teacher-protofilio-class-view>
+    </div>
+
+    <div *ngIf="targetComponent=='teacherProtofilioGuide'">
+        <app-teacher-protofilio-guide></app-teacher-protofilio-guide>
     </div>
 
 </ng-template>
