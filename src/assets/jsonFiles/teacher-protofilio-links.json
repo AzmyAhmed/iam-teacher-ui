@@ -28,34 +28,6 @@
         "IsActive": 1
     },
     {
-        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
-        "NameAr": "التدريبات",
-        "NameEn": "Training",
-        "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
-    },
-    {
-        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
-        "NameAr": "اسئلة هامة",
-        "NameEn": "Training",
-        "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
-    },
-    {
-        "RoutePath": "/website/website-blogs",
-        "NameAr": "المقالات ",
-        "NameEn": "Blogs",
-        "ClassName": "fa fa-book",
-        "IsActive": 0
-    },
-    {
-        "RoutePath": "/website/website-aboutus",
-        "NameAr": "عن الاستاذ",
-        "NameEn": "About Teacher",
-        "ClassName": "fa fa-share",
-        "IsActive": 1
-    },
-    {
         "RoutePath": "/website/website-features",
         "NameAr": "مميزات الدرس",
         "NameEn": "Features",
@@ -63,24 +35,10 @@
         "IsActive": 1
     },
     {
-        "RoutePath": "/website/website-view",
-        "NameAr": "رؤية المدرس ",
-        "NameEn": "Our View",
-        "ClassName": "fa fa-lightbulb-o",
-        "IsActive": 0
-    },
-    {
-        "RoutePath": "/website/website-team",
-        "NameAr": "اسأل الاستاذ",
-        "NameEn": "FAQs",
-        "ClassName": "fa fa-users",
-        "IsActive": 1
-    },
-    {
-        "RoutePath": "/website/website-contactus",
-        "NameAr": "تواصل معنا",
-        "NameEn": "Contact Us",
-        "ClassName": "fa fa-envelope-o",
+        "RoutePath": "/teacher-prorofilio/teacher-prorofilio-landingpage",
+        "NameAr": "عن الاستاذ",
+        "NameEn": "about",
+        "ClassName": "fa fa-sm fa fa-home",
         "IsActive": 1
     }
 ]

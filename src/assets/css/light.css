@@ -149,6 +149,9 @@ body {
 
 .t-menu-icon {
   color: #737373;
+  color: #737373;
+  font-size: 27px !important;
+  margin-top: 12px;
 }
 
 .t-login-icon {
@@ -164,11 +167,14 @@ body {
 }
 
 .t-lang-icon {
-  color: cadetblue;
+  color: #2f5859;
+  font-size: 30px !important;
 }
 
 .t-mode-icon {
-  color: cornflowerblue;
+  color: #466d7e;
+  font-size: 30px !important;
+
 }
 
 .t-responsive-header {
@@ -448,15 +454,10 @@ h1,
 h2,
 h3,
 h4 {
-  color: #737373;
-  font-family: cursive !important;
-
+  color: #555454;
 }
 
-button {
-  font-family: cursive !important;
 
-}
 
 .card {
   background-color: white !important

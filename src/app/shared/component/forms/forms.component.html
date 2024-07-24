@@ -3,7 +3,7 @@
     <div *ngFor="let field of fields" [class]="gridClass">
         <ng-container [ngSwitch]="field.type">
             <div *ngSwitchCase="'input'" class="form-group">
-                <strong class="form-label">{{field.label}}</strong>
+                <span class="form-label">{{field.label}}</span>
                 <input [type]="field.inputType" formControlName="{{field.name}}" class="form-control"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
@@ -11,11 +11,11 @@
                 </div>
             </div>
             <div *ngSwitchCase="'radio'" class="form-group " style="display: inline-block;">
-                <strong class="form-label">{{field.label}}</strong>
+                <span class="form-label">{{field.label}}</span>
                 <div *ngFor="let option of field.options" class="form-check">
                     <input type="radio" [value]="option" formControlName="{{field.name}}" class="form-check-input"
                         [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
-                    <strong class="form-check-label">{{option}}</strong>
+                    <span class="form-check-label">{{option}}</span>
                 </div>
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
                     {{field.label}} is required.
@@ -24,12 +24,12 @@
             <div *ngSwitchCase="'checkbox'" class="form-group form-check">
                 <input type="checkbox" formControlName="{{field.name}}" class="form-check-input"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
-                <strong class="form-check-label">{{field.label}}</strong>
+                <span class="form-check-label">{{field.label}}</span>
             </div>
             <div *ngSwitchCase="'textarea'" class="form-group form-check col-12">
                 <textarea class="form-control" id="exampleTextarea" rows="5" formControlName="{{field.name}}"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched"></textarea>
-                <strong class="form-check-label">{{field.label}}</strong>
+                <span class="form-check-label">{{field.label}}</span>
 
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
                     {{field.label}} is required.

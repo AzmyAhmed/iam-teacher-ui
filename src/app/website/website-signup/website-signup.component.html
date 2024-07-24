@@ -2,20 +2,22 @@
   <div class="col-md-6 card mt-2 vh-100">
     <div class="card-body">
       <div class="text-center">
-        <h2 class="mb-4">SignUp
-          <i class="fa fa-user-plus"></i>
-        </h2>
+        <span class="mb-4">SignUp
+          <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
+
+        </span>
       </div>
       <div class="col-11 m-3">
-        <strong class="m-2">
+        <span class="m-2">
           SignUp As
-        </strong>
+        </span>
+        
         <div>
-          <app-select-option class="col-8" [options]="options" (selectedOptionChange)="onSelectedOptionChange($event)"></app-select-option>
+          <!-- <app-select-option class="col-8" [options]="options" (selectedOptionChange)="onSelectedOptionChange($event)"></app-select-option> -->
 
           <select class="form-select" aria-label="Default select example">
             <option *ngFor="let option of options" [value]="option.Serial">
-              <strong> {{ option.NameEn }}</strong>
+              <span> {{ option.NameEn }}</span>
             </option>
           </select>
         </div>
@@ -25,11 +27,11 @@
       <div>
         <input type="checkbox" class="form-check-input m-3" [(ngModel)]="isReadTerms" (click)="acceptTerms()">
         <a class="btn btn-primary" (click)="openModalTemplate('termsAndCondition','TERMSANDCONDITION')">
-          <strong style="color: white;">
+          <span style="color: white;">
             I Have Read Terms
             and
             Condition
-          </strong>
+          </span>
         </a>
       </div>
       <div class="m-1 text-center">

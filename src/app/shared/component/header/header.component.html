@@ -4,26 +4,39 @@
     <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
 
     <div class="d-inline-flex t-responsive-header">
-        <a *ngIf="fromModule =='website'" class=" mt-2  mobileMode " (click)="onOpenSideNav()">
+        <a *ngIf="fromModule !=='teacher'" class=" mt-2  mobileMode " (click)="onOpenSideNav()">
             <span class=" pe-1">
                 <i class="fa fa-bars  mr-2 ml-2 t-menu-icon">
                 </i> </span>
 
         </a>
-        <a *ngIf="fromModule !='website'" class="mt-2" (click)="onOpenSideNav()">
+        <a *ngIf="fromModule =='teacher'" class="mt-2" (click)="onOpenSideNav()">
             <span class=" pe-1">
                 <i class="fa fa-bars  mr-2 ml-2 t-menu-icon">
                 </i> </span>
 
         </a>
         <a class=" d-inline-flex btn-sm " (click)="gotoIamTeacherWebsite()">
-            <h2 class="text-muted"><i class='fa fa-leanpub t-logo-icon'>I'M </i>
-                <strong class="text-muted">Teacher</strong>
+            <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
+        </a>
 
-            </h2>
+        <a *ngIf="fromModule=='teacher-protofilio'" class="desktopMode p-2 mt-3"
+            aria-label="Read more about me">
+            <strong class="p-1"> {{translate.currentLang=='ar'?' Mr / Mohamed Ahmed':' Mr / Mohamed
+                Ahmed'}}</strong>
+            <i class="fa fa-calendar  p-1" (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')"></i>
+            <div class="notification-icon mr-2">
+                <i class="fa fa-bell-o  p-1" (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
+                    <span class="notification-count">5</span>
+
+                </i>
+            </div>
+
+            <i class="fa fa-comments-o  p-1" (click)="openModalTemplate('sendMessageToTeacher','SENDMESSAGE')"></i>
+
 
         </a>
-        <div *ngIf="fromModule =='website'">
+        <div *ngIf="fromModule !=='teacher'" class="mt-3">
             <a *ngFor="let link of sidNavLinks"
                 class=" navbar-expand-lg navbar-light bg-light desktopMode m-1 p-2 navbar "
                 [routerLink]="[link.RoutePath]" routerLinkActive="active" aria-label="Read more about me"
@@ -55,23 +68,7 @@
             {{"BOOK With"|translate}}
         </a> -->
 
-        <a *ngIf="fromModule=='teacher-protofilio'" class=" mx-1 border border desktopMode p-2"
-            aria-label="Read more about me">
-            <img src="/assets/images/avatar.png" alt="Avatar" class="avatar" alt="img">
-            <strong> {{translate.currentLang=='ar'?' Mr / Mohamed Ahmed':' Mr / Mohamed
-                Ahmed'}}</strong>
-            <i class="fa fa-calendar  " (click)="openModalTemplate('teacherAppointment','TEACHERAPPOINTMENT')"></i>
-            <div class="notification-icon mr-2">
-                <i class="fa fa-bell-o  " (click)="openModalTemplate('teacherNotification','TEACHERNOTIFICATION')">
-                    <span class="notification-count">5</span>
 
-                </i>
-            </div>
-
-            <i class="fa fa-comments-o  " (click)="openModalTemplate('sendMessageToTeacher','SENDMESSAGE')"></i>
-
-
-        </a>
 
         <!--eof  teacher-protofilio Module  19-7-2024 Azmestics -->
         <!-- sof Module Teacher  -->
@@ -132,6 +129,25 @@
             </span>
 
         </a>
+        <a *ngIf="fromModule=='teacher-protofilio'" class="d-inline-flex btn-sm m-3 border mobileMode"
+        (click)="teacherProtofilioLogin(1)">
+        <span>
+            {{"LOGIN"|translate}}
+            <i class="fa fa-sign-in">
+            </i>
+        </span>
+      
+
+    </a>
+    <a *ngIf="fromModule=='teacher'" class="btn btn-dark d-inline-flex btn-sm m-3 mobileMode"
+        (click)="logoutFromIamTeacher()">
+
+        <span>
+            {{"LogOut"|translate}} <i class="fa fa-sign-out">
+            </i>
+
+        </span>
+    </a>
         <!-- lang -->
         <a class="  mt-3 desktopMode" (click)="toggleLanguage()">
             <span class=" pe-3">
@@ -148,23 +164,7 @@
 
         </a>
 
-        <a *ngIf="fromModule=='teacher-protofilio'" class="d-inline-flex btn-sm  border mx-1  "
-            (click)="teacherProtofilioLogin(1)">
-            <span>
-                {{"LOGIN"|translate}} </span>
-            <i class="fa fa-sign-in">
-            </i>
-
-        </a>
-        <a *ngIf="fromModule=='teacher'" class="btn btn-dark d-inline-flex btn-sm   mx-1 "
-            (click)="logoutFromIamTeacher()">
-
-            <span>
-                {{"LogOut"|translate}} <i class="fa fa-sign-out">
-                </i>
-
-            </span>
-        </a>
+    
     </div>
 </header>
 <!-- End Header -->
