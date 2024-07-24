@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Input, input, OnDestroy, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { ThemeService } from '../../service/theme.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Subject } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { TeacherAuthService } from '../../../teacher/services/teacher-auth.service';
 import { AccessToJsonService } from '../../service/access-to-json.service';
 import { SharedService } from '../../service/shared.service';
 import { ToastService } from '../../service/toast.service';
+import { HeaderService, ISysLink } from './header.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,7 +17,7 @@ import { ToastService } from '../../service/toast.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   collapsed: boolean = false;
   screenWidth: number = 0;
-  private ngUnsubscribe: Subject<void> = new Subject<void>();
+  private stream: Subject<void> = new Subject<void>();
   toggleLangBtn: boolean = false;
   toggleModeBtn: boolean = false;
   currentLang: string = 'en';
@@ -33,8 +34,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   headerIsHiddenFlag: boolean = false;
   linkNameAr: string = 'لوحة التحكم'
   linkNameEn: string = 'Dashboard'
-  className: string = ''
-  constructor(private _toaster: ToastService,
+  className: string = '';
+  sysLinks: ISysLink = <ISysLink>{};
+  constructor(private _headerSer: HeaderService, private _toaster: ToastService,
     private themeService: ThemeService, private accessToJsonService: AccessToJsonService,
     public translate: TranslateService, private router: Router, private authService: TeacherAuthService, private sharedService: SharedService) {
     this.translate.setDefaultLang(this.currentLang);
@@ -42,7 +44,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getSidNavLinks();
   }
+
+
+
+
   getSidNavLinks() {
+    if (this.fromModule) {
+      this.sysLinks.Module = this.fromModule;
+      this._headerSer.sysLinksLoad(this.sysLinks)
+        .pipe(takeUntil(this.stream))
+        .subscribe((res: any) => {
+          console.log("User Data From Db in Login" + res)
+          if (res.Value.Table) {
+            // this.dbResponse = res.Value.Table[0];
+          }
+        });
+    }
+
     this.accessToJsonService.getLinks(this.fromJson).subscribe(
       (data) => {
         this.sidNavLinks = data.filter((ele: { IsActive: number; }) => ele.IsActive == 1);
@@ -129,8 +147,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['/teacher/iamteacher/', 1]);
   }
   ngOnDestroy() {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
+    this.stream.next();
+    this.stream.complete();
   }
 }
 

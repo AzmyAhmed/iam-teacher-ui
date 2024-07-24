@@ -8,7 +8,7 @@ export class Controller {
         userAuth: `UserAuth`,
         tteacher: `tteacher`,
         smsControl: `SmsControl`,
+        sysLinks: `SysLinks`,
         Shared: `${apiUrl}/api/Shared`
-
     };
 }

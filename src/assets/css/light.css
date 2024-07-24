@@ -129,15 +129,15 @@ body {
 /* Media query for screens with a max width of 300px */
 @media only screen and (max-width: 850px) and (min-width: 550px) {
   .t-body {
-    margin-top: 120px !important;
+    margin-top: 65px !important;
     /* New margin-top for small screens */
   }
 
 }
 
-@media only screen and (max-width: 550px) and (min-width: 450px) {
+@media only screen and  (min-width: 450px) {
   .t-body {
-    margin-top: 140px !important;
+    margin-top: 65px !important;
     /* New margin-top for small screens */
   }
 
@@ -153,7 +153,7 @@ body {
 
 @media only screen and (max-width: 350px) {
   .t-body {
-    margin-top: 205px !important;
+    margin-top: 65px !important;
     /* New margin-top for small screens */
   }
 
@@ -161,7 +161,7 @@ body {
 
 @media only screen and (max-width: 320px) {
   .t-body {
-    margin-top: 240px !important;
+    margin-top: 65px !important;
     /* New margin-top for small screens */
   }
 
