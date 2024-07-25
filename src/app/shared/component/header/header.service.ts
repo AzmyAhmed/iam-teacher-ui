@@ -25,5 +25,11 @@ export class HeaderService {
     return data;
 
   }
+  sysLinksSave(link: ISysLink) {
+    var data =
+      this.http.generalPost(`${sysLinksUrl}/SysLinksSave`, link);
+    return data;
+
+  }
 
 }

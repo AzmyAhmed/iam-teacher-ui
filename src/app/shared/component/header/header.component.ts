@@ -55,20 +55,27 @@ export class HeaderComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.stream))
         .subscribe((res: any) => {
           console.log("User Data From Db in Login" + res)
-          if (res.Value.Table) {
+          if (res.data1 && res.data1.length > 0) {
             // this.dbResponse = res.Value.Table[0];
+            this.sidNavLinks = res.data1;
           }
-        });
+        }
+          ,
+          error => {
+            this._toaster.activateRequestError(error.Value)
+          }
+
+        );
     }
 
-    this.accessToJsonService.getLinks(this.fromJson).subscribe(
-      (data) => {
-        this.sidNavLinks = data.filter((ele: { IsActive: number; }) => ele.IsActive == 1);
-      },
-      (error) => {
-        console.error('Error fetching JSON data', error);
-      }
-    );
+    // this.accessToJsonService.getLinks(this.fromJson).subscribe(
+    //   (data) => {
+    //     this.sidNavLinks = data.filter((ele: { IsActive: number; }) => ele.IsActive == 1);
+    //   },
+    //   (error) => {
+    //     console.error('Error fetching JSON data', error);
+    //   }
+    // );
   }
 
   onLinkClick(link: { Serial: number, NameAr: string, NameEn: string, ClassName: string }) {

@@ -4,69 +4,89 @@
         "NameAr": "الرئيسية",
         "NameEn": "Home",
         "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 1,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-aboutus",
         "NameAr": "من نحن ",
         "NameEn": "About Us",
         "ClassName": "fa fa-share",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 2,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-features",
         "NameAr": "مميزات البرنامج",
         "NameEn": "Features",
         "ClassName": "fa fa-cubes",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 3,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-clients",
         "NameAr": "عملائنا ",
         "NameEn": "Our Clients",
         "ClassName": "fa fa-address-book-o",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 4,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-projects",
         "NameAr": "مشاريعنا",
         "NameEn": "Our Projects",
         "ClassName": "fa fa-product-hunt",
-        "IsActive": 0
+        "IsActive": 0,
+        "Sort": 5,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-blogs",
         "NameAr": "المقالات ",
         "NameEn": "Blogs",
         "ClassName": "fa fa-book",
-        "IsActive": 0
+        "IsActive": 0,
+        "Sort": 6,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-view",
         "NameAr": "رؤيتنا ",
         "NameEn": "Our View",
         "ClassName": "fa fa-lightbulb-o",
-        "IsActive": 0
+        "IsActive": 0,
+        "Sort": 6,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-team",
         "NameAr": "الفريق والاسئلة الشائعة",
         "NameEn": "Our Team & FAQs",
         "ClassName": "fa fa-users",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 7,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-contactus",
         "NameAr": "تواصل معنا",
         "NameEn": "Contact Us",
         "ClassName": "fa fa-envelope-o",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 8,
+        "Module": "website"
     },
     {
         "RoutePath": "/website/website-pricing",
         "NameAr": "الأسعار",
         "NameEn": "Pricing",
         "ClassName": "fa fa-envelope-o",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 9,
+        "Module": "website"
     }
 ]
