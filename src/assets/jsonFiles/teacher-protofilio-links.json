@@ -4,41 +4,53 @@
         "NameAr": "الرئيسية",
         "NameEn": "Home",
         "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
+        "IsActive": 1,
+        "Sort": 1,
+        "Module": "teacher-protofilio"
     },
     {
         "RoutePath": "/teacher-protofilio/teacher-protofilio-classrooms",
         "NameAr": "الصفوف الدراسية",
         "NameEn": "Class Rooms",
         "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
+        "IsActive": 1,
+         "Sort": 1,
+        "Module": "teacher-protofilio"
     },
     {
         "RoutePath": "/teacher-protofilio/teacher-protofilio-finalreviews",
         "NameAr": "المراجعات",
         "NameEn": "Reviews",
         "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
+        "IsActive": 1,
+         "Sort": 2,
+        "Module": "teacher-protofilio"
     },
     {
         "RoutePath": "/teacher-protofilio/teacher-protofilio-exams",
         "NameAr": "الامتحانات",
         "NameEn": "ُExams",
         "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
+        "IsActive": 1,
+         "Sort": 3,
+        "Module": "teacher-protofilio"
     },
     {
         "RoutePath": "/teacher-protofilio/teacher-protofilio-class-features",
         "NameAr": "مميزات الدرس",
         "NameEn": "Features",
         "ClassName": "fa fa-cubes",
-        "IsActive": 1
+        "IsActive": 1,
+         "Sort": 4,
+        "Module": "teacher-protofilio"
     },
     {
         "RoutePath": "/teacher-protofilio/teacher-protofilio-about",
         "NameAr": "عن الاستاذ",
         "NameEn": "about",
         "ClassName": "fa fa-sm fa fa-home",
-        "IsActive": 1
+        "IsActive": 1,
+         "Sort": 5,
+        "Module": "teacher-protofilio"
     }
 ]

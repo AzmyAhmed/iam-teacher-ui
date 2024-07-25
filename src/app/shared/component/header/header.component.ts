@@ -55,9 +55,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.stream))
         .subscribe((res: any) => {
           console.log("User Data From Db in Login" + res)
-          if (res.data1 && res.data1.length > 0) {
+          if (res.azmestic1 && res.azmestic1.length > 0) {
             // this.dbResponse = res.Value.Table[0];
-            this.sidNavLinks = res.data1;
+            this.sidNavLinks = res.azmestic1;
           }
         }
           ,
