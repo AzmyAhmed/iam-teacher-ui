@@ -4,17 +4,31 @@
 @import url("assets/css/bootstrap/css/bootstrap.min.css");
 
 ::-webkit-scrollbar {
-  width:3px;
+  width: 3px;
 }
 
 a {
   text-decoration: none;
 }
 
+
+
+.warn-snackbar {
+  background-color: yellow;
+  color: black;
+  /* Adjust text color if needed */
+}
+
 /* Style the scrollbar track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 2px;
+}
+
+.mat-snack-bar-container {
+  z-index: 20000000 !important;
+  /* Adjust the z-index value as needed */
+  margin-top: 80px !important;
 }
 
 /* Style the scrollbar handle (thumb) */
@@ -1558,5 +1572,13 @@ section {
   letter-spacing: 0;
   color: #198754;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -9,6 +9,8 @@ export class Controller {
         tteacher: `tteacher`,
         smsControl: `SmsControl`,
         sysLinks: `App_Links_Stp`,
+        App_Sections_Data: `App_Sections_DataConroller`,
+        
         Shared: `${apiUrl}/api/Shared`
     };
 }

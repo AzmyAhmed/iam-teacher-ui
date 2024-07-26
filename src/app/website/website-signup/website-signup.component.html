@@ -11,7 +11,7 @@
         <span class="m-2">
           SignUp As
         </span>
-        
+
         <div>
           <!-- <app-select-option class="col-8" [options]="options" (selectedOptionChange)="onSelectedOptionChange($event)"></app-select-option> -->
 
@@ -34,9 +34,9 @@
           </span>
         </a>
       </div>
+      <!-- [disabled]="isReadTerms==false || this.dynamicForm.form.invalid" -->
       <div class="m-1 text-center">
-        <button (click)="confirmTeacherSignUp()" [disabled]="isReadTerms==false || this.dynamicForm.form.invalid"
-          class="btn btn-success ml-5 mr-5">
+        <button (click)="confirmTeacherSignUp()" class="btn btn-success ml-5 mr-5">
           SignUp
         </button>
       </div>

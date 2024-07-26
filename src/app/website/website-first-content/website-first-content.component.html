@@ -3,43 +3,38 @@
     <div class="t-first-section" data-aos="zoom-out" data-aos-delay="100">
         <div>
             <div class="row ">
-                <div class="col-md-4 m-5">
+                <div class="col-md-6 m-5">
                     <h1>
-                        50 Procedures that Will Save Your Sanity
+                        {{translate.currentLang=='ar'?appSectionsDataResult[0].DescAr: appSectionsDataResult[0].DescEn}}
                     </h1>
                     <h2>
-                        Discover simple procedures to make your classroom run more efficiently
+                        {{translate.currentLang=='ar'?appSectionsDataResult[0].DetailAr:
+                        appSectionsDataResult[0].DetailEn}}
                     </h2>
                     <a class="btn btn-sm btn-success m-2" (click)="openModalTemplate('bookDemo','BOOKDEMO')"><i
                             class="fa fa-play-circle-o" aria-hidden="true"></i>
+                        <h2>{{"BOOKDEMO"|translate}}</h2>
 
-                        Book Demo
                     </a>
 
                     <a class="btn btn-sm btn-primary " (click)="openModalTemplate('liveView','LiveView')"> <i
                             class="fa fa-desktop" aria-hidden="true"></i>
+                        <h2>{{"LIVEVIEW"|translate}}</h2>
 
-                        Live View
                     </a>
-
-
                 </div>
-
-             
-
             </div>
 
         </div>
     </div>
-
-
-
-
 </section><!-- End Hero Section -->
 <div class="btns text-center mt-3 text-muted p-2 ">
-    <a href="#" class="m-2"><i class="fa fa-facebook fa-2x "></i>facebook</a>
-    <a href="#" class="m-2"><i class="fa fa-linkedin fa-2x"></i>linkedin</a>
-    <a href="#" class="m-2"><i class="fa fa-whatsapp fa-2x"></i>Whatsapp</a>
+    <a [href]="appSectionsDataResult[0].UserFaceBook" target="_blank" class="m-2"><i
+            class="fa fa-facebook fa-2x "></i>{{"FACEBOOK"|translate}}</a>
+    <a [href]="appSectionsDataResult[0].UserLinkedIn" target="_blank" class="m-2"><i
+            class="fa fa-linkedin fa-2x"></i>{{"LINKEDIN"|translate}}</a>
+    <a [href]="appSectionsDataResult[0].UserTwitter" target="_blank" class="m-2"><i
+            class="fa fa-twitter fa-2x"></i>{{"TWITTER"|translate}}</a>
 </div>
 
 <!-- Sof Modal area  23-7-2024-->

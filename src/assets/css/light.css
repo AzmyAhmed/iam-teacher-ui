@@ -135,7 +135,7 @@ body {
 
 }
 
-@media only screen and  (min-width: 450px) {
+@media only screen and (min-width: 450px) {
   .t-body {
     margin-top: 65px !important;
     /* New margin-top for small screens */
@@ -150,6 +150,55 @@ body {
   }
 
 } */
+.success-snackbar {
+
+  /* Adjust text color if needed */
+  .mdc-snackbar__surface {
+    background-color: rgb(33, 130, 33) !important;
+    color: white !important;
+    margin-top: 70px;
+    /* Adjust text color if needed */
+  }
+
+  .mdc-button__label,
+  .mat-mdc-simple-snack-bar {
+    color: white;
+    font-size: large;
+  }
+}
+
+.error-snackbar {
+  .mdc-snackbar__surface {
+    background-color: rgb(182, 40, 40) !important;
+    color: white !important;
+    margin-top: 70px;
+    /* Adjust text color if needed */
+  }
+
+  .mdc-button__label,
+  .mat-mdc-simple-snack-bar {
+    color: white;
+    font-size: large;
+  }
+
+}
+
+.warn-snackbar {
+  .mdc-snackbar__surface {
+    background-color: rgb(205, 166, 75) !important;
+    color: black !important;
+    margin-top: 70px;
+    /* Adjust text color if needed */
+  }
+
+  .mdc-button__label,
+  .mat-mdc-simple-snack-bar {
+    color: white;
+    font-size: large;
+  }
+
+  /* Adjust text color if needed */
+}
 
 @media only screen and (max-width: 350px) {
   .t-body {

@@ -20,6 +20,7 @@ import { AuthenticationService } from './shared/service/authentication.service';
 import { ExceptionService } from './shared/service/exception.service';
 import { SpinnerService } from './shared/service/spinner.service';
 import { ToastService } from './shared/service/toast.service';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -36,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSnackBarModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-left', // Set position to bottom-left
       // Other global options if needed
@@ -54,6 +56,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ExceptionService,
     NotificationService, GeneralService, SpinnerService,
     ExceptionService, TranslateService, ToastService, SpinnerService,
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {}
+    },
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,

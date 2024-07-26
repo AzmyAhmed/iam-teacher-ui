@@ -11,5 +11,8 @@ export class SharedService {
 
   changeLinkData(Serial: number, NameAr: string, NameEn: string, ClassName: string) {
     this.linkDataSource.next({ Serial, NameAr, NameEn, ClassName });
+    sessionStorage.setItem('linkSerial', String(Serial));
+
   }
+
 }
