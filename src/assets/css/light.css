@@ -57,8 +57,17 @@ body {
   a {
     color: white !important;
   }
+  h2{
+    font-size: 14px !important;
+  }
 }
-
+.separator{
+  margin-top: 5px !important;
+}
+.website-ask{
+  color: white !important;
+  font-size: larger;
+}
 .preview-container {
   width: 789px;
   height: 466px;

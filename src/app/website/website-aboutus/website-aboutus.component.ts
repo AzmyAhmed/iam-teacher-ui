@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject, takeUntil } from 'rxjs';
-import { AppSectionsDataService, Iapp_Sections_Data } from '../../shared/service/app-sections-data.service';
+import { AppSectionsDataService } from '../../shared/service/app-sections-data.service';
+import { IWebsite_Sections_Data, WebsiteSectionsDataService } from '../website-sections-data.service';
 
 @Component({
   selector: 'app-website-aboutus',
@@ -10,15 +11,15 @@ import { AppSectionsDataService, Iapp_Sections_Data } from '../../shared/service
 })
 export class WebsiteAboutusComponent {
   stream: Subject<void> = new Subject();
-  appSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  appSectionsDataObj: IWebsite_Sections_Data = <IWebsite_Sections_Data>{}
   appSectionsDataResult: any[] = []
-  constructor(private _AppSectionsDataService: AppSectionsDataService, public translate: TranslateService) {
-    this.app_Sections_DataLoad();
+  constructor(private _WebsiteSectionsDataService: WebsiteSectionsDataService, public translate: TranslateService) {
+    this.website_Sections_DataLoad();
   }
 
-  app_Sections_DataLoad() {
+  website_Sections_DataLoad() {
     this.appSectionsDataObj.App_Links_Stp = 2;
-    this._AppSectionsDataService.app_Sections_DataLoad(this.appSectionsDataObj)
+    this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.appSectionsDataObj)
       .pipe(takeUntil(this.stream))
       .subscribe((res: any) => {
         if (res.azmestic1 && res.azmestic1.length > 0) {

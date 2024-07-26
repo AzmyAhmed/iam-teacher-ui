@@ -4,17 +4,18 @@
   <div class="container" data-aos="fade-up">
     <div class="section-title text-center">
       <h2>
-        {{translate.currentLang=='ar'?this.appSectionsDataResult[0].TitleNameAr:this.appSectionsDataResult[0].TitleNameEn}}
+        {{translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:this.websiteSectionsDataResult[0]?.TitleNameEn}}
       </h2>
     </div>
 
-    <div class="row" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-md-6 col-lg-3" *ngFor="let object of appSectionsDataResult;" data-aos="zoom-in" data-aos-delay="100">
+    <div class="row" data-aos="fade-up" data-aos-delay="100" *ngIf="websiteSectionsDataResult.length>0">
+      <div class="col-md-6 col-lg-3" *ngFor="let object of websiteSectionsDataResult;" data-aos="zoom-in"
+        data-aos-delay="100">
         <div class="feature-block">
-            <img [src]="object.ImgSrc" alt="img">
-            <h4>{{ translate.currentLang == 'ar' ? object.DescAr : object.DescEn }}</h4>
+          <img *ngIf="object.ImgSrc" [src]="object.ImgSrc" alt="img">
+          <h4>{{ translate.currentLang == 'ar' ? object.DescAr : object.DescEn }}</h4>
         </div>
-    </div>
+      </div>
 
     </div>
   </div>

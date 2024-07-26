@@ -8,6 +8,7 @@ import { WebsiteLiveViewComponent } from "../website-live-view/website-live-view
 import { AppSectionsDataService, Iapp_Sections_Data } from '../../shared/service/app-sections-data.service';
 import { Subject, takeUntil } from 'rxjs';
 import { SharedService } from '../../shared/service/shared.service';
+import { WebsiteSectionsDataService } from '../website-sections-data.service';
 
 @Component({
   selector: 'app-website-first-content',
@@ -19,21 +20,25 @@ import { SharedService } from '../../shared/service/shared.service';
 export class WebsiteFirstContentComponent {
   componentTitle: string = ''
   targetComponent: string = '';
-  appSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
-  appSectionsDataResult: any[] = []
+  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  websiteSectionsDataResult: any[] = []
+  socialMediaLinks: any[] = []
   @ViewChild(ModalComponent) modal!: ModalComponent;
   @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
   stream: Subject<void> = new Subject();
-  constructor(private _AppSectionsDataService: AppSectionsDataService , public translate:TranslateService) {
-    this.app_Sections_DataLoad();
+  constructor(private _WebsiteSectionsDataService: WebsiteSectionsDataService, public translate: TranslateService) {
+    this.Website_Sections_DataLoad();
   }
-  app_Sections_DataLoad() {
-    this.appSectionsDataObj.App_Links_Stp = 29;
-    this._AppSectionsDataService.app_Sections_DataLoad(this.appSectionsDataObj)
+  Website_Sections_DataLoad() {
+    this.websiteSectionsDataObj.App_Links_Stp = 29;
+    this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.websiteSectionsDataObj)
       .pipe(takeUntil(this.stream))
       .subscribe((res: any) => {
         if (res.azmestic1 && res.azmestic1.length > 0) {
-          this.appSectionsDataResult = res.azmestic1;
+          this.websiteSectionsDataResult = res.azmestic1;
+        }
+        if (res.azmestic2 && res.azmestic2.length > 0) {
+          this.socialMediaLinks = res.azmestic2;
         }
       }
         ,

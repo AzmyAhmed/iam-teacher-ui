@@ -14,6 +14,7 @@ import { WebsiteTeamComponent } from './website-team/website-team.component';
 import { WebsiteSignupComponent } from './website-signup/website-signup.component';
 import { WebsiteSignupConfirmationComponent } from './website-signup-confirmation/website-signup-confirmation.component';
 import { PricingComponent } from './pricing/pricing.component';
+import { WebsiteFaqsComponent } from './website-faqs/website-faqs.component';
 const routes: Routes = [
   { path: '', redirectTo: 'website-landingpage', pathMatch: 'full' },
   {
@@ -30,6 +31,8 @@ const routes: Routes = [
       { path: 'website-signup', component: WebsiteSignupComponent, data: { description: 'azmy ahmed software engineer' } },
       { path: 'website-signup-confirmation', component: WebsiteSignupConfirmationComponent, data: { description: 'azmy ahmed software engineer' } },
       { path: 'website-pricing', component: PricingComponent, data: { description: 'azmy ahmed software engineer' } },
+      { path: 'website-faqs', component: WebsiteFaqsComponent, data: { description: 'azmy ahmed software engineer' } },
+
     ]
   }
   ,

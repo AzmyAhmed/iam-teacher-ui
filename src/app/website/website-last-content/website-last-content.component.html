@@ -4,10 +4,12 @@
             <div class="row ">
                 <div class="col-md-4 m-5">
                     <h1>
-                        50 Procedures that Will Save Your Sanity
+                        {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DescAr:
+                        websiteSectionsDataResult[0]?.DescEn}}
                     </h1>
                     <h2>
-                        Discover simple procedures to make your classroom run more efficiently
+                        {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DetailAr:
+                        websiteSectionsDataResult[0]?.DetailEn}}
                     </h2>
                 </div>
                 <div class="col-md-8 m-5 preview-container">
