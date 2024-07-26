@@ -24,7 +24,7 @@ export class SnackBarService {
     this.snackBarClass = 'error-snackbar';
 
     this._snackBar.open(message, action, {
-     // duration: 2500,
+     duration: 2500,
       horizontalPosition: 'start', // or 'start', 'end'
       verticalPosition: 'top',
       panelClass: [this.snackBarClass]
