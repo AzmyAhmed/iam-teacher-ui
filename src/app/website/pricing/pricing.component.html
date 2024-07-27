@@ -1,1 +1,14 @@
-<p>pricing works!</p>
+<header class="pricing-header">
+    <h1>Pricing Plans</h1>
+    <p>Choose a plan that suits your needs</p>
+</header>
+<div class="pricing-container">
+
+    <div *ngFor="let plan of pricingPlans" class="pricing-card" [ngClass]="plan.type">
+        <h2>{{ plan.title }}</h2>
+        <p class="price">{{ plan.price }} L.E</p>
+        <p class="discount">{{ plan.discount }}% Discount</p>
+        <p class="final-price">{{ plan.finalPrice }} L.E</p>
+        <button>Choose Plan</button>
+    </div>
+</div>

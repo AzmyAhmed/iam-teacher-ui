@@ -30,6 +30,7 @@ import { WebsiteFeaturesComponent } from "./website-features/website-features.co
 import { WebsiteTeamComponent } from "./website-team/website-team.component";
 import { WebsiteFaqsComponent } from "./website-faqs/website-faqs.component";
 import { SelectOptionComponent } from "../shared/component/select-option/select-option.component";
+import { PricingComponent } from "./pricing/pricing.component";
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { SelectOptionComponent } from "../shared/component/select-option/select-
     WebsiteFeaturesComponent,
     WebsiteTeamComponent,
     WebsiteFaqsComponent,
-    SelectOptionComponent
+    SelectOptionComponent,
+    PricingComponent
 ],
   exports: []
 })
