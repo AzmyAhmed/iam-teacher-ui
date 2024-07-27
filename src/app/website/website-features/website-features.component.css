@@ -1,0 +1,49 @@
+.container {
+    max-width: 1200px;
+  }
+  
+  .feature-card {
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-card i {
+    color: #007bff;
+  }
+  
+  .feature-card h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .feature-card p {
+    color: #6c757d;
+    font-size: 0.875rem;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .flex-fill {
+    flex: 1 1 auto;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  

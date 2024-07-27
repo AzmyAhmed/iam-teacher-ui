@@ -1,14 +1,22 @@
-<header class="pricing-header">
-    <h1>Pricing Plans</h1>
-    <p>Choose a plan that suits your needs</p>
-</header>
-<div class="pricing-container">
+<section data-aos="zoom-in" data-aos-delay="100">
+    <header class="pricing-header">
+        <h1>
 
-    <div *ngFor="let plan of pricingPlans" class="pricing-card" [ngClass]="plan.type">
-        <h2>{{ plan.title }}</h2>
-        <p class="price">{{ plan.price }} L.E</p>
-        <p class="discount">{{ plan.discount }}% Discount</p>
-        <p class="final-price">{{ plan.finalPrice }} L.E</p>
-        <button>Choose Plan</button>
+            {{translate.currentLang=='ar'?'خطط الأسعار':'Pricing Plans'}}
+        </h1>
+        <p>
+
+            {{translate.currentLang=='ar'?'اختر ما يناسبك':'Choose a plan that suits your needs'}}
+        </p>
+    </header>
+    <div class="pricing-container">
+
+        <div *ngFor="let plan of pricingPlans" class="pricing-card" [ngClass]="plan.ClassName">
+            <h2>{{translate.currentLang=='ar'?plan.TitleNameAr:plan.TitleNameEn }}</h2>
+            <p class="price">{{ plan.Price }} L.E</p>
+            <p class="discount">{{ plan.Discount }}% {{translate.currentLang=='ar'?'الخصم':'Discount'}} Discount</p>
+            <p class="final-price">{{ plan.FinalPrice }} L.E</p>
+            <button>{{translate.currentLang=='ar'?'أختر الشريحة':' Choose Plan'}}</button>
+        </div>
     </div>
-</div>
+</section>

@@ -9,11 +9,15 @@ import { AppSectionsDataService, Iapp_Sections_Data } from '../../shared/service
 import { Subject, takeUntil } from 'rxjs';
 import { SharedService } from '../../shared/service/shared.service';
 import { WebsiteSectionsDataService } from '../website-sections-data.service';
-
+interface FAQ {
+  question: string;
+  answer: string;
+  manager: string;
+}
 @Component({
   selector: 'app-website-faqs',
   standalone: true,
-  imports: [ CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './website-faqs.component.html',
   styleUrl: './website-faqs.component.css'
 })
@@ -26,6 +30,7 @@ export class WebsiteFaqsComponent {
   @ViewChild(ModalComponent) modal!: ModalComponent;
   @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
   stream: Subject<void> = new Subject();
+
   constructor(private _WebsiteSectionsDataService: WebsiteSectionsDataService, public translate: TranslateService) {
     this.Website_Sections_DataLoad();
   }

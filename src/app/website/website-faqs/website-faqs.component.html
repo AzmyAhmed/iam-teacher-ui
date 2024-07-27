@@ -1,58 +1,34 @@
-<!-- ======= FaQS Section ======= -->
-<section id="testimonials" class="padd-section text-center" data-aos="zoom-in" data-aos-delay="100">
-    <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-            <div class="section-title text-center">
+<section class="mt-5" data-aos="zoom-in" data-aos-delay="100">
+    <div class="section-title text-center mt-5">
 
-                <h2>{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
-                    this.websiteSectionsDataResult[0]?.TitleNameEn }}</h2>
+        <h2>{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
+            this.websiteSectionsDataResult[0]?.TitleNameEn }}</h2>
 
-                <a class="btn btn-sm btn-success m-2 website-ask">{{"ASK"|translate}}
-                    <p class="separator">
+        <a class="btn btn-sm btn-success m-2 website-ask">{{"ASK"|translate}}
+            <p class="separator">
 
-                        {{translate.currentLang=='ar'?'تستطيع أن تسأل عن ما تشاء':'You Can Ask Us For Any Thing'}}
-                    </p>
-                </a>
-            </div>
-            <div class="col-md-8">
-                <div>
-                    <h2>Our Users Speack volumes us</h2>
-
-                    <div id="carousel-example-generic" *ngFor="let Result of websiteSectionsDataResult;let index i"
-                        class="carousel slide">
-
-                        <div class="carousel-inner" role="listbox">
-
-                            <div class="carousel-item  active">
-                                <div class="top-top">
-                                    <div>
-
-                                    </div>
-                                    <p>
-                                        {{Result.Question}}
-                                    </p>
-                                    <p>{{Result.Answer}}</p>
-                                    <h4>Azmy Ahmed<span>manager</span></h4>
-
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-
-                        <div class="btm-btm">
-                            <ul class="list-unstyled carousel-indicators">
-                                <li  class="active"></li>
-                            </ul>
-
-                        </div>
-
-                    </div>
+                {{translate.currentLang=='ar'?'تستطيع أن تسأل عن ما تشاء':'You Can Ask Us For Any Thing'}}
+            </p>
+        </a>
+    </div>
+    <div id="faqCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let faq of websiteSectionsDataResult; let i = index"
+                [ngClass]="{'active': i === 0}">
+                <div class="d-flex flex-column align-items-center">
+                    <h3>{{ faq.Question }}</h3>
+                    <p>{{ faq.Answer }}</p>
+                    <h4>Azmy Ahmed<span>manager</span></h4>
                 </div>
             </div>
-
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#faqCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon btn-success" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#faqCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon btn-success" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-</section><!-- End Testimonials Section -->
+</section>

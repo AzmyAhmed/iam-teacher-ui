@@ -10,6 +10,7 @@ export class Controller {
         smsControl: `SmsControl`,
         sysLinks: `App_Links_Stp`,
         App_Sections_Data: `App_Sections_DataConroller`,
+        App_Trackig_Visits: `App_Sections_DataConroller`,
         Website_Sections_Data: `Website_Sections_DataConroller`,
         Shared: `${apiUrl}/api/Shared`
     };

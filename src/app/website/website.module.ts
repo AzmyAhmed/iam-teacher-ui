@@ -31,6 +31,8 @@ import { WebsiteTeamComponent } from "./website-team/website-team.component";
 import { WebsiteFaqsComponent } from "./website-faqs/website-faqs.component";
 import { SelectOptionComponent } from "../shared/component/select-option/select-option.component";
 import { PricingComponent } from "./pricing/pricing.component";
+import { DeviceService } from '../shared/service/device.service';
+import { TrackingService } from '../shared/service/tracking.service';
 
 
 @NgModule({
@@ -70,7 +72,8 @@ import { PricingComponent } from "./pricing/pricing.component";
     WebsiteFaqsComponent,
     SelectOptionComponent,
     PricingComponent
-],
-  exports: []
+  ],
+  exports: [],
+  providers: [TrackingService, DeviceService]
 })
 export class WebsiteModule { }

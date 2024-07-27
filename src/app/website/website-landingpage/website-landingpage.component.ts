@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { TrackingService } from '../../shared/service/tracking.service';
 
 @Component({
   selector: 'app-website-landingpage',
@@ -9,28 +10,20 @@ import { Subject } from 'rxjs';
 export class WebsiteLandingpageComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
   isButtonVisible = false;
-
-
-  constructor() { }
+  visitId!: number;
+  constructor(private trackingService: TrackingService) { }
 
   ngOnInit(): void {
-
+    this.trackingService.App_Tracking_VisitsSave().subscribe((response: any) => {
+      this.visitId = response.visitId;
+    });
   }
-  sendEmail(e: Event) {
-    // e.preventDefault();
 
-    // emailjs.sendForm('service_r10lcgd', 'template_366diwi', e.target as HTMLFormElement, '5fN1GjW87249AppkL')
-    //   .then((result: EmailJSResponseStatus) => {
-    //     console.log(result.text);
-    //     this.notify.showSuccess('Email sent successfully!', 'Success')
-    //     this.router.navigate(['/main']);
-    //   }, (error) => {
-    //     console.log(error.text);
-    //     this.notify.showError('Failed to send email. Please try again later.', 'Failed')
-
-    //   });
-
+  @HostListener('window:beforeunload', ['$event'])
+  unloadHandler(event: Event) {
+    this.trackingService.App_Tracking_LeavesSave(this.visitId);
   }
+
   ngOnDestroy() {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
