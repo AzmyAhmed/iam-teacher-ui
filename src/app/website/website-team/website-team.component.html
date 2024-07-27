@@ -4,44 +4,35 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
 
-            <h2>Team Member</h2>
-            <p class="separator">we are amazing collaborative and helpful team</p>
+            <h2>{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
+                this.websiteSectionsDataResult[0]?.TitleNameEn }}</h2>
+            <p class="separator">{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.DescAr:
+                this.websiteSectionsDataResult[0]?.DescEn }}</p>
         </div>
 
         <div class="row">
 
-            <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-md-6 col-md-4 col-lg-3" *ngFor="let result of websiteSectionsDataResult" data-aos="zoom-in"
+                data-aos-delay="100">
                 <div class="team-block bottom">
-                    <img src="assets/images/team/azmy.png" class="img-responsive" alt="img">
+                    <img [src]="result.ImgSrc" class="img-responsive" alt="img">
                     <div class="team-content">
                         <ul class="list-unstyled">
-                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                            <li><a [href]="result.FaceBookLink" target="_blank"><i class="fa fa-facebook mx-2"></i></a>
+                            </li>
+                            <li><a [href]="result.LinkedInLink" target="_blank"><i class="fa fa-linkedin mx-2"></i></a>
+                            </li>
+                            <li><a [href]="result.TwitterLink" target="_blank"><i class="fa fa-twitter mx-2">
+                                    </i></a></li>
+                            <li><a [href]="result.Link" target="_blank"><i class="fa fa-globe mx-2"></i></a>
+                            </li>
                         </ul>
-                        <span>CEO</span>
-                        <h4>Azmy Ahmed</h4>
+
+                        <h4>{{ translate.currentLang=='ar'?this.result?.DetailAr:
+                            this.result?.DetailEn }}</h4>
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-                <div class="team-block bottom">
-                    <img src="assets/images/team/selem.png" class="img-responsive" alt="img">
-                    <div class="team-content">
-                        <ul class="list-unstyled">
-                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                        </ul>
-                        <span>CTO</span>
-                        <h4>Ahmed Selem</h4>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section><!-- End Team Section -->
-

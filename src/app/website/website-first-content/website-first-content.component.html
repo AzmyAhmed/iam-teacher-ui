@@ -30,10 +30,14 @@
     </div>
 </section><!-- End Hero Section -->
 <div class="btns text-center mt-3 text-muted p-2 " *ngIf="socialMediaLinks.length>0">
-    <a *ngFor="let link of socialMediaLinks" [href]="link.Link" target="_blank" class="m-2"><i
-            [class]="link.ImgSrc"></i>{{translate.currentLang=='ar'?link.TitleNameAr:
-        link.TitleNameEn}}</a>
-
+    <div class="btns text-center mt-3 text-muted p-2 " *ngIf="socialMediaLinks.length>0">
+        <a [href]="socialMediaLinks[0].FaceBookLink" target="_blank" class="mx-2"><i
+                class="fa fa-facebook fa-2x"></i>FaceBook</a>
+        <a [href]="socialMediaLinks[0].TwitterLink" target="_blank" class="mx-2"><i
+                class="fa fa-linkedin fa-2x"></i>LinkedIn</a>
+        <a [href]="socialMediaLinks[0].LinkedInLink" target="_blank" class="mx-2"><i
+                class="fa fa-twitter fa-2x"></i>Twitter</a>
+    </div>
 </div>
 
 <!-- Sof Modal area  23-7-2024-->

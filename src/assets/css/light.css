@@ -57,17 +57,21 @@ body {
   a {
     color: white !important;
   }
-  h2{
+
+  h2 {
     font-size: 14px !important;
   }
 }
-.separator{
+
+.separator {
   margin-top: 5px !important;
 }
-.website-ask{
+
+.website-ask {
   color: white !important;
   font-size: larger;
 }
+
 .preview-container {
   width: 789px;
   height: 466px;
@@ -318,13 +322,15 @@ fa {
 }
 
 .feature-block {
-  background: #fff none repeat scroll 0 0;
   transition: all 0.5s ease-in-out 0s;
   padding: 20px;
-  border: 1px solid #f2f2f2;
-  border-radius: 8px;
-  height: 90%;
-
+  height: 215px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px;
+  align-content: center;
 
 }
 
