@@ -1,48 +1,59 @@
 <!-- ======= Contact Section ======= -->
-<section id="contact" class="padd-section"  data-aos="zoom-in" data-aos-delay="100">
+<section id="contact" class="padd-section" data-aos="zoom-in" data-aos-delay="100">
     <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
-            <h2>Contact</h2>
-            <p class="separator">Send To Us And We Will Contact You Soon
+            <h2> {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.TitleNameAr:
+                websiteSectionsDataResult[0]?.TitleNameEn}}</h2>
+            <p class="separator">
+                {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DescAr:
+                websiteSectionsDataResult[0]?.DescEn}}
             </p>
         </div>
         <div class="row justify-content-center">
 
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-4 col-md-4">
 
                 <div class="info">
                     <div>
-                        <i class="bi bi-geo-alt"></i>
-                        <p class="">Location : Tanta , Egypt</p>
+                        <i class="fa fa-location-arrow"></i>
+                        <p class="">{{"LOCATION"|translate}} :
+
+
+                            {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.LoactionAr:
+                            websiteSectionsDataResult[0]?.LoactionEn}}
+                        </p>
                     </div>
 
                     <div class="email">
-                        <i class="bi bi-envelope"></i>
-                        <p class="">Gmail : azmyahmedbasuonygmail.com</p>
-                    </div>
+                        <i class="fa fa-envelope"></i>
+                        <p class="">
+                            {{"EMAIL"|translate}} :
+                            {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.Email:
+                            websiteSectionsDataResult[0]?.Email}}
 
+                        </p>
+                    </div>
                     <div>
-                        <i class="bi bi-phone "></i>
-                        <p class="">Whatsapp : 01004303936</p>
+                        <i class="fa fa-whatsapp"></i>
+                        <p class="">
+                            {{"WHATSAPP"|translate}}
+                            : {{websiteSectionsDataResult[0].WhatApp}}
+
+                        </p>
+                    </div>
+                    <div>
+                        <i class="fa fa-comment-o"></i>
+                        <p class="">
+                            {{"MESSENGER"|translate}}
+                            : {{websiteSectionsDataResult[0].Messenger}}
+
+                        </p>
                     </div>
                 </div>
 
-                <div class="social-links">
-                    <a aria-label="Read more about me" target="_blank" href="https://x.com/rgfdgvfdyazoma"
-                        class="twitter"><i class="fa fa-twitter social-links-icons"></i></a>
-                    <a aria-label="Read more about me" target="_blank"
-                        href="https://www.facebook.com/profile.php?id=100015169905913" class="facebook"><i
-                            class="fa fa-facebook fa-2x social-links-icons"></i></a>
-                    <a aria-label="Read more about me" target="_blank"
-                        href="https://www.linkedin.com/in/azmy-ahmed-5197bb196/" class="linkedin"><i
-                            class="fa fa-linkedin fa-2x social-links-icons"></i></a>
-                    <a aria-label="Read more about me" target="_blank"
-                        href="https://www.linkedin.com/in/azmy-ahmed-5197bb196/" class="linkedin"><i
-                            class="fa fa-whatsapp fa-2x social-links-icons"></i></a>
-                </div>
             </div>
 
-            <div class="col-lg-5 col-md-8">
+            <div class="col-lg-6 col-md-8">
                 <div class="form">
                     <form (ngSubmit)="sendEmail($event)" class="php-email-form" #emailForm="ngForm">
                         <div class="form-group">

@@ -5,6 +5,9 @@
     "LINKEDIN":"LinkeIn",
     "WHATSAPP":"Whats App",
     "TWITTER":"Twitter",
-    "ASK":"Ask"
+    "ASK":"Ask",
+    "LOCATION": "Location",
+    "EMAIL": "Email",
+    "MESSENGER": "Messenger"
 
 }
