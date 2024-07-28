@@ -1,22 +1,21 @@
 {
     "BOOKDEMO": "Book Demo",
     "LIVEVIEW": "Live View",
-    "FACEBOOK":"FaceBook",
-    "LINKEDIN":"LinkeIn",
-    "WHATSAPP":"Whats App",
-    "TWITTER":"Twitter",
-    "ASK":"Ask",
+    "FACEBOOK": "FaceBook",
+    "LINKEDIN": "LinkeIn",
+    "WHATSAPP": "Whats App",
+    "TWITTER": "Twitter",
+    "ASK": "Ask",
     "LOCATION": "Location",
     "EMAIL": "Email",
     "MESSENGER": "Messenger",
-    "BOOKAS":"Book As",
-    "FULLNAME":"Full Name",
-    "ADDRESS":"Address",
-    "PHONENUMBER":"Phone Number",
-    "PLEASECOMPLETEDATA":"Please Complete Data",
-    "ALERT":"Alert"
-
-
-
-
+    "BOOKAS": "Book As",
+    "FULLNAME": "Full Name",
+    "ADDRESS": "Address",
+    "PHONENUMBER": "Phone Number",
+    "PLEASECOMPLETEDATA": "Please Complete Data",
+    "ALERT": "Alert",
+    "SIGNUP": "Sign Up",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout"
 }

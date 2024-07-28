@@ -14,5 +14,8 @@
     "ADDRESS": "العنوان بالكامل",
     "PHONENUMBER": "رقم الهاتف",
     "PLEASECOMPLETEDATA": "من فضلك اكمل البيانات",
-    "ALERT":"تنبية"
+    "ALERT":"تنبية",
+    "SIGNUP":"تسجيل دخول",
+    "LOGIN":"دخول",
+    "LOGOUT":"تسجيل خروج"
 }
