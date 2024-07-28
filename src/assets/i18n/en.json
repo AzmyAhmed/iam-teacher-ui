@@ -8,6 +8,15 @@
     "ASK":"Ask",
     "LOCATION": "Location",
     "EMAIL": "Email",
-    "MESSENGER": "Messenger"
+    "MESSENGER": "Messenger",
+    "BOOKAS":"Book As",
+    "FULLNAME":"Full Name",
+    "ADDRESS":"Address",
+    "PHONENUMBER":"Phone Number",
+    "PLEASECOMPLETEDATA":"Please Complete Data",
+    "ALERT":"Alert"
+
+
+
 
 }

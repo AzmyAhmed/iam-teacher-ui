@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, ReactiveFormsModule, FormControl, Validators } 
 import { IamteacherFormsService } from '../../service/iamteacher-forms.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-forms',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,TranslateModule
   ],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'

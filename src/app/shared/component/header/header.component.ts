@@ -54,7 +54,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this._headerSer.sysLinksLoad(this.sysLinks)
         .pipe(takeUntil(this.stream))
         .subscribe((res: any) => {
-          console.log("User Data From Db in Login" + res)
           if (res.azmestic1 && res.azmestic1.length > 0) {
             // this.dbResponse = res.Value.Table[0];
             this.sidNavLinks = res.azmestic1;

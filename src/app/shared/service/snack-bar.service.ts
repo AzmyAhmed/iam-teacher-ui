@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SnackBarService {
-   snackBarClass = '';
+  snackBarClass = '';
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar, public translate: TranslateService) { }
 
   // db validations 26-7-2024
   showDbSucessSnackBar(message: string, action: string) {
@@ -24,9 +25,9 @@ export class SnackBarService {
     this.snackBarClass = 'error-snackbar';
 
     this._snackBar.open(message, action, {
-     duration: 2500,
+      duration: 3500,
       horizontalPosition: 'start', // or 'start', 'end'
-      verticalPosition: 'top',
+      verticalPosition: 'bottom',
       panelClass: [this.snackBarClass]
       // or 'bottom'
     });
@@ -64,13 +65,15 @@ export class SnackBarService {
     });
   }
   showErrorSnackBar(message: string, action: string) {
-    this.snackBarClass = 'info-snackbar';
-
-    this._snackBar.open(message, action, {
-      duration: 2500,
-      horizontalPosition: 'center', // or 'start', 'end'
-      verticalPosition: 'bottom', // or 'bottom'
-      panelClass: [this.snackBarClass]
+    this.translate.get(message).subscribe(translatedMessage => {
+      this.translate.get(action).subscribe(translatedAction => {
+        this._snackBar.open(translatedMessage, translatedAction, {
+          duration: 2500,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar']
+        });
+      });
     });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, input, TemplateRef, ViewChild } from '@angular/core';
 import { WebsiteBookdemoComponent } from "../website-bookdemo/website-bookdemo.component";
 import { SharedModule } from "../../shared/shared.module";
 import { CommonModule } from '@angular/common';
@@ -20,34 +20,18 @@ import { WebsiteSectionsDataService } from '../website-sections-data.service';
 export class WebsiteFirstContentComponent {
   componentTitle: string = ''
   targetComponent: string = '';
-  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
-  websiteSectionsDataResult: any[] = []
-  socialMediaLinks: any[] = []
+  @Input() firstContent: any = [];
+  @Input() socialMediaContent: any = [];
   @ViewChild(ModalComponent) modal!: ModalComponent;
   @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
   stream: Subject<void> = new Subject();
-  constructor(private _WebsiteSectionsDataService: WebsiteSectionsDataService, public translate: TranslateService) {
-    this.Website_Sections_DataLoad();
-  }
-  Website_Sections_DataLoad() {
-    this.websiteSectionsDataObj.App_Links_Stp = 29;
-    this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.websiteSectionsDataObj)
-      .pipe(takeUntil(this.stream))
-      .subscribe((res: any) => {
-        if (res.azmestic1 && res.azmestic1.length > 0) {
-          this.websiteSectionsDataResult = res.azmestic1;
-        }
-        if (res.azmestic2 && res.azmestic2.length > 0) {
-          this.socialMediaLinks = res.azmestic2;
-        }
-      }
-        ,
-        error => {
-        }
+  constructor(public translate: TranslateService) {
+    if (this.firstContent.length == 0) {
+      this.firstContent = sessionStorage.getItem("firstContent");
+      this.socialMediaContent = sessionStorage.getItem("socialMediaContent");
 
-      );
+    }
   }
-
 
   //Sof  Modal Area =====================================18-7-2024 Azmestic============================
   openModalTemplate(targetComponent: string, componentTitle: string) {

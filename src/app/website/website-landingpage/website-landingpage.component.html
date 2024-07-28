@@ -1,25 +1,26 @@
 <!-- ======= Hero Section ======= -->
-<app-website-first-content></app-website-first-content>
+<app-website-first-content [firstContent]="firstContent"
+  [socialMediaContent]="socialMediaContent"></app-website-first-content>
 <main id="main">
   <!-- ======= Get about Section ======= -->
-  <app-website-aboutus></app-website-aboutus>
+  <app-website-aboutus [websiteSectionsDataResult]="aboutContent"></app-website-aboutus>
   <!-- End Get about Section -->
   <!-- ======= Features Section ======= -->
-  <app-website-features></app-website-features>
+  <app-website-features [websiteSectionsDataResult]="featuresContent"></app-website-features>
   <!-- End Features Section -->
   <!-- ======= Clients Section ======= -->
-  <app-website-clients></app-website-clients>
+  <app-website-clients [appSectionsDataResult]="clientsContent"></app-website-clients>
   <!-- End Clients Section -->
-  <app-pricing></app-pricing>
+  <app-pricing [pricingPlans]="pricingContent"></app-pricing>
   <!-- ======= FaQS Section ======= -->
-  <app-website-faqs></app-website-faqs>
+  <app-website-faqs [websiteSectionsDataResult]="faqContent"></app-website-faqs>
   <!-- ======= Team Section ======= -->
-  <app-website-team></app-website-team>
+  <app-website-team [websiteSectionsDataResult]="teamContent"></app-website-team>
   <!-- End Team Section -->
 
   <!-- End Testimonials Section -->
   <!-- ======= Contact Section ======= -->
-  <app-website-contactus></app-website-contactus>
+  <app-website-contactus [websiteSectionsDataResult]="contactContent"></app-website-contactus>
   <!-- ======= Last Section ======= -->
-  <app-website-last-content></app-website-last-content>
+  <app-website-last-content [websiteSectionsDataResult]="lastContent"></app-website-last-content>
 </main><!-- End #main -->

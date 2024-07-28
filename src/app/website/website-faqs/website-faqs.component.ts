@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 import { WebsiteBookdemoComponent } from "../website-bookdemo/website-bookdemo.component";
 import { SharedModule } from "../../shared/shared.module";
 import { CommonModule } from '@angular/common';
@@ -22,27 +22,23 @@ interface FAQ {
   styleUrl: './website-faqs.component.css'
 })
 export class WebsiteFaqsComponent {
-  componentTitle: string = ''
-  targetComponent: string = '';
-  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
-  websiteSectionsDataResult: any[] = []
-  socialMediaLinks: any[] = []
-  @ViewChild(ModalComponent) modal!: ModalComponent;
-  @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
+  @Input() websiteSectionsDataResult: any[] = []
   stream: Subject<void> = new Subject();
+  constructor(public translate: TranslateService, private _WebsiteSectionsDataService: WebsiteSectionsDataService) {
+    if (this.websiteSectionsDataResult.length == 0) {
+      this.Website_Sections_DataLoad();
+    }
 
-  constructor(private _WebsiteSectionsDataService: WebsiteSectionsDataService, public translate: TranslateService) {
-    this.Website_Sections_DataLoad();
   }
+  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
   Website_Sections_DataLoad() {
     this.websiteSectionsDataObj.App_Links_Stp = 33;
     this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.websiteSectionsDataObj)
       .pipe(takeUntil(this.stream))
       .subscribe((res: any) => {
-        if (res.azmestic1 && res.azmestic1.length > 0) {
-          this.websiteSectionsDataResult = res.azmestic1;
+        if (res.azmestic9 && res.azmestic9.length > 0) {
+          this.websiteSectionsDataResult = res.azmestic9;
         }
-
       }
         ,
         error => {
@@ -50,7 +46,4 @@ export class WebsiteFaqsComponent {
 
       );
   }
-
-
-
 }

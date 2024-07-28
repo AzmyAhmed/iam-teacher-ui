@@ -5,12 +5,12 @@
             <div class="row ">
                 <div class="col-md-6 m-5">
                     <h1>
-                        {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DescAr:
-                        websiteSectionsDataResult[0]?.DescEn}}
+                        {{translate.currentLang=='ar'?firstContent[0]?.DescAr:
+                        firstContent[0]?.DescEn}}
                     </h1>
                     <h2>
-                        {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DetailAr:
-                        websiteSectionsDataResult[0]?.DetailEn}}
+                        {{translate.currentLang=='ar'?firstContent[0]?.DetailAr:
+                        firstContent[0]?.DetailEn}}
                     </h2>
                     <a class="btn btn-sm btn-success m-2" (click)="openModalTemplate('bookDemo','BOOKDEMO')"><i
                             class="fa fa-play-circle-o" aria-hidden="true"></i>
@@ -29,13 +29,13 @@
         </div>
     </div>
 </section><!-- End Hero Section -->
-<div class="btns text-center mt-3 text-muted p-2 " *ngIf="socialMediaLinks.length>0">
-    <div class="btns text-center mt-3 text-muted p-2 " *ngIf="socialMediaLinks.length>0">
-        <a [href]="socialMediaLinks[0].FaceBookLink" target="_blank" class="mx-2"><i
+<div class="btns text-center mt-3 text-muted p-2 " *ngIf="socialMediaContent.length>0">
+    <div class="btns text-center mt-3 text-muted p-2 " *ngIf="socialMediaContent.length>0">
+        <a [href]="socialMediaContent[0].FaceBookLink" target="_blank" class="mx-2"><i
                 class="fa fa-facebook fa-2x"></i>FaceBook</a>
-        <a [href]="socialMediaLinks[0].TwitterLink" target="_blank" class="mx-2"><i
+        <a [href]="socialMediaContent[0].TwitterLink" target="_blank" class="mx-2"><i
                 class="fa fa-linkedin fa-2x"></i>LinkedIn</a>
-        <a [href]="socialMediaLinks[0].LinkedInLink" target="_blank" class="mx-2"><i
+        <a [href]="socialMediaContent[0].LinkedInLink" target="_blank" class="mx-2"><i
                 class="fa fa-twitter fa-2x"></i>Twitter</a>
     </div>
 </div>

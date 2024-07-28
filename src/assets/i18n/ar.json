@@ -8,5 +8,11 @@
     "ASK": "اسأل",
     "LOCATION": "الموقع",
     "EMAIL": "الايميل",
-    "MESSENGER": "ماسنجر"
+    "MESSENGER": "ماسنجر",
+    "BOOKAS": "حجز ك",
+    "FULLNAME": "الأسم بالكامل",
+    "ADDRESS": "العنوان بالكامل",
+    "PHONENUMBER": "رقم الهاتف",
+    "PLEASECOMPLETEDATA": "من فضلك اكمل البيانات",
+    "ALERT":"تنبية"
 }

@@ -73,35 +73,27 @@
                 "inputType": "password",
                 "required": true
             }
-                
         ]
     },
     "bookDemo": {
         "fields": [
             {
-                "name": "fullName",
-                "label": "Full Name",
+                "name": "FullName",
+                "label": "FULLNAME",
                 "type": "input",
                 "inputType": "text",
                 "required": true
             },
             {
-                "name": "phoneNumber",
-                "label": "Phone Number",
+                "name": "PhoneNumber",
+                "label": "PHONENUMBER",
                 "type": "input",
                 "inputType": "text",
                 "required": true
             },
             {
-                "name": "email",
-                "label": "Email",
-                "type": "input",
-                "inputType": "email",
-                "required": false
-            },
-            {
-                "name": "address",
-                "label": "Address",
+                "name": "Address",
+                "label": "ADDRESS",
                 "type": "input",
                 "inputType": "text",
                 "required": true
@@ -176,7 +168,6 @@
     },
     "messagetToGuardian": {
         "fields": [
-            
             {
                 "name": "phoneNumber",
                 "label": "Phone Number ",

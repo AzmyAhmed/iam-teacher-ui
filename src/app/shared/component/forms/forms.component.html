@@ -1,49 +1,49 @@
 <form [formGroup]="form" class="container mt-1 row" data-aos="zoom-in" data-aos-delay="100">
-   
+
     <div *ngFor="let field of fields" [class]="gridClass">
         <ng-container [ngSwitch]="field.type">
             <div *ngSwitchCase="'input'" class="form-group">
-                <span class="form-label">{{field.label}}</span>
+                <span class="form-label"> {{field.label|translate}} </span>
                 <input [type]="field.inputType" formControlName="{{field.name}}" class="form-control"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label}} is required.
+                    {{field.label|translate}} is required.
                 </div>
             </div>
             <div *ngSwitchCase="'radio'" class="form-group " style="display: inline-block;">
-                <span class="form-label">{{field.label}}</span>
+                <span class="form-label">{{field.label|translate}}</span>
                 <div *ngFor="let option of field.options" class="form-check">
                     <input type="radio" [value]="option" formControlName="{{field.name}}" class="form-check-input"
                         [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
                     <span class="form-check-label">{{option}}</span>
                 </div>
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label}} is required.
+                    {{field.label|translate}} is required.
                 </div>
             </div>
             <div *ngSwitchCase="'checkbox'" class="form-group form-check">
                 <input type="checkbox" formControlName="{{field.name}}" class="form-check-input"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
-                <span class="form-check-label">{{field.label}}</span>
+                <span class="form-check-label">{{field.label|translate}}</span>
             </div>
             <div *ngSwitchCase="'textarea'" class="form-group form-check col-12">
                 <textarea class="form-control" id="exampleTextarea" rows="5" formControlName="{{field.name}}"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched"></textarea>
-                <span class="form-check-label">{{field.label}}</span>
+                <span class="form-check-label">{{field.label|translate}}</span>
 
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label}} is required.
+                    {{field.label|translate}} is required.
                 </div>
             </div>
             <div *ngSwitchCase="'select'">
-                <div class="form-check-label mb-1">{{field.label}}</div>
+                <div class="form-check-label mb-1">{{field.label|translate}}</div>
 
                 <select [formControlName]="field.name" class="form-select" aria-label="Default select example"
                     [required]="field.required">
                     <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
                 </select>
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label}} is required.
+                    {{field.label|translate}} is required.
                 </div>
             </div>
         </ng-container>

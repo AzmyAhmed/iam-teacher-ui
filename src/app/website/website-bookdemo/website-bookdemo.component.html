@@ -1,5 +1,4 @@
 <div *ngIf="showFormFalg==1">
-
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
         <div class="row">
             <!-- Image Column -->
@@ -9,25 +8,29 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="col-11 m-4">
-                            <strong class="m-2">
-                                      Book As
-                            </strong>
-                         <div>
-                           <select  class="form-select" aria-label="Default select example"
-                           >
-                            <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
-                        </select>
-                         </div> 
-                          </div>
-                        <app-forms formName="bookDemo" title="Book Demo" (formSubmit)="handleFormSubmit($event)"
+                            <span class="m-2">
+                                {{"BOOKAS" | translate}}
+                            </span>
+                            <div>
+                                <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="selectedValue" (change)="onSelectionChange()">
+                                    <option *ngFor="let option of options" [value]="option.Serial">
+                                        {{translate.currentLang=='ar'?option.NameAr:option.NameEn}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <app-forms formName="bookDemo" title="BOOKDEMO" (formSubmit)="handleFormSubmit($event)"
                             [gridClass]="'col-sm-6 mb-3'" iconClass="fa fa fa-bookmark-o"></app-forms>
                         <div class="m-1 text-center">
-                            <button class="btn btn-success mt-3" (click)="teacherBookDemo()">Book Demo</button>
+                            <button class="btn btn-success mt-3" (click)="teacherBookDemo()">
+                                {{"BOOKDEMO" |translate}}
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
 

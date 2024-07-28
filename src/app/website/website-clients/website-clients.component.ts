@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-website-clients',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './website-clients.component.css'
 })
 export class WebsiteClientsComponent {
-
+  @Input() appSectionsDataResult: any = [];
 }

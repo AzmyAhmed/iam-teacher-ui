@@ -182,7 +182,7 @@ body {
 
 .error-snackbar {
   .mdc-snackbar__surface {
-    background-color: rgb(182, 40, 40) !important;
+    background-color: rgb(35, 35, 35) !important;
     color: white !important;
     margin-top: 70px;
     /* Adjust text color if needed */
@@ -193,6 +193,7 @@ body {
     color: white;
     font-size: large;
   }
+  margin-top: 70px;
 
 }
 

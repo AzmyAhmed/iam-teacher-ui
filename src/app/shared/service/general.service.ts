@@ -1,82 +1,162 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Output } from '@angular/core';
-import { BehaviorSubject, catchError, finalize, map, Observable, tap } from 'rxjs';
+import { BehaviorSubject, catchError, finalize, map, Observable, switchMap, tap } from 'rxjs';
 import { ExceptionService } from './exception.service';
 import { SpinnerService } from './spinner.service';
-
-const apiUrl = 'http://localhost:5140/api';
+import { AccessToJsonService } from './access-to-json.service';
 @Injectable({
   providedIn: 'root'
 })
 
 export class GeneralService {
   showSpinner: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
+  fromJsonUrl: string = "assets/jsonFiles/apiUrl.json";
   headers = this.getHeader();
   urlData: any = {};
   homeDataJson: any;
   constructor(private http: HttpClient, private _exceptionService: ExceptionService,
-    public _spinner: SpinnerService
+    public _spinner: SpinnerService, private _acessToJson: AccessToJsonService
   ) {
-    this.getJSON().subscribe(data => {
-      console.log(data);
-      this.urlData = data;
-    });
-
-    if (!this.urlData) {
-      this.urlData = apiUrl;
-    }
-
   }
-  public getJSON(): Observable<any> {
-    return this.http.get("/assets/jsonFiles/apiUrl.json");
+  private getUrl(): Observable<any> {
+    return this.http.get(this.fromJsonUrl);
   }
-
   public getHomeJSON(): Observable<any> {
     return this.http.get("/assets/json/sectionDisplaySetting.json");
   }
 
 
-  generalPost(url: string, body: any) {
-    this.showSpinner.next(true);
-    this._spinner.show();
-    return this.http
-      .post(apiUrl + '/' + url, body, { headers: this.headers }).pipe(
-        map(response => {
-          let dbRes = <any>response;
-          if (dbRes) {
-            this.showSpinner.next(false);
+  // generalPost(url: string, body: any) {
+  //   this.showSpinner.next(true);
+  //   this._spinner.show();
+  //   return this.http
+  //     .post(this.urlData.apiUrl + '/' + url, body, { headers: this.headers }).pipe(
+  //       map(response => {
+  //         let dbRes = <any>response;
+  //         if (dbRes) {
+  //           this.showSpinner.next(false);
+  //           this._spinner.hide();
+
+  //         }
+  //         return dbRes;
+  //       }),
+  //       catchError(error => {
+  //         this._exceptionService.catchBadResponse
+  //         this.showSpinner.next(false)
+  //         this._spinner.hide();
+
+  //         return error
+  //       }),
+  //       finalize(() => {
+  //         this.showSpinner.next(false)
+  //         this._spinner.hide();
+  //       }
+
+  //       ));
+  // }
+
+  generalPost(url: string, body: any): Observable<any> {
+    if (this.urlData.apiUrl) {
+      this.showSpinner.next(true);
+      this._spinner.show();
+      return this.http
+        .post(this.urlData.apiUrl + '/' + url, body, { headers: this.headers }).pipe(
+          map(response => {
+            let dbRes = <any>response;
+            if (dbRes) {
+              this.showSpinner.next(false);
+              this._spinner.hide();
+
+            }
+            return dbRes;
+          }),
+          catchError(error => {
+            this._exceptionService.catchBadResponse
+            this.showSpinner.next(false)
             this._spinner.hide();
 
+            return error
+          }),
+          finalize(() => {
+            this.showSpinner.next(false)
+            this._spinner.hide();
           }
-          return dbRes;
+
+          ));
+    } else {
+      return this.getUrl().pipe(
+        switchMap((data) => {
+          this.urlData = data;
+          this.showSpinner.next(true);
+          this._spinner.show();
+          return this.http
+            .post(this.urlData.apiUrl + '/' + url, body, { headers: this.headers }).pipe(
+              map(response => {
+                let dbRes = <any>response;
+                if (dbRes) {
+                  this.showSpinner.next(false);
+                  this._spinner.hide();
+
+                }
+                return dbRes;
+              }),
+              catchError(error => {
+                this._exceptionService.catchBadResponse
+                this.showSpinner.next(false)
+                this._spinner.hide();
+
+                return error
+              }),
+              finalize(() => {
+                this.showSpinner.next(false)
+                this._spinner.hide();
+              }
+
+              ));
         }),
         catchError(error => {
-          this._exceptionService.catchBadResponse
-          this.showSpinner.next(false)
-          this._spinner.hide();
+          console.error('Error fetching URL or making PUT request', error);
+          throw error;
+        })
+      );
+    }
+  }
 
-          return error
+
+  // generalPut(url: string, body: any, id: number) {
+  //   return this.http.put(this.urlData.apiUrl + '/' + url + '/' + id, body, { headers: this.headers });
+  // }
+
+
+  generalPut(url: string, body: any, id: number): Observable<any> {
+    if (this.urlData) {
+      return this.http.put(this.urlData.apiUrl + '/' + url + '/' + id, body, { headers: this.headers });
+    } else {
+      return this.getUrl().pipe(
+        switchMap((data) => {
+          this.urlData = data;
+          return this.http.put(this.urlData.apiUrl + '/' + url + '/' + id, body, { headers: this.headers });
         }),
-        finalize(() => {
-          this.showSpinner.next(false)
-          this._spinner.hide();
-        }
-
-        ));
+        catchError(error => {
+          console.error('Error fetching URL or making PUT request', error);
+          throw error;
+        })
+      );
+    }
   }
 
-  generalPut(url: string, body: any, id: number) {
-    return this.http.put(apiUrl + '/' + url + '/' + id, body, { headers: this.headers });
-  }
+
   generalDelete(url: string, id: number) {
-    return this.http.delete(apiUrl + '/' + url + '/' + id, { headers: this.headers });
+    this.getUrl();
+    return this.http.delete(this.urlData.apiUrl + '/' + url + '/' + id, { headers: this.headers });
   }
   generalGet(url: string, id: number) {
-    return this.getWith(apiUrl + '/' + url + '/' + id)
+    this.getUrl();
+    return this.getWith(this.urlData.apiUrl + '/' + url + '/' + id)
   }
 
   getWith(url: string) {
+    this.getUrl();
     return this.http
       .get(url, { headers: this.headers }).pipe(
         map(response => {
