@@ -37,5 +37,11 @@
     "OPERATIONSUCCESS": "تم العملية بنجاح",
     "ERROR": "حدث خطا ما",
     "FILLREQUIRED": "أكمل البيانات الناقصة",
-    "ADMINLOGIN":"دخول الأدمن"
+    "ADMINLOGIN": "دخول الأدمن",
+    "ADMINLOGOUT": "خروج الأدمن",
+    "USERNAME": "اسم المستخدم",
+    "PASSWORD": "الرقم السري",
+    "WARN": "تحذير",
+    "USERNAMEINCORRECT": "اسم المستخدم غير صحيح",
+    "PASSWORDINCORRECT": "الرقم السري غير صحيح"
 }

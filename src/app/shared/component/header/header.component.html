@@ -20,11 +20,21 @@
             <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
         </a>
         <!-- admin Area -->
-        <a *ngIf="DevObj?.DevFlag==1" class=" d-inline-flex btn-sm   m-3 border mobileMode" 
-        (click)="teacherSignup()">
+        <a *ngIf="DevObj?.DevFlag==1 && fromModule=='website'" class=" d-inline-flex btn-sm   m-3 border mobileMode"
+            (click)="gotoAdminLogin()">
 
-            <span >
+            <span>
                 {{"ADMINLOGIN"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
+        <a *ngIf="DevObj?.DevFlag==1 && fromModule=='admin'" class=" d-inline-flex btn-sm   m-3 border mobileMode"
+            (click)="gotoAdminLogout()">
+
+            <span>
+                {{"ADMINLOGOUT"|translate}}
                 <i class="fa fa-user-secret">
                 </i>
             </span>

@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   currentLang: string = 'en';
   isDarkTheme = false;
   userData: any = {}
-  @Input() fromModule: string = '';
+  @Input() fromModule: string = 'website';
   @Input() fromJson: string = '';
   sidNavLinks: any = [];
   @ViewChild(ModalComponent) modal!: ModalComponent;
@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private themeService: ThemeService, private accessToJsonService: AccessToJsonService,
     public translate: TranslateService, private router: Router, private authService: TeacherAuthService, private sharedService: SharedService) {
     this.translate.setDefaultLang(this.currentLang);
+
   }
   ngOnInit(): void {
     this.getSidNavLinks();
@@ -50,7 +51,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.accessToJsonService.getLinks("assets/jsonFiles/Development/dev.json").subscribe(
       (data) => {
         this.DevObj = data[0];
-        console.log("Admin Is Active = ", this.DevObj)
+        if (this.DevObj.Admin == 1) {
+          sessionStorage.setItem("admin", JSON.stringify(this.DevObj));
+        } else {
+          sessionStorage.removeItem('admin');
+        }
       },
       (error) => {
         console.error('Error fetching JSON data', error);
@@ -122,6 +127,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
   goToWebsite() {
+    this.fromModule = 'website'
     this.router.navigate(['/website/website-landingpage'])
   }
   goTeacherProtofilio() {
@@ -132,7 +138,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['/website/website-signup'])
   }
   gotoAdminLogin() {
-
+    this.router.navigate(['/admin/admin-login'])
+  }
+  gotoAdminLogout() {
+    this.fromModule = 'website'
+    this.router.navigate(['/website/website-landingpage'])
   }
   //Sof  Modal Area =====================================18-7-2024 Azmestic============================
   openModalTemplate(targetComponent: string, componentTitle: string) {

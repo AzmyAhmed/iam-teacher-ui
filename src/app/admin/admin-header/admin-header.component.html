@@ -1,0 +1,75 @@
+<header class="t-header fixed-top d-flex d-inline-flex
+     align-items-center header-container justify-content-between t-responsive-header">
+    <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
+
+    <div class="d-inline-flex t-responsive-header">
+        <a class="t-lang m-3 " (click)="toggleLanguage()">
+            <span class=" pe-1">
+                <i class="fa fa-language t-lang-icon"></i>
+            </span>
+            <span>
+                {{"LANG"|translate}} </span>
+
+        </a>
+        <a class="t-mode m-3" (click)="switchTheme()">
+            <span class=" pe-1">
+                <i class="fa fa-moon-o t-mode-icon">
+                </i> </span>
+            <span>
+                {{"MODE"|translate}} </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm " (click)="gotoIamTeacherWebsite()">
+            <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
+        </a>
+
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+
+            <span>
+                {{"ADMINLOGOUT"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+
+            <span>
+                {{"WEBSITE"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+
+            <span>
+                {{"TEACHERPROTOFILIO"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+
+            <span>
+                {{"APPLICATION"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<aside class="side-nav">
+    <nav>
+        <ul>
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</aside>

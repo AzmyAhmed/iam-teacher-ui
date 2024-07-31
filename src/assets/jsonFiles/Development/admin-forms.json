@@ -1,0 +1,20 @@
+{
+    "admin-login": {
+        "fields": [
+            {
+                "name": "UserName",
+                "label": "USERNAME",
+                "type": "input",
+                "inputType": "text",
+                "required": true
+            },
+            {
+                "name": "Password",
+                "label": "PASSWORD",
+                "type": "input",
+                "inputType": "password",
+                "required": true
+            }
+        ]
+    }
+}

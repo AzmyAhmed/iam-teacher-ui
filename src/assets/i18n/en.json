@@ -35,7 +35,13 @@
     "QUESTION": "Question",
     "ENTERQUESTION": "Enter Question",
     "OPERATIONSUCCESS": "Operation Done Successfully",
-     "ERROR":"Some Thing Wrong",
-    "FILLREQUIRED":"COmplete Required Data",
-    "ADMINLOGIN":"Admin Login"
+    "ERROR": "Some Thing Wrong",
+    "FILLREQUIRED": "COmplete Required Data",
+    "ADMINLOGIN": "Admin Login",
+    "ADMINLOGOUT": "Admin Logout",
+    "USERNAME": "User Name",
+    "PASSWORD": "Password",
+    "WARN": "Warn",
+    "USERNAMEINCORRECT": "User Name Incorrect",
+    "PASSWORDINCORRECT": "Password Incorrect"
 }
