@@ -13,11 +13,7 @@ a {
 
 
 
-.warn-snackbar {
-  background-color: yellow;
-  color: black;
-  /* Adjust text color if needed */
-}
+
 
 /* Style the scrollbar track */
 ::-webkit-scrollbar-track {

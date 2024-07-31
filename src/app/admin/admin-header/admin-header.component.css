@@ -1,47 +1,78 @@
+header {
+  width: 100%;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
 
-  .logo img {
-    height: 40px;
-  }
-  
-  .header-icons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-icons button {
-    background: none;
-    border: none;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
-  
-  .side-nav {
-    width: 200px;
-    position: fixed;
-    top: 60px; /* Adjust based on your header height */
-    left: 0;
-    height: 100%;
-    background-color: #343a40;
-    padding-top: 1rem;
-  }
-  
-  .side-nav nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .side-nav nav ul li {
-    margin: 1rem 0;
-  }
-  
-  .side-nav nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
-  }
-  
-  .side-nav nav ul li a:hover {
-    background-color: #495057;
-  }
-  
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-icons button {
+  background: none;
+  border: none;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.side-naav {
+  width: 200px;
+  position: fixed;
+  top: 55px; /* Adjust based on your header height */
+  height: 100%;
+  background-color: #ffffff;
+  padding-top: 1rem;
+  border: 1px solid rgb(215, 215, 215);
+}
+
+.side-naav-left {
+  left: 0;
+  text-align: left !important;
+
+}
+
+.side-naav-right {
+  right: 0;
+  text-align: right !important;
+ 
+
+}
+
+.side-naav nav ul {
+  list-style: none;
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(129, 129, 129, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.side-naav nav ul li {
+  margin:1px;
+  border: 2px solid rgb(223, 224, 224);
+  border-radius: 3px;
+}
+
+.side-naav nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+
+}
+
+.side-naav nav ul li a:hover {
+  background-color: #96aeab;
+  color: white !important;
+  font-size: larger !important;
+}

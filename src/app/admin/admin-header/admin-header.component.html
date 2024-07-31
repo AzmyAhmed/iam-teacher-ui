@@ -32,7 +32,16 @@
             </span>
 
         </a>
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('admin')">
+
+            <span>
+                {{"ADMIN"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('website')">
 
             <span>
                 {{"WEBSITE"|translate}}
@@ -41,7 +50,7 @@
             </span>
 
         </a>
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('teacher-protofilio')">
 
             <span>
                 {{"TEACHERPROTOFILIO"|translate}}
@@ -50,7 +59,7 @@
             </span>
 
         </a>
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('teacher')">
 
             <span>
                 {{"APPLICATION"|translate}}
@@ -64,12 +73,37 @@
 
 </header>
 
-<aside class="side-nav">
+<aside class="side-naav" [ngClass]="{'side-naav-left': currentLang === 'ar', 'side-naav-right': currentLang === 'en'}">
+    <div>
+        <a class=" d-inline-flex btn-sm ">
+            <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
+        </a>
+    </div>
     <nav>
-        <ul>
-            <li><a routerLink="/home">Home</a></li>
-            <li><a routerLink="/about">About</a></li>
-            <li><a routerLink="/contact">Contact Us</a></li>
-        </ul>
+        <ul >
+        <li *ngFor="let link of sidNavLinks" (click)="onLinkClick(link)"><a [routerLink]="[link.RoutePath]"
+            routerLinkActive="active">
+          
+            <span class="sidenav-link-text">
+                {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
+            </span>
+            <i class="sidenav-link-icon" [class]="link.ClassName">
+            </i>
+        </a></li>
+   
+      </ul>
+
+        <!-- <div *ngFor="let link of sidNavLinks">
+            <a class="sidenav-nav-link applyDarkMode"
+             [routerLink]="[link.RoutePath]"
+              routerLinkActive="active"
+                aria-label="Read more about me" [routerLinkActiveOptions]="{exact:true}" (click)="onLinkClick(link)">
+                <i class="sidenav-link-icon" [class]="link.ClassName">
+                </i>
+                <span class="sidenav-link-text">
+                    {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
+                </span>
+            </a>
+        </div> -->
     </nav>
 </aside>

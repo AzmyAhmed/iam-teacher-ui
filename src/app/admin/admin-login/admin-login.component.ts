@@ -4,6 +4,7 @@ import { AdminFormsComponent } from "../admin-forms/admin-forms.component";
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SnackBarService } from '../../shared/service/snack-bar.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AdminAuthService } from '../services/admin-auth.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -15,7 +16,8 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class AdminLoginComponent {
   adminObj: any = {};
   @ViewChild(AdminFormsComponent) dynamicForm!: AdminFormsComponent;
-  constructor(public translate: TranslateService, private snack: SnackBarService, private router: Router) {
+  constructor(public translate: TranslateService, private authService: AdminAuthService, private snack: SnackBarService, private router: Router) {
+      this.translate.use('en')
     if (sessionStorage.getItem("admin")) {
       const adminString = sessionStorage.getItem("admin");
       this.adminObj = adminString ? JSON.parse(adminString) : null;
@@ -38,10 +40,16 @@ export class AdminLoginComponent {
       this.snack.showErrorSnackBar("PASSWORDINCORRECT", 'WARN');
       return
     }
-    this.router.navigate(['/admin/admin-dashboard'])
-
+    // Your login logic here
+    const token = 'sample-token'; // Get token from API
+    this.authService.login(token);
+    this.router.navigate(['/admin/admin-main/admin-dashboard']);
+    this.snack.showSucessSnackBar("LOGIN", 'LOGIN');
 
   }
+  gotoIamTeacherWebsite() {
+    this.router.navigate(['/website/website-landingpage']);
 
+  }
 
 }

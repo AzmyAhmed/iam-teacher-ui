@@ -10,4 +10,15 @@ export class AdminAuthService {
   isAuthenticated(): boolean {
     return sessionStorage.getItem('admin') !== null;
   }
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token'); // Adjust this logic based on your authentication mechanism
+  }
+
+  login(token: string): void {
+    localStorage.setItem('token', token);
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }
 }
