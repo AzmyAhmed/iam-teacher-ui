@@ -137,6 +137,7 @@ body {
   width: 60%;
   max-height: 500px;
   overflow-y: scroll;
+  z-index: 1000000;
 }
 
 /* Media query for screens with a max width of 300px */

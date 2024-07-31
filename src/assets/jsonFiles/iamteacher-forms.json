@@ -254,5 +254,16 @@
                 "required": false
             }
         ]
+    },
+    "websiteFaqs": {
+        "fields": [
+            {
+                "name": "Question",
+                "label": "QUESTION",
+                "type": "textarea",
+                "inputType": "text",
+                "required": true
+            }
+        ]
     }
 }

@@ -7,7 +7,7 @@
                 <input [type]="field.inputType" formControlName="{{field.name}}" class="form-control"
                     [class.is-invalid]="form.get(field.name)!.invalid && form.get(field.name)!.touched">
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label|translate}} is required.
+                    {{field.label|translate}} {{'ISREQUIRED'|translate}}
                 </div>
             </div>
             <div *ngSwitchCase="'radio'" class="form-group " style="display: inline-block;">
@@ -18,7 +18,7 @@
                     <span class="form-check-label">{{option}}</span>
                 </div>
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label|translate}} is required.
+                    {{field.label|translate}} {{'ISREQUIRED'|translate}}
                 </div>
             </div>
             <div *ngSwitchCase="'checkbox'" class="form-group form-check">
@@ -32,7 +32,7 @@
                 <span class="form-check-label">{{field.label|translate}}</span>
 
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label|translate}} is required.
+                    {{field.label|translate}} {{'ISREQUIRED'|translate}}
                 </div>
             </div>
             <div *ngSwitchCase="'select'">
@@ -43,7 +43,7 @@
                     <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
                 </select>
                 <div *ngIf="form.get(field.name)!.invalid && form.get(field.name)!.touched" class="invalid-feedback">
-                    {{field.label|translate}} is required.
+                    {{field.label|translate}} {{'ISREQUIRED'|translate}}
                 </div>
             </div>
         </ng-container>

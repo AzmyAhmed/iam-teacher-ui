@@ -12,7 +12,9 @@ export class Controller {
         Website_Trackig_Visits: `Website_Tracking_VisitsConroller`,
         Website_Sections_Data: `Website_Sections_DataConroller`,
         Website_BookDemo: `Website_BookDemoConroller`,
+        Website_ContactUs: `Website_ContactUsConroller`,
+        Website_Faqs: `Website_FaqsConroller`,
 
-
+        
     };
 }

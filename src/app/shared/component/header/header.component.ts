@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   linkNameEn: string = 'Dashboard'
   className: string = '';
   sysLinks: ISysLink = <ISysLink>{};
+  DevObj: any = {};
   constructor(private _headerSer: HeaderService, private _toaster: ToastService,
     private themeService: ThemeService, private accessToJsonService: AccessToJsonService,
     public translate: TranslateService, private router: Router, private authService: TeacherAuthService, private sharedService: SharedService) {
@@ -43,8 +44,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     this.getSidNavLinks();
+    this.getDevFlag();
   }
-
+  getDevFlag() {
+    this.accessToJsonService.getLinks("assets/jsonFiles/Development/dev.json").subscribe(
+      (data) => {
+        this.DevObj = data[0];
+        console.log("Admin Is Active = ", this.DevObj)
+      },
+      (error) => {
+        console.error('Error fetching JSON data', error);
+      }
+    );
+  }
 
 
 
@@ -118,6 +130,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   teacherSignup() {
     this.headerIsHiddenFlag = true;
     this.router.navigate(['/website/website-signup'])
+  }
+  gotoAdminLogin() {
+
   }
   //Sof  Modal Area =====================================18-7-2024 Azmestic============================
   openModalTemplate(targetComponent: string, componentTitle: string) {

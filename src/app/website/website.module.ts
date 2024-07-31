@@ -33,6 +33,7 @@ import { SelectOptionComponent } from "../shared/component/select-option/select-
 import { PricingComponent } from "./pricing/pricing.component";
 import { DeviceService } from '../shared/service/device.service';
 import { TrackingService } from '../shared/service/tracking.service';
+import { WebsiteContactusConfirmationComponent } from "./website-contactus-confirmation/website-contactus-confirmation.component";
 
 
 @NgModule({
@@ -71,8 +72,9 @@ import { TrackingService } from '../shared/service/tracking.service';
     WebsiteTeamComponent,
     WebsiteFaqsComponent,
     SelectOptionComponent,
-    PricingComponent
-  ],
+    PricingComponent,
+    WebsiteContactusConfirmationComponent
+],
   exports: [],
   providers: [TrackingService, DeviceService]
 })

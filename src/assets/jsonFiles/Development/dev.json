@@ -1,0 +1,12 @@
+[
+    {
+        "DevFlag": 1,
+        "StyleFlag": 1,
+        "Active": 1,
+        "Admin": 1,
+        "DefaultUSer": 1,
+        "UserId": 1,
+        "UserName": "admin",
+        "Password": 123456
+    }
+]

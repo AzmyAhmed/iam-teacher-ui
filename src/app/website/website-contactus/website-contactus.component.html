@@ -1,5 +1,5 @@
 <!-- ======= Contact Section ======= -->
-<section id="contact" class="padd-section" data-aos="zoom-in" data-aos-delay="100">
+<section id="contact" class="padd-section" data-aos="zoom-in" data-aos-delay="100" *ngIf="contactUsSerial==0">
     <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
             <h2> {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.TitleNameAr:
@@ -55,55 +55,87 @@
 
             <div class="col-lg-6 col-md-8">
                 <div class="form">
-                    <form (ngSubmit)="sendEmail($event)" class="php-email-form" #emailForm="ngForm">
+                    <!-- your-component.component.html -->
+                    <form [formGroup]="emailForm" (ngSubmit)="sendWebsite_ContactUs()" class="php-email-form">
                         <div class="form-group">
-                            <input type="text" name="user_name" class="form-control" id="name" placeholder="Your Name"
-                                required ngModel #userName="ngModel">
-                            <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+                            <input type="text" formControlName="FullName" class="form-control" id="fullName"
+                            placeholder="{{ 'FULLNAME' | translate }}"
+                                required>
+                            <div *ngIf="emailForm.get('FullName')?.invalid && (emailForm.get('FullName')?.dirty || emailForm.get('FullName')?.touched)"
                                 class="alert alert-danger">
-                                <div *ngIf="userName.errors?.['required']">
-                                    Name is required.
+                                <div *ngIf="emailForm.get('FullName')?.errors?.['required']">
+                                    
+                                    {{"FULLNAMEREQUIRED"|translate}}
+
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="email" class="form-control" name="user_email" id="email"
-                                placeholder="Your Email" required ngModel #userEmail="ngModel">
-                            <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)"
+                            <input type="email" formControlName="Email" class="form-control" id="email"
+                            placeholder="{{ 'EMAIL' | translate }}" required>
+                            <div *ngIf="emailForm.get('Email')?.invalid && (emailForm.get('Email')?.dirty || emailForm.get('Email')?.touched)"
                                 class="alert alert-danger">
-                                <div *ngIf="userEmail.errors?.['required']">
-                                    Email is required.
+                                <div *ngIf="emailForm.get('Email')?.errors?.['required']">
+                                    
+                                    {{"EMAILREQUIRED"|translate}}
+
                                 </div>
-                                <div *ngIf="userEmail.errors?.['email']">
-                                    Invalid email format.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                                required ngModel #subject="ngModel">
-                            <div *ngIf="subject.invalid && (subject.dirty || subject.touched)"
-                                class="alert alert-danger">
-                                <div *ngIf="subject.errors?.['required']">
-                                    Subject is required.
+                                <div *ngIf="emailForm.get('Email')?.errors?.['email']">
+                                    
+                                    {{"INVALIDEMAIL"|translate}}
+
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required
-                                ngModel #message="ngModel"></textarea>
-                            <div *ngIf="message.invalid && (message.dirty || message.touched)"
+                            <input type="text" formControlName="Address" class="form-control" id="address"
+                            placeholder="{{ 'ADDRESS' | translate }}" required>
+                            <div *ngIf="emailForm.get('Address')?.invalid && (emailForm.get('Address')?.dirty || emailForm.get('Address')?.touched)"
                                 class="alert alert-danger">
-                                <div *ngIf="message.errors?.['required']">
-                                    Message is required.
+                                <div *ngIf="emailForm.get('Address')?.errors?.['required']">
+                                    
+                                    {{"ADDRESSREQUIRED"|translate}}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" formControlName="PhoneNumber" class="form-control" id="phoneNumber"
+                            placeholder="{{ 'PHONENUMBER' | translate }}" required>
+                            <div *ngIf="emailForm.get('PhoneNumber')?.invalid && (emailForm.get('PhoneNumber')?.dirty || emailForm.get('PhoneNumber')?.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="emailForm.get('PhoneNumber')?.errors?.['required']">
+                                    {{"PHONENUMBERREQUIRED"|translate}}
+
+                                </div>
+                                <div *ngIf="emailForm.get('PhoneNumber')?.errors?.['pattern']">
+                                    
+
+                                    {{"INVALIDPHONENUMBER"|translate}}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea formControlName="Message" class="form-control" rows="5" id="message"
+                            placeholder="{{ 'MESSAGE' | translate }}" required></textarea>
+                            <div *ngIf="emailForm.get('Message')?.invalid && (emailForm.get('Message')?.dirty || emailForm.get('Message')?.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="emailForm.get('Message')?.errors?.['required']">
+                                    {{"MESSAGEISREQUIRED"|translate}}
+
                                 </div>
                             </div>
                         </div>
 
-                        <div class="text-center m-4"><button type="submit" id="sendMessage" aria-label="sendMessage"
-                                class="btn  contact-submit-button">Send
-                                Message</button></div>
+                        <div class="text-center m-4">
+                            <button type="submit" id="sendMessage" aria-label="sendMessage"
+                                class="btn contact-submit-button" [disabled]="emailForm.invalid">
+                                {{"SENDMESSAGE"|translate}}
+                            </button>
+                        </div>
                     </form>
+
 
                 </div>
             </div>
@@ -111,3 +143,7 @@
         </div>
     </div>
 </section>
+<!-- <section *ngIf="contactUsSerial>0">
+    <app-website-contactus-confirmation></app-website-contactus-confirmation>
+
+</section> -->

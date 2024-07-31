@@ -19,6 +19,19 @@
         <a class=" d-inline-flex btn-sm " (click)="gotoIamTeacherWebsite()">
             <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
         </a>
+        <!-- admin Area -->
+        <a *ngIf="DevObj?.DevFlag==1" class=" d-inline-flex btn-sm   m-3 border mobileMode" 
+        (click)="teacherSignup()">
+
+            <span >
+                {{"ADMINLOGIN"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
+
+
 
         <a *ngIf="fromModule=='teacher-protofilio'" class="desktopMode p-2 mt-3" aria-label="Read more about me">
             <strong class="p-1"> {{translate.currentLang=='ar'?' Mr / Mohamed Ahmed':' Mr / Mohamed

@@ -45,10 +45,10 @@ export class SnackBarService {
 
   // ui validations
   showSucessSnackBar(message: string, action: string) {
-    this.snackBarClass = 'error-snackbar';
+    this.snackBarClass = 'success-snackbar';
 
     this._snackBar.open(message, action, {
-      duration: 2500,
+      duration: 3500,
       horizontalPosition: 'center', // or 'start', 'end'
       verticalPosition: 'bottom', // or 'bottom'
       panelClass: [this.snackBarClass]
@@ -58,7 +58,7 @@ export class SnackBarService {
     this.snackBarClass = 'warn-snackbar';
 
     this._snackBar.open(message, action, {
-      duration: 2500,
+      duration: 3500,
       horizontalPosition: 'center', // or 'start', 'end'
       verticalPosition: 'bottom', // or 'bottom'
       panelClass: [this.snackBarClass]

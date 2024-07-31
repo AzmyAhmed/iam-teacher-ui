@@ -4,7 +4,7 @@
         <h2>{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
             this.websiteSectionsDataResult[0]?.TitleNameEn }}</h2>
 
-        <a class="btn btn-sm btn-success m-2 website-ask">{{"ASK"|translate}}
+        <a class="btn btn-sm btn-success m-2 website-ask" (click)="openModalTemplate('askWebsite','ASK')">{{"ASK"|translate}}
             <p class="separator">
 
                 {{translate.currentLang=='ar'?'تستطيع أن تسأل عن ما تشاء':'You Can Ask Us For Any Thing'}}
@@ -18,17 +18,36 @@
                 <div class="d-flex flex-column align-items-center">
                     <h3>{{ faq.Question }}</h3>
                     <p>{{ faq.Answer }}</p>
-                    <h4>Azmy Ahmed<span>manager</span></h4>
                 </div>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#faqCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon btn-success" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span>
+                {{"PREV"|translate}}
+            </span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#faqCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#faqCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon btn-success" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span>
+                {{"NEXT"|translate}}
+
+            </span>
         </button>
     </div>
 </section>
+<ng-template #modalTemplate>
+
+    <!-- ======================================teacher-protofilio area============================= -->
+    <div *ngIf="targetComponent=='askWebsite'">
+        <app-forms formName="websiteFaqs" title="ASK" (formSubmit)="handleFormSubmit($event)"
+        [gridClass]="'col-sm-6 mb-3'" iconClass="fa fa fa-bookmark-o"></app-forms>
+        <div class="m-1 text-center">
+            <button class="btn btn-success mt-3" (click)="sendQuestion()">
+                {{"ASK" |translate}}
+            </button>
+        </div>
+    </div>
+</ng-template>
+<app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
