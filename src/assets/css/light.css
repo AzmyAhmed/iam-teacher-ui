@@ -129,13 +129,16 @@ body {
 
   }
 }
-
+.action-icon{
+  color: white !important;
+  font-size: 27px !important;
+}
 .shared-modal {
   position: fixed;
   top: 65px;
   left: 25%;
   width: 60%;
-  max-height: 500px;
+  max-height: 700px;
   overflow-y: scroll;
   z-index: 1000000;
 }

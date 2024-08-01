@@ -8,7 +8,7 @@ import { WebsiteLiveViewComponent } from "../website-live-view/website-live-view
 import { AppSectionsDataService, Iapp_Sections_Data } from '../../shared/service/app-sections-data.service';
 import { Subject, takeUntil } from 'rxjs';
 import { SharedService } from '../../shared/service/shared.service';
-import { WebsiteSectionsDataService } from '../website-sections-data.service';
+import { IWebsite_Sections_Data, WebsiteSectionsDataService } from '../website-sections-data.service';
 import { AdminHeaderService } from '../../admin/admin-header/admin-header.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -41,10 +41,12 @@ export class WebsiteFirstContentComponent {
     this.adminLink = link ? JSON.parse(link) : null;
     console.log("adminLink To First Content = ", this.adminLink);
   }
-  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  websiteSectionsDataObj: IWebsite_Sections_Data = <IWebsite_Sections_Data>{}
   Website_Sections_DataLoad() {
     this.firstContent = [];
     this.aboutObj = {};
+    this.socialMediaObj = {};
+    this.socialMediaContent = [];
     this.websiteSectionsDataObj.App_Links_Stp = 29;
     this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.websiteSectionsDataObj)
       .pipe(takeUntil(this.stream))
@@ -103,12 +105,54 @@ export class WebsiteFirstContentComponent {
       .subscribe({
         next: (value) => {
           // Assuming value is an array
-          this.snack.showDbSucessSnackBar("OPERATIONSUCCESS", "ALERT");
-          this.Website_Sections_DataLoad();
+        
         },
         error: (err) => this.snack.showDbErrorSnackBar("ERROR", "ALERT")
         ,
-        complete: () => console.log('Observable completed')
+        complete: () => {
+          this.snack.showDbSucessSnackBar("OPERATIONSUCCESS", "ALERT");
+          this.Website_Sections_DataLoad();
+          this.modal.close();
+        }
+
+      });
+  }
+
+  onConfirmSocialMedia(componentTitle: string) {
+    if (componentTitle == 'ADD') {
+      this.socialMediaObj.Serial = -1;
+      this.socialMediaObj.ReturnCode = 20;
+      this.socialMediaObj.App_Links_Stp = 29
+      this.saveSocialMedia();
+      //ADD AREA
+    }
+    else if (componentTitle == 'EDIT') {
+      this.socialMediaObj.ReturnCode = 30;
+      this.saveSocialMedia();
+    }
+    else if (componentTitle == 'DELETE') {
+      this.socialMediaObj.ReturnCode = 40;
+      this.saveSocialMedia();
+
+    }
+    // Add your form submission logic here
+  }
+
+  saveSocialMedia() {
+    this._WebsiteSectionsDataService.Website_SocialMedia_DataSave(this.socialMediaObj)
+      .pipe(takeUntil(this.stream))
+      .subscribe({
+        next: (value) => {
+          // Assuming value is an array
+
+        },
+        error: (err) => this.snack.showDbErrorSnackBar("ERROR", "ALERT")
+        ,
+        complete: () => {
+          this.snack.showDbSucessSnackBar("OPERATIONSUCCESS", "ALERT");
+          this.Website_Sections_DataLoad();
+          this.modal.close();
+        }
 
       });
   }

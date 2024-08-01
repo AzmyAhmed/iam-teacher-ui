@@ -1,22 +1,85 @@
-<section>
-    <div class="t-last-section" data-aos="zoom-in" data-aos-delay="100">
+<section id="hero">
+    <!-- style="background:url(&quot;assets/images/slider/silde1.png&quot;);height: 75vh;direction: ltr !important;" -->
+    <div class="t-first-section" data-aos="zoom-out" data-aos-delay="100">
         <div>
+
             <div class="row ">
-                <div class="col-md-4 m-5">
+                <div class="col-md-6 m-5">
+                    <div class="d-inline-flex tex" *ngIf="adminLink&&adminLink.Serial==30">
+
+                        <a class="btn-sm  text-center mx-1" *ngIf="lastContent.length==0"
+                            (click)="openModalTemplate('editWebsiteAbout','ADD')">
+                            <i class="fa fa-plus-square-o action-icon"></i>
+                        </a>
+                        <a class="btn-sm  text-center mx-1" *ngIf="lastContent.length>0"
+                            (click)="openModalTemplate('editWebsiteAbout','EDIT')">
+                            <i class="fa fa-pencil-square-o action-icon"></i>
+                        </a>
+                        <a class="btn-sm  text-center" *ngIf="lastContent.length>0"
+                            (click)="openModalTemplate('editWebsiteAbout','DELETE')">
+                            <i class="fa fa-trash-o action-icon"></i>
+                        </a>
+
+                    </div>
                     <h1>
-                        {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DescAr:
-                        websiteSectionsDataResult[0]?.DescEn}}
+                        {{translate.currentLang=='ar'?lastContent[0]?.DescAr:
+                        lastContent[0]?.DescEn}}
                     </h1>
                     <h2>
-                        {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DetailAr:
-                        websiteSectionsDataResult[0]?.DetailEn}}
+                        {{translate.currentLang=='ar'?lastContent[0]?.DetailAr:
+                        lastContent[0]?.DetailEn}}
                     </h2>
-                </div>
-                <div class="col-md-8 m-5 preview-container">
-                    <!-- <iframe class="" src="//player.vimeo.com/video/268913506" height="340px" title="0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe> -->
                 </div>
             </div>
 
         </div>
     </div>
-</section>
+</section><!-- End Hero Section -->
+<!-- Sof Modal area  23-7-2024-->
+<ng-template #modalTemplate>
+    <!-- ======================================website area======================================= -->
+
+    <div *ngIf="targetComponent=='bookDemo'">
+        <app-website-bookdemo></app-website-bookdemo>
+    </div>
+    <div *ngIf="targetComponent=='liveView'">
+        <app-website-live-view [videoSrc]="aboutObj.ImgSrc"></app-website-live-view>
+
+    </div>
+    <div *ngIf="targetComponent=='editWebsiteAbout'">
+        <div class="container mt-4">
+            <form (ngSubmit)="onConfirm(componentTitle)">
+                <div class="form-group mb-3">
+                    <label for="description">{{"DESCRIPTIONAR"|translate}}</label>
+                    <textarea id="DescriptionAr" class="form-control" [(ngModel)]="aboutObj.DescAr" name="DescriptionAr"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description">{{"DESCRIPTIONEN"|translate}}</label>
+                    <textarea id="DescriptionEn" class="form-control" [(ngModel)]="aboutObj.DescEn" name="DescriptionEn"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="detail">{{"DETAILAR"|translate}}</label>
+                    <textarea id="DetailAr" class="form-control" [(ngModel)]="aboutObj.DetailAr" name="DetailAr"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="detail">{{"DETAILEN"|translate}}</label>
+                    <textarea id="DetailEn" class="form-control" [(ngModel)]="aboutObj.DetailEn" name="DetailEn"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="detail">{{"VEDIOLINK"|translate}}</label>
+                    <textarea id="ImgSrc" class="form-control" [(ngModel)]="aboutObj.ImgSrc" name="ImgSrc"
+                        rows="1"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">{{"CONFIRM"|translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-template>
+<app-modal [content]="modalTemplate" #Modal [title]="componentTitle"></app-modal>
+<!-- Eof Modal area  19-7-2024-->

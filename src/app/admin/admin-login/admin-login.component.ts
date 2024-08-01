@@ -43,7 +43,7 @@ export class AdminLoginComponent {
     // Your login logic here
     const token = 'sample-token'; // Get token from API
     this.authService.login(token);
-    this.router.navigate(['/admin/admin-main/admin-dashboard']);
+    this.router.navigate(['/admin/admin-main/website-first-content']);
     this.snack.showSucessSnackBar("LOGIN", 'LOGIN');
 
   }

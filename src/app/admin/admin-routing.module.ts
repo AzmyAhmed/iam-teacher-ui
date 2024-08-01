@@ -14,10 +14,10 @@ const routes: Routes = [
   {
     path: 'admin-main', component: AdminComponent, canActivate: [loginAuthGuard],
     children: [
-      { path: '', redirectTo: 'admin-dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'website-first-content', pathMatch: 'full' },
+      { path: 'website-first-content', component: WebsiteFirstContentComponent, data: { description: 'azmy ahmed software engineer' }, canActivate: [adminAuthGuard] },
       { path: 'admin-dashboard', component: AdminDashboardComponent, data: { description: 'azmy ahmed software engineer' }, canActivate: [adminAuthGuard] },
       { path: 'website-aboutus', component: WebsiteAboutusComponent, data: { description: 'azmy ahmed software engineer' }, canActivate: [adminAuthGuard] },
-      { path: 'website-first-content', component: WebsiteFirstContentComponent, data: { description: 'azmy ahmed software engineer' }, canActivate: [adminAuthGuard] },
       { path: 'website-last-content', component: WebsiteLastContentComponent, data: { description: 'azmy ahmed software engineer' }, canActivate: [adminAuthGuard] },
 
     ]

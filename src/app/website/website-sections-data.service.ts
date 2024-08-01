@@ -8,9 +8,13 @@ export interface IWebsite_Sections_Data {
   Serial?: number;
   UserId?: number;
   DescAr: string;
-  DescEn: string,
-  DetailAr: string,
-  DetailEn: string,
+  DescEn: string;
+  DetailAr: string;
+  DetailEn: string;
+  Link: string;
+  FaceBookLink: string;
+  LinkedInLink: string;
+  TwitterLink: string,
   IsActive?: number,
   Sort?: number,
   ImgSrc: string,
@@ -44,6 +48,12 @@ export class WebsiteSectionsDataService {
 
   }
 
+  Website_LastContent_DataSave(link: IWebsite_Sections_Data) {
+    var data =
+      this.http.generalPost(`${Website_Sections_Data}/Website_LastContent_DataSave`, link);
+    return data;
+
+  }
   Website_SocialMedia_DataSave(link: IWebsite_Sections_Data) {
     var data =
       this.http.generalPost(`${Website_Sections_Data}/Website_SocialMedia_DataSave`, link);
