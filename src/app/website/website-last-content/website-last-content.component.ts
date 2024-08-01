@@ -19,7 +19,28 @@ import { WebsiteSectionsDataService } from '../website-sections-data.service';
 })
 export class WebsiteLastContentComponent {
   @Input() websiteSectionsDataResult: any[] = []
+  stream: Subject<void> = new Subject();
+  constructor(public translate: TranslateService, private _WebsiteSectionsDataService: WebsiteSectionsDataService) {
+    if (this.websiteSectionsDataResult.length == 0) {
+      this.Website_Sections_DataLoad();
+    }
+  }
 
-  constructor(public translate: TranslateService) {
+  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  Website_Sections_DataLoad() {
+    this.websiteSectionsDataObj.App_Links_Stp = 30;
+    this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.websiteSectionsDataObj)
+      .pipe(takeUntil(this.stream))
+      .subscribe((res: any) => {
+        if (res.azmestic10 && res.azmestic10.length > 0) {
+          this.websiteSectionsDataResult = res.azmestic10;
+        }
+
+      }
+        ,
+        error => {
+        }
+
+      );
   }
 }

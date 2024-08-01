@@ -1,0 +1,8 @@
+:host {
+    display: block;
+    height: 100vh; /* Ensure the component takes the full height of the viewport */
+    background-image: url('/assets/jsonFiles/Development/images/login-bg.jpg'); /* Adjust the path as needed */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }

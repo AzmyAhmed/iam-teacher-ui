@@ -9,30 +9,61 @@ import { AppSectionsDataService, Iapp_Sections_Data } from '../../shared/service
 import { Subject, takeUntil } from 'rxjs';
 import { SharedService } from '../../shared/service/shared.service';
 import { WebsiteSectionsDataService } from '../website-sections-data.service';
+import { AdminHeaderService } from '../../admin/admin-header/admin-header.service';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { SnackBarService } from '../../shared/service/snack-bar.service';
 
 @Component({
   selector: 'app-website-first-content',
   standalone: true,
-  imports: [WebsiteBookdemoComponent, SharedModule, CommonModule, TranslateModule, WebsiteLiveViewComponent],
+  imports: [RouterModule, FormsModule, WebsiteBookdemoComponent, SharedModule, CommonModule, TranslateModule, WebsiteLiveViewComponent],
   templateUrl: './website-first-content.component.html',
   styleUrl: './website-first-content.component.css'
 })
 export class WebsiteFirstContentComponent {
   componentTitle: string = ''
   targetComponent: string = '';
+  adminLink: any = {}
   @Input() firstContent: any = [];
   @Input() socialMediaContent: any = [];
   @ViewChild(ModalComponent) modal!: ModalComponent;
   @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
   stream: Subject<void> = new Subject();
-  constructor(public translate: TranslateService) {
+  constructor(private snack: SnackBarService, public translate: TranslateService, private _WebsiteSectionsDataService: WebsiteSectionsDataService) {
     if (this.firstContent.length == 0) {
-      this.firstContent = sessionStorage.getItem("firstContent");
-      this.socialMediaContent = sessionStorage.getItem("socialMediaContent");
-
+      this.Website_Sections_DataLoad();
+      this.getLinkFromAdmin();
     }
   }
+  getLinkFromAdmin() {
+    const link = sessionStorage.getItem("linkFromAdmin");
+    this.adminLink = link ? JSON.parse(link) : null;
+    console.log("adminLink To First Content = ", this.adminLink);
+  }
+  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  Website_Sections_DataLoad() {
+    this.firstContent = [];
+    this.aboutObj = {};
+    this.websiteSectionsDataObj.App_Links_Stp = 29;
+    this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.websiteSectionsDataObj)
+      .pipe(takeUntil(this.stream))
+      .subscribe((res: any) => {
+        if (res.azmestic1 && res.azmestic1.length > 0) {
+          this.firstContent = res.azmestic1;
+          this.aboutObj = this.firstContent[0];
+        }
+        if (res.azmestic2 && res.azmestic2.length > 0) {
+          this.socialMediaContent = res.azmestic2;
+          this.socialMediaObj = res.azmestic2[0];
+        }
+      }
+        ,
+        error => {
+        }
 
+      );
+  }
   //Sof  Modal Area =====================================18-7-2024 Azmestic============================
   openModalTemplate(targetComponent: string, componentTitle: string) {
     this.targetComponent = targetComponent;
@@ -43,5 +74,42 @@ export class WebsiteFirstContentComponent {
     } else {
       console.error(' Modal component is not available');
     }
+  }
+  aboutObj: any = {};
+  socialMediaObj: any = {};
+  onConfirm(componentTitle: string) {
+    if (componentTitle == 'ADD') {
+      this.aboutObj.Serial = -1;
+      this.aboutObj.ReturnCode = 20;
+      this.aboutObj.App_Links_Stp = 29
+      this.saveAbout();
+      //ADD AREA
+    }
+    else if (componentTitle == 'EDIT') {
+      this.aboutObj.ReturnCode = 30;
+      this.saveAbout();
+    }
+    else if (componentTitle == 'DELETE') {
+      this.aboutObj.ReturnCode = 40;
+      this.saveAbout();
+
+    }
+    // Add your form submission logic here
+  }
+
+  saveAbout() {
+    this._WebsiteSectionsDataService.Website_FirstContent_DataSave(this.aboutObj)
+      .pipe(takeUntil(this.stream))
+      .subscribe({
+        next: (value) => {
+          // Assuming value is an array
+          this.snack.showDbSucessSnackBar("OPERATIONSUCCESS", "ALERT");
+          this.Website_Sections_DataLoad();
+        },
+        error: (err) => this.snack.showDbErrorSnackBar("ERROR", "ALERT")
+        ,
+        complete: () => console.log('Observable completed')
+
+      });
   }
 }

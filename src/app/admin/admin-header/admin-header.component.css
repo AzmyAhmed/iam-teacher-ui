@@ -28,13 +28,15 @@ header {
 }
 
 .side-naav {
-  width: 200px;
+  width: 220px;
   position: fixed;
   top: 55px; /* Adjust based on your header height */
-  height: 100%;
   background-color: #ffffff;
   padding-top: 1rem;
+  max-height: 95%;
   border: 1px solid rgb(215, 215, 215);
+  overflow-y: auto; /* Enable vertical scrolling */
+
 }
 
 .side-naav-left {
@@ -71,8 +73,71 @@ header {
 
 }
 
-.side-naav nav ul li a:hover {
+/* .side-naav nav ul li a:hover {
   background-color: #96aeab;
   color: white !important;
   font-size: larger !important;
+} */
+
+.side-naav-left.side-naav-closed {
+  transform: translateX(-100%);
+  display: block;
+  transition: 0.3s;
+}
+
+.side-naav-left.side-naav-open {
+  transform: translateX(0);
+  display: block;
+  transition: 0.3s;
+}
+
+.side-naav-right.side-naav-closed {
+  transform: translateX(100%);
+  display: block;
+  transition: 0.3s;
+}
+
+.side-naav-right.side-naav-open {
+  transform: translateX(0);
+  display: block;
+  transition: 0.3s;
+}
+/* Ensure the list items have proper spacing and alignment */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidenav-link-icon {
+  margin-right: 8px;
+}
+
+.sidenav-link-text {
+  font-size: 14px;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.nav-link.active {
+  background-color: #007bff !important;
+  color: white;
 }

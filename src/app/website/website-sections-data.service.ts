@@ -15,6 +15,7 @@ export interface IWebsite_Sections_Data {
   Sort?: number,
   ImgSrc: string,
   App_Links_Stp?: number;
+  ReturnCode?: number;
 }
 @Injectable({
   providedIn: 'root'
@@ -36,4 +37,17 @@ export class WebsiteSectionsDataService {
 
   }
 
+  Website_FirstContent_DataSave(link: IWebsite_Sections_Data) {
+    var data =
+      this.http.generalPost(`${Website_Sections_Data}/Website_FirstContent_DataSave`, link);
+    return data;
+
+  }
+
+  Website_SocialMedia_DataSave(link: IWebsite_Sections_Data) {
+    var data =
+      this.http.generalPost(`${Website_Sections_Data}/Website_SocialMedia_DataSave`, link);
+    return data;
+
+  }
 }

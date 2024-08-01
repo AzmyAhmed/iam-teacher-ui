@@ -43,5 +43,12 @@
     "PASSWORD": "Password",
     "WARN": "Warn",
     "USERNAMEINCORRECT": "User Name Incorrect",
-    "PASSWORDINCORRECT": "Password Incorrect"
+    "PASSWORDINCORRECT": "Password Incorrect",
+    "EDIT": "Edit",
+    "CONFIRM": "Confirm",
+    "DESCRIPTIONAR": "Arabic Description ",
+    "DESCRIPTIONEN": "English Description",
+    "DETAILAR": "Arabic Details",
+    "DETAILEN": "English Details",
+    "VEDIOLINK": "Vedio Link"
 }

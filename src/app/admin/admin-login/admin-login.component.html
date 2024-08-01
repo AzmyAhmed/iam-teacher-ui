@@ -1,11 +1,11 @@
-<div class="d-flex justify-content-center align-items-center ">
-    <div class="col-md-4 card vh-100 align-items-center align-content-center mt-5" >
-        <a class=" d-inline-flex btn-sm text-center" (click)="gotoIamTeacherWebsite()">
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-4 card align-items-center align-content-center ">
+        <a class="d-inline-flex btn-sm text-center" (click)="gotoIamTeacherWebsite()">
             <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
         </a>
         <div class="card-body">
             <div class="text-center">
-                <h2 class="mb-4">{{"ADMINLOGIN" |translate}}
+                <h2 class="mb-4">{{"ADMINLOGIN" | translate}}
                     <i class="fa fa-user-o"></i>
                 </h2>
             </div>
@@ -13,7 +13,7 @@
                 [gridClass]="'col-sm-12 mb-3'" (formSubmit)="handleFormSubmit($event)"></app-admin-forms>
             <div class="m-1 text-center">
                 <button class="btn btn-success" (click)="adminLogin()">
-                    {{"ADMINLOGIN"|translate}}
+                    {{"ADMINLOGIN" | translate}}
                 </button>
             </div>
         </div>

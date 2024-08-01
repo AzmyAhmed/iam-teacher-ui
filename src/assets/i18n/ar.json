@@ -43,5 +43,12 @@
     "PASSWORD": "الرقم السري",
     "WARN": "تحذير",
     "USERNAMEINCORRECT": "اسم المستخدم غير صحيح",
-    "PASSWORDINCORRECT": "الرقم السري غير صحيح"
+    "PASSWORDINCORRECT": "الرقم السري غير صحيح",
+    "EDIT": "تعديل",
+    "CONFIRM": "تأكيد",
+    "DESCRIPTIONAR": "الوصف بالعربي",
+    "DESCRIPTIONEN": "الوصف بالانجليزي",
+    "DETAILAR": "التفاصيل بالعربي",
+    "DETAILEN": "التفاصيل بالانجليزي",
+    "VEDIOLINK":"رابط الفيديو"
 }

@@ -38,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-left', // Set position to bottom-left
       // Other global options if needed

@@ -16,6 +16,10 @@ export class WebsiteAboutusComponent {
       this.Website_Sections_DataLoad();
     }
 
+
+  }
+  getLinkFromAdmin() {
+
   }
   websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
   stream: Subject<void> = new Subject();

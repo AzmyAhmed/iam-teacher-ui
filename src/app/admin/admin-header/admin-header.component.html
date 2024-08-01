@@ -3,6 +3,20 @@
     <!-- *ngIf="(userData?.UserType==1) &&userData.LoginStatus==1" -->
 
     <div class="d-inline-flex t-responsive-header">
+        <a class="t-lang m-3 " (click)="toggleSidNav()">
+            <span class=" pe-1">
+                <i class="fa fa-tasks t-lang-icon"></i>
+            </span>
+        </a>
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
+
+            <span>
+                {{"ADMINLOGOUT"|translate}}
+                <i class="fa fa-user-secret">
+                </i>
+            </span>
+
+        </a>
         <a class="t-lang m-3 " (click)="toggleLanguage()">
             <span class=" pe-1">
                 <i class="fa fa-language t-lang-icon"></i>
@@ -23,87 +37,76 @@
             <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
         </a>
 
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="gotoAdminLogout()">
 
-            <span>
-                {{"ADMINLOGOUT"|translate}}
-                <i class="fa fa-user-secret">
-                </i>
-            </span>
 
-        </a>
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('admin')">
-
-            <span>
-                {{"ADMIN"|translate}}
-                <i class="fa fa-user-secret">
-                </i>
-            </span>
-
-        </a>
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('website')">
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" [ngClass]="{ 'active': activeLink === 'website' }" (click)="getLinks('website')">
 
             <span>
                 {{"WEBSITE"|translate}}
-                <i class="fa fa-user-secret">
+                <i class="fa fa-globe">
                 </i>
             </span>
 
         </a>
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('teacher-protofilio')">
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" [ngClass]="{ 'active': activeLink === 'teacher-protofilio' }" (click)="getLinks('teacher-protofilio')">
 
             <span>
                 {{"TEACHERPROTOFILIO"|translate}}
-                <i class="fa fa-user-secret">
+                <i class="fa fa-user">
                 </i>
             </span>
 
         </a>
-        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" (click)="getLinks('teacher')">
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" [ngClass]="{ 'active': activeLink === 'teacher' }" (click)="getLinks('teacher')">
 
             <span>
                 {{"APPLICATION"|translate}}
+                <i class="fa fa-building">
+                </i>
+            </span>
+
+        </a>
+        <a class=" d-inline-flex btn-sm   m-3 border mobileMode" [ngClass]="{ 'active': activeLink === 'company' }" (click)="getLinks('company')">
+
+            <span>
+                {{"COMPANY"|translate}}
                 <i class="fa fa-user-secret">
                 </i>
             </span>
 
         </a>
-
     </div>
 
 </header>
 
-<aside class="side-naav" [ngClass]="{'side-naav-left': currentLang === 'ar', 'side-naav-right': currentLang === 'en'}">
-    <div>
-        <a class=" d-inline-flex btn-sm ">
-            <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
-        </a>
+<aside class="side-naav" [ngClass]="{
+  'side-naav-left': currentLang === 'en',
+  'side-naav-right': currentLang === 'ar',
+  'side-naav-open': showSideNavFlag,
+  'side-naav-closed': !showSideNavFlag
+}">
+    <div class="mx-5 p-2">
+        <a class="d-inline-flex btn-sm text-center">
+           
+                <i class="fa fa-plus">
+                </i>
+                {{"ADDLINK"|translate}}
+ </a>
     </div>
     <nav>
-        <ul >
-        <li *ngFor="let link of sidNavLinks" (click)="onLinkClick(link)"><a [routerLink]="[link.RoutePath]"
-            routerLinkActive="active">
+        <ul>
+            <li *ngFor="let link of sidNavLinks" class="d-flex justify-content-between align-items-center">
+              <div class="d-inline-flex align-items-center">
+                <a (click)="onLinkClick(link)" [routerLink]="[link.AdminRoutePath]" routerLinkActive="active" class="d-flex align-items-center">
+                  <i class="sidenav-link-icon" [class]="link.ClassName"></i>
+                  <span class="sidenav-link-text ">
+                    {{ translate.currentLang == 'ar' ? link.NameAr : link.NameEn }}
+                  </span>
+                </a>
+              </div>
+        
+            </li>
+          </ul>
           
-            <span class="sidenav-link-text">
-                {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
-            </span>
-            <i class="sidenav-link-icon" [class]="link.ClassName">
-            </i>
-        </a></li>
-   
-      </ul>
-
-        <!-- <div *ngFor="let link of sidNavLinks">
-            <a class="sidenav-nav-link applyDarkMode"
-             [routerLink]="[link.RoutePath]"
-              routerLinkActive="active"
-                aria-label="Read more about me" [routerLinkActiveOptions]="{exact:true}" (click)="onLinkClick(link)">
-                <i class="sidenav-link-icon" [class]="link.ClassName">
-                </i>
-                <span class="sidenav-link-text">
-                    {{translate.currentLang=='ar'?link.NameAr:link.NameEn}}
-                </span>
-            </a>
-        </div> -->
     </nav>
 </aside>
