@@ -85,60 +85,102 @@
 
     </div>
     <div *ngIf="targetComponent=='editWebsiteAbout'">
-        <div class="container mt-4">
+        <div class="container">
             <form (ngSubmit)="onConfirm(componentTitle)">
-                <div class="form-group mb-3">
+                <div class="form-group mb-2">
                     <label for="description">{{"DESCRIPTIONAR"|translate}}</label>
                     <textarea id="DescriptionAr" class="form-control" [(ngModel)]="aboutObj.DescAr" name="DescriptionAr"
                         rows="1"></textarea>
                 </div>
-                <div class="form-group mb-3">
+                <div class="form-group mb-2">
                     <label for="description">{{"DESCRIPTIONEN"|translate}}</label>
                     <textarea id="DescriptionEn" class="form-control" [(ngModel)]="aboutObj.DescEn" name="DescriptionEn"
                         rows="1"></textarea>
                 </div>
-                <div class="form-group mb-3">
+                <div class="form-group mb-2">
                     <label for="detail">{{"DETAILAR"|translate}}</label>
                     <textarea id="DetailAr" class="form-control" [(ngModel)]="aboutObj.DetailAr" name="DetailAr"
                         rows="1"></textarea>
                 </div>
-                <div class="form-group mb-3">
+                <div class="form-group mb-2">
                     <label for="detail">{{"DETAILEN"|translate}}</label>
                     <textarea id="DetailEn" class="form-control" [(ngModel)]="aboutObj.DetailEn" name="DetailEn"
                         rows="1"></textarea>
                 </div>
-                <div class="form-group mb-3">
+                <div class="form-group mb-2">
                     <label for="detail">{{"VEDIOLINK"|translate}}</label>
                     <textarea id="ImgSrc" class="form-control" [(ngModel)]="aboutObj.ImgSrc" name="ImgSrc"
                         rows="1"></textarea>
                 </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="aboutObj.BookDemoActive"
+                            name="DEMOACTIVE" />
+                        <label class="form-check-label" for="BookDemoActive">
+                            {{"DEMOACTIVE" | translate}}
+                        </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="aboutObj.LiveViewActive"
+                            name="LiveViewActive" />
+                        <label class="form-check-label" for="LiveViewActive">
+                            {{"LIVEVIEWACTIVE" | translate}}
+                        </label>
+                    </div>
+                </div>
+
+
                 <div class="text-center">
                     <button type="submit" class="btn btn-success">{{"CONFIRM"|translate}}</button>
                 </div>
+
             </form>
         </div>
     </div>
     <div *ngIf="targetComponent=='editWebsiteSocilaMedia'">
         <form (ngSubmit)="onConfirmSocialMedia(componentTitle)">
-            <div class="form-group mb-3">
+            <div class="form-group mb-2">
                 <label for="description">{{"WEBSITE"|translate}}</label>
                 <textarea id="WEBSITE" class="form-control" [(ngModel)]="socialMediaObj.Link" name="WEBSITE"
                     rows="1"></textarea>
             </div>
-            <div class="form-group mb-3">
+            <div class="form-group mb-2">
                 <label for="description">{{"FACEBOOK"|translate}}</label>
                 <textarea id="FACEBOOK" class="form-control" [(ngModel)]="socialMediaObj.FaceBookLink" name="FACEBOOK"
                     rows="1"></textarea>
             </div>
-            <div class="form-group mb-3">
+            <div class="form-group mb-2">
                 <label for="detail">{{"LINKEDIN"|translate}}</label>
                 <textarea id="LinkedInLink" class="form-control" [(ngModel)]="socialMediaObj.LinkedInLink"
                     name="LinkedInLink" rows="1"></textarea>
             </div>
-            <div class="form-group mb-3">
+            <div class="form-group mb-2">
                 <label for="detail">{{"TWITTER"|translate}}</label>
                 <textarea id="TwitterLink" class="form-control" [(ngModel)]="socialMediaObj.TwitterLink"
                     name="TwitterLink" rows="1"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="socialMediaObj.FaceBookActive"
+                        name="FaceBookActive" />
+                    <label class="form-check-label" for="FaceBookActive">
+                        {{"FaceBookActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-4">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="socialMediaObj.TwitterActive"
+                        name="TwitterActive" />
+                    <label class="form-check-label" for="TwitterActive">
+                        {{"TwitterActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-4">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="socialMediaObj.LinkedinActive"
+                        name="LinkedinActive" />
+                    <label class="form-check-label" for="LinkedinActive">
+                        {{"LinkedinActive" | translate}}
+                    </label>
+                </div>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">{{"CONFIRM"|translate}}</button>

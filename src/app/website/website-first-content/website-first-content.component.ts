@@ -100,12 +100,13 @@ export class WebsiteFirstContentComponent {
   }
 
   saveAbout() {
+
     this._WebsiteSectionsDataService.Website_FirstContent_DataSave(this.aboutObj)
       .pipe(takeUntil(this.stream))
       .subscribe({
         next: (value) => {
           // Assuming value is an array
-        
+
         },
         error: (err) => this.snack.showDbErrorSnackBar("ERROR", "ALERT")
         ,

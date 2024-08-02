@@ -14,10 +14,15 @@ export interface IWebsite_Sections_Data {
   Link: string;
   FaceBookLink: string;
   LinkedInLink: string;
-  TwitterLink: string,
-  IsActive?: number,
-  Sort?: number,
-  ImgSrc: string,
+  TwitterLink: string;
+  IsActive?: number;
+  BookDemoActive?: boolean;
+  LiveViewActive?: boolean;
+  FaceBookActive?: boolean;
+  TwitterActive?: boolean;
+  LinkedinActive?: boolean;
+  Sort?: number;
+  ImgSrc: string;
   App_Links_Stp?: number;
   ReturnCode?: number;
 }

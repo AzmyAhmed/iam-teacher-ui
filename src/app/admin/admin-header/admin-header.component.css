@@ -28,7 +28,7 @@ header {
 }
 
 .side-naav {
-  width: 220px;
+  width: 300px;
   position: fixed;
   top: 55px; /* Adjust based on your header height */
   background-color: #ffffff;
