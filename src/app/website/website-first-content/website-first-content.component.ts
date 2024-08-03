@@ -17,7 +17,8 @@ import { SnackBarService } from '../../shared/service/snack-bar.service';
 @Component({
   selector: 'app-website-first-content',
   standalone: true,
-  imports: [RouterModule, FormsModule, WebsiteBookdemoComponent, SharedModule, CommonModule, TranslateModule, WebsiteLiveViewComponent],
+  imports: [RouterModule, FormsModule, WebsiteBookdemoComponent, 
+    SharedModule, CommonModule, TranslateModule, WebsiteLiveViewComponent],
   templateUrl: './website-first-content.component.html',
   styleUrl: './website-first-content.component.css'
 })
@@ -30,7 +31,8 @@ export class WebsiteFirstContentComponent {
   @ViewChild(ModalComponent) modal!: ModalComponent;
   @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
   stream: Subject<void> = new Subject();
-  constructor(private snack: SnackBarService, public translate: TranslateService, private _WebsiteSectionsDataService: WebsiteSectionsDataService) {
+  constructor(private snack: SnackBarService, public translate: TranslateService, 
+    private _WebsiteSectionsDataService: WebsiteSectionsDataService) {
     if (this.firstContent.length == 0) {
       this.Website_Sections_DataLoad();
       this.getLinkFromAdmin();

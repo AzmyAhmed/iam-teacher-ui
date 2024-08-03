@@ -11,6 +11,8 @@ export interface ISysLink {
   Module: string;
   ClassName: string;
   RoutePath: string;
+  AdminRoutePath: string,
+  IsAdminActive?: number;
 }
 @Injectable({
   providedIn: 'root'

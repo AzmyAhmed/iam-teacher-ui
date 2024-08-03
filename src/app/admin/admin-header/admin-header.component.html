@@ -92,7 +92,7 @@
     <div class="mx-5 p-2">
         <a class="d-inline-flex btn-sm text-center">
 
-            <a class="btn-sm  text-center">
+            <a class="btn-sm  text-center" (click)="openModalTemplate('link','ADDLINK');onAddLink()">
                 <i class="fa fa-plus-square-o" style="color: #007bff;"></i>
                 {{"ADDLINK"|translate}}
 
@@ -113,10 +113,12 @@
                 </div>
                 <div class="d-inline-flex">
                     <a class="btn-sm  text-center mx-1">
-                        <i class="fa fa-pencil-square-o" style="color: #198754"></i>
+                        <i class="fa fa-pencil-square-o" style="color: #198754"
+                            (click)="openModalTemplate('link','EDITLINK');onEditLink(link)"></i>
                     </a>
                     <a class="btn-sm  text-center">
-                        <i class="fa fa-trash-o" style="color: #dc3545;"></i>
+                        <i class="fa fa-trash-o" style="color: #dc3545;"
+                            (click)="openModalTemplate('link','DELETELINK');onDeleteLink(link)"></i>
                     </a>
 
                 </div>
@@ -126,3 +128,74 @@
 
     </nav>
 </aside>
+<!-- Sof Modal area  23-7-2024-->
+<ng-template #modalTemplate>
+    <!-- ======================================website area======================================= -->
+    <div *ngIf="targetComponent=='link'">
+        <div class="container">
+            <form (ngSubmit)="saveLink()">
+                <div class="form-group mb-2">
+                    <label for="description">{{"NameAr"|translate}}</label>
+                    <textarea id="NameAr" class="form-control" [(ngModel)]="LinkData.NameAr" name="NameAr"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="description">{{"NameEn"|translate}}</label>
+                    <textarea id="NameEn" class="form-control" [(ngModel)]="LinkData.NameEn" name="NameEn"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="detail">{{"ClassName"|translate}}</label>
+                    <textarea id="ClassName" class="form-control" [(ngModel)]="LinkData.ClassName" name="ClassName"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="detail">{{"Sort"|translate}}</label>
+                    <input type="number" class="form-control" [(ngModel)]="LinkData.Sort" name="Sort">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="detail">{{"RoutePath"|translate}}</label>
+                    <textarea id="RoutePath" class="form-control" [(ngModel)]="LinkData.RoutePath" name="RoutePath"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="detail">{{"Module"|translate}}</label>
+                    <textarea id="Module" class="form-control" disabled [(ngModel)]="LinkData.Module" name="Module"
+                        rows="1"></textarea>
+                </div>
+
+                <div class="form-group mb-2">
+                    <label for="detail">{{"AdminRoutePath"|translate}}</label>
+                    <textarea id="AdminRoutePath" class="form-control" [(ngModel)]="LinkData.AdminRoutePath"
+                        name="AdminRoutePath" rows="1"></textarea>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="LinkData.IsAdminActive"
+                            name="IsAdminActive" />
+                        <label class="form-check-label" for="IsAdminActive">
+                            {{"IsAdminActive" | translate}}
+                        </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="LinkData.IsActive"
+                            name="IsActive" />
+                        <label class="form-check-label" for="IsActive">
+                            {{"IsActive" | translate}}
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">{{"CONFIRM"|translate}}</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</ng-template>
+<app-modal [content]="modalTemplate" #Modal [title]="componentTitle"></app-modal>
