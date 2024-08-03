@@ -13,7 +13,7 @@ export interface IWebsite_Sections_Data {
   DetailEn: string;
   TitleNameAr: string;
   TitleNameEn: string;
-  DefaultStp?:number;
+  DefaultStp?: number;
   Link: string;
   FaceBookLink: string;
   LinkedInLink: string;
@@ -71,6 +71,18 @@ export class WebsiteSectionsDataService {
   Website_About_DataSave(link: IWebsite_Sections_Data) {
     var data =
       this.http.generalPost(`${Website_Sections_Data}/Website_About_DataSave`, link);
+    return data;
+
+  }
+  Website_Feature_DataSave(link: IWebsite_Sections_Data) {
+    var data =
+      this.http.generalPost(`${Website_Sections_Data}/Website_Feature_DataSave`, link);
+    return data;
+
+  }
+  Website_Team_DataSave(link: IWebsite_Sections_Data) {
+    var data =
+      this.http.generalPost(`${Website_Sections_Data}/Website_Team_DataSave`, link);
     return data;
 
   }

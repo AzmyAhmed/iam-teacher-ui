@@ -2,18 +2,36 @@
 <div class="container mt-5" data-aos="zoom-in" data-aos-delay="100">
 
   <header class="pricing-header mt-5 text-center">
-    <h1>
 
+    <h1>
+      <a class="btn-sm  text-center mx-1 mt-5" (click)="openModalTemplate('feature','ADDFEATURE');onAddFeature()"
+        *ngIf="adminLink&&adminLink.Serial==3">
+        <i class="fa fa-plus-square-o" style="color: #007bff;font-size: x-large;"></i>
+      </a>
       {{translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:this.websiteSectionsDataResult[0]?.TitleNameEn}}
     </h1>
-  
-</header>
+
+  </header>
 
   <div class="row justify-content-center">
     <div class="col-md-6 col-lg-3 mb-4 d-flex align-items-stretch"
       *ngFor="let feature of websiteSectionsDataResult.slice(1); let i = index">
+
       <div class="card feature-card text-center flex-fill">
-        <div class="card-body d-flex flex-column">
+        <div class="d-inline-flex">
+          <a class="btn-sm  text-center mx-1 d-inline-flex"
+            *ngIf="websiteSectionsDataResult.length>0 && adminLink&&adminLink.Serial==3"
+            (click)="openModalTemplate('feature','EDITFEATURE');onEditFeature(feature)">
+            <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;"></i>
+          </a>
+          <a class="btn-sm  text-center d-inline-flex"
+            *ngIf="websiteSectionsDataResult.length>0 && adminLink&&adminLink.Serial==3"
+            (click)="openModalTemplate('feature','DELETEABOUT');onDeleteFeature(feature)">
+            <i class="fa fa-trash-o" style="color: #dc3545;font-size: x-large;"></i>
+          </a>
+        </div>
+
+        <div class="card-body d-flex flex-column d-inline-flex">
           <i class="{{ feature.ImgSrc }} fa-3x mb-3"></i>
           <h5 class="card-title"> {{translate.currentLang=='ar'?feature.TitleNameAr: feature.TitleNameEn }}</h5>
           <p class="card-text">{{translate.currentLang=='ar'?feature.DescAr: feature.DescEn }}</p>
@@ -22,3 +40,53 @@
     </div>
   </div>
 </div>
+
+<ng-template #modalTemplate>
+  <div *ngIf="targetComponent=='feature'">
+    <form (ngSubmit)="onConfirmFeatuer()">
+      <div class="form-group mb-2">
+        <label for="description">{{"TitleNameAr"|translate}}</label>
+        <textarea id="TitleNameAr" class="form-control" [(ngModel)]="FeatureObj.TitleNameAr" name="TitleNameAr"
+          rows="1"></textarea>
+      </div>
+      <div class="form-group mb-2">
+        <label for="description">{{"TitleNameEn"|translate}}</label>
+        <textarea id="TitleNameEn" class="form-control" [(ngModel)]="FeatureObj.TitleNameEn" name="TitleNameEn"
+          rows="1"></textarea>
+      </div>
+      <div class="form-group mb-2">
+        <label for="description">{{"DescAr"|translate}}</label>
+        <textarea id="DescAr" class="form-control" [(ngModel)]="FeatureObj.DescAr" name="DescAr" rows="3"></textarea>
+      </div>
+      <div class="form-group mb-2">
+        <label for="description">{{"DescEn"|translate}}</label>
+        <textarea id="DescEn" class="form-control" [(ngModel)]="FeatureObj.DescEn" name="DescEn" rows="3"></textarea>
+      </div>
+      <div class="form-group mb-2">
+        <label for="description">{{"ClassName"|translate}}</label>
+        <textarea id="ClassName" class="form-control" [(ngModel)]="FeatureObj.ImgSrc" name="ClassName" rows="1"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="FeatureObj.IsActive" name="IsActive" />
+          <label class="form-check-label" for="IsActive">
+            {{"IsActive" | translate}}
+          </label>
+        </div>
+        <div class="col-sm-6">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="FeatureObj.DefaultStp" name="DefaultStp" />
+          <label class="form-check-label" for="DefaultStp">
+            {{"DefaultStp" | translate}}
+          </label>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">{{"CONFIRM"|translate}}</button>
+
+      </div>
+    </form>
+  </div>
+
+</ng-template>
+<app-modal [content]="modalTemplate" #Modal [title]="componentTitle"></app-modal>

@@ -4,8 +4,14 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
 
-            <h2>{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
-                this.websiteSectionsDataResult[0]?.TitleNameEn }}</h2>
+            <h2>
+                <a class="btn-sm  text-center mx-1 mt-5" (click)="openModalTemplate('team','ADDTEAM');onAddTeam()"
+                    *ngIf="adminLink&&adminLink.Serial==8">
+                    <i class="fa fa-plus-square-o" style="color: #007bff;font-size: x-large;"></i>
+                </a>
+                {{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
+                this.websiteSectionsDataResult[0]?.TitleNameEn }}
+            </h2>
             <p class="separator">{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.DescAr:
                 this.websiteSectionsDataResult[0]?.DescEn }}</p>
         </div>
@@ -14,6 +20,18 @@
 
             <div class="col-md-6 col-md-4 col-lg-3" *ngFor="let result of websiteSectionsDataResult" data-aos="zoom-in"
                 data-aos-delay="100">
+                <div class="d-inline-flex">
+                    <a class="btn-sm  text-center mx-1 d-inline-flex"
+                        *ngIf="websiteSectionsDataResult.length>0 && adminLink&&adminLink.Serial==8"
+                        (click)="openModalTemplate('team','EDITteam');onEditTeam(result)">
+                        <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;"></i>
+                    </a>
+                    <a class="btn-sm  text-center d-inline-flex"
+                        *ngIf="websiteSectionsDataResult.length>0 && adminLink&&adminLink.Serial==8"
+                        (click)="openModalTemplate('team','DELETEABOUT');onDeleteTeam(result)">
+                        <i class="fa fa-trash-o" style="color: #dc3545;font-size: x-large;"></i>
+                    </a>
+                </div>
                 <div class="team-block bottom">
                     <img [src]="result.ImgSrc" class="img-responsive" alt="img">
                     <div class="team-content">
@@ -36,3 +54,88 @@
         </div>
     </div>
 </section><!-- End Team Section -->
+
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='team'">
+        <form (ngSubmit)="onConfirmTeam()">
+            <div class="form-group mb-2">
+                <label for="description">{{"DetailAr"|translate}}</label>
+                <textarea id="DetailAr" class="form-control" [(ngModel)]="TeamObj.DetailAr" name="DetailAr"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DetailEn"|translate}}</label>
+                <textarea id="DetailEn" class="form-control" [(ngModel)]="TeamObj.DetailEn" name="DetailEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="TitleNameAr">{{"TitleNameAr"|translate}}</label>
+                <textarea id="TitleNameAr" class="form-control" [(ngModel)]="TeamObj.TitleNameAr" name="TitleNameAr"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"TitleNameEn"|translate}}</label>
+                <textarea id="TitleNameEn" class="form-control" [(ngModel)]="TeamObj.TitleNameEn" name="TitleNameEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescAr"|translate}}</label>
+                <textarea id="DescAr" class="form-control" [(ngModel)]="TeamObj.DescAr" name="DescAr"
+                    rows="3"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescEn"|translate}}</label>
+                <textarea id="DescEn" class="form-control" [(ngModel)]="TeamObj.DescEn" name="DescEn"
+                    rows="3"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"FaceBookLink"|translate}}</label>
+                <textarea id="FaceBookLink" class="form-control" [(ngModel)]="TeamObj.FaceBookLink" name="FaceBookLink"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="LinkedInLink">{{"LinkedInLink"|translate}}</label>
+                <textarea id="LinkedInLink" class="form-control" [(ngModel)]="TeamObj.LinkedInLink" name="DescEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"TwitterLink"|translate}}</label>
+                <textarea id="TwitterLink" class="form-control" [(ngModel)]="TeamObj.TwitterLink" name="DescEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="Link">{{"Link"|translate}}</label>
+                <textarea id="Link" class="form-control" [(ngModel)]="TeamObj.Link" name="DescEn" rows="1"></textarea>
+            </div>
+
+
+            <div class="form-group mb-2">
+                <label for="ImgSrc">{{"ImgSrc"|translate}}</label>
+                <textarea id="ImgSrc" class="form-control" [(ngModel)]="TeamObj.ImgSrc" name="ClassName"
+                    rows="1"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="TeamObj.IsActive" name="IsActive" />
+                    <label class="form-check-label" for="IsActive">
+                        {{"IsActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="TeamObj.DefaultStp"
+                        name="DefaultStp" />
+                    <label class="form-check-label" for="DefaultStp">
+                        {{"DefaultStp" | translate}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">{{"CONFIRM"|translate}}</button>
+
+            </div>
+        </form>
+    </div>
+
+</ng-template>
+<app-modal [content]="modalTemplate" #Modal [title]="componentTitle"></app-modal>
