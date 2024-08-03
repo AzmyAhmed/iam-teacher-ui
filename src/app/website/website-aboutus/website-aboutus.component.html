@@ -2,6 +2,22 @@
 <section id="get-started" class="padd-section text-center" data-aos="zoom-in" data-aos-delay="100">
 
     <div class="container" data-aos="fade-up">
+        <div class="d-inline-flex tex" *ngIf="adminLink&&adminLink.Serial==2">
+
+            <a class="btn-sm  text-center mx-1" *ngIf="websiteSectionsDataResult.length==0"
+                (click)="openModalTemplate('about','ADDABOUT')" style="color: #007bff;font-size: x-large;">
+                <i class="fa fa-plus-square-o" (click)="onAddAbout()"></i>
+            </a>
+            <a class="btn-sm  text-center mx-1" *ngIf="websiteSectionsDataResult.length>0"
+                (click)="openModalTemplate('about','EDITABOUT')">
+                <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;" (click)="onEditAbout()"></i>
+            </a>
+            <a class="btn-sm  text-center" *ngIf="websiteSectionsDataResult.length>0"
+                (click)="openModalTemplate('about','DELETEABOUT')">
+                <i class="fa fa-trash-o" style="color: #dc3545;font-size: x-large;" (click)="onDeleteAbout()"></i>
+            </a>
+
+        </div>
         <div class="section-title text-center">
 
             <h2>{{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.TitleNameAr:
@@ -28,3 +44,53 @@
     </div> -->
 
 </section><!-- End Get About Us Section -->
+
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='about'">
+        <form (ngSubmit)="onConfirmAbout()">
+            <div class="form-group mb-2">
+                <label for="description">{{"TitleNameAr"|translate}}</label>
+                <textarea id="TitleNameAr" class="form-control" [(ngModel)]="aboutObj.TitleNameAr" name="TitleNameAr"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"TitleNameEn"|translate}}</label>
+                <textarea id="TitleNameEn" class="form-control" [(ngModel)]="aboutObj.TitleNameEn" name="TitleNameEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescAr"|translate}}</label>
+                <textarea id="DescAr" class="form-control" [(ngModel)]="aboutObj.DescAr" name="DescAr"
+                    rows="4"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescEn"|translate}}</label>
+                <textarea id="DescEn" class="form-control" [(ngModel)]="aboutObj.DescEn" name="DescEn"
+                    rows="4"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="aboutObj.IsActive" name="IsActive" />
+                    <label class="form-check-label" for="IsActive">
+                        {{"IsActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="aboutObj.DefaultStp"
+                        name="DefaultStp" />
+                    <label class="form-check-label" for="DefaultStp">
+                        {{"DefaultStp" | translate}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">{{"CONFIRM"|translate}}</button>
+
+            </div>
+        </form>
+    </div>
+
+</ng-template>
+<app-modal [content]="modalTemplate" #Modal [title]="componentTitle"></app-modal>

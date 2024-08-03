@@ -23,7 +23,6 @@ export class SnackBarService {
   }
   showDbErrorSnackBar(message: string, action: string) {
     this.snackBarClass = 'error-snackbar';
-
     this._snackBar.open(message, action, {
       duration: 3500,
       horizontalPosition: 'start', // or 'start', 'end'

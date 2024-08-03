@@ -10,6 +10,9 @@ export interface Iapp_Sections_Data {
   DescEn: string,
   DetailAr: string,
   DetailEn: string,
+  TitleNameAr: string;
+  TitleNameEn: string;
+  DefaultStp?: number;
   Link: string;
   FaceBookLink: string;
   LinkedInLink: string;

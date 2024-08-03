@@ -33,7 +33,7 @@
                 {{"MODE"|translate}} </span>
 
         </a>
-        <a class=" d-inline-flex btn-sm " (click)="gotoIamTeacherWebsite()">
+        <a class=" d-inline-flex btn-sm " (click)="gotoIamTeacherWebsite()" target="_blank">
             <img src="/assets/images/shared/t-logo.PNG" alt="Avatar" class="avatar" alt="img">
         </a>
 
@@ -113,11 +113,11 @@
                 </div>
                 <div class="d-inline-flex">
                     <a class="btn-sm  text-center mx-1">
-                        <i class="fa fa-pencil-square-o" style="color: #198754"
+                        <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;"
                             (click)="openModalTemplate('link','EDITLINK');onEditLink(link)"></i>
                     </a>
                     <a class="btn-sm  text-center">
-                        <i class="fa fa-trash-o" style="color: #dc3545;"
+                        <i class="fa fa-trash-o" style="color: #dc3545;font-size: x-large;"
                             (click)="openModalTemplate('link','DELETELINK');onDeleteLink(link)"></i>
                     </a>
 
