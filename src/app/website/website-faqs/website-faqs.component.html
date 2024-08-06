@@ -1,20 +1,43 @@
 <section class="mt-5" data-aos="zoom-in" data-aos-delay="100">
     <div class="section-title text-center mt-5">
 
-        <h2>{{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
-            this.websiteSectionsDataResult[0]?.TitleNameEn }}</h2>
+        <h2>
+            <a class="btn-sm  text-center mx-1 mt-5" (click)="openModalTemplate('faqs','ADDCONTACT');onAddFaqs()"
+                *ngIf="adminLink&&adminLink.Serial==33">
+                <i class="fa fa-plus-square-o" style="color: #007bff;font-size: x-large;"></i>
+            </a>
+            <a class="btn-sm  text-center mx-1 d-inline-flex"
+                *ngIf="websiteSectionsDataResult.length>0 && adminLink&&adminLink.Serial==33"
+                (click)="openModalTemplate('faqs','EDITFaqs');onEditFaqs(this.websiteSectionsDataResult[0])">
+                <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;"></i>
+            </a>
+            {{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.TitleNameAr:
+            this.websiteSectionsDataResult[0]?.TitleNameEn }}
+        </h2>
 
-        <a class="btn btn-sm btn-success m-2 website-ask" (click)="openModalTemplate('askWebsite','ASK')">{{"ASK"|translate}}
+        <a class="btn btn-sm btn-success m-2 website-ask" *ngIf="this.websiteSectionsDataResult[0].AskIsActive"
+            (click)="openModalTemplate('askWebsite','ASK')">{{"ASK"|translate}}
             <p class="separator">
 
-                {{translate.currentLang=='ar'?'تستطيع أن تسأل عن ما تشاء':'You Can Ask Us For Any Thing'}}
-            </p>
+                {{ translate.currentLang=='ar'?this.websiteSectionsDataResult[0]?.DescAr:
+                this.websiteSectionsDataResult[0]?.DescEn }} </p>
         </a>
     </div>
     <div id="faqCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item" *ngFor="let faq of websiteSectionsDataResult; let i = index"
                 [ngClass]="{'active': i === 0}">
+
+                <div>
+                    <a class="btn-sm  text-center mx-1 d-inline-flex" *ngIf="adminLink&&adminLink.Serial==33"
+                        (click)="openModalTemplate('faqs','EDITFaqs');onEditFaqs(faq)">
+                        <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;"></i>
+                    </a>
+                    <a class="btn-sm  text-center d-inline-flex" *ngIf="adminLink&&adminLink.Serial==33"
+                        (click)="openModalTemplate('contact','DELETEFaqs');onDeleteFaqs(faq)">
+                        <i class="fa fa-trash-o" style="color: #dc3545;font-size: x-large;"></i>
+                    </a>
+                </div>
                 <div class="d-flex flex-column align-items-center">
                     <h3>{{ faq.Question }}</h3>
                     <p>{{ faq.Answer }}</p>
@@ -27,8 +50,7 @@
                 {{"PREV"|translate}}
             </span>
         </button>
-        <button class="carousel-control-next" type="button"
-            data-bs-target="#faqCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#faqCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon btn-success" aria-hidden="true"></span>
             <span>
                 {{"NEXT"|translate}}
@@ -42,12 +64,75 @@
     <!-- ======================================teacher-protofilio area============================= -->
     <div *ngIf="targetComponent=='askWebsite'">
         <app-forms formName="websiteFaqs" title="ASK" (formSubmit)="handleFormSubmit($event)"
-        [gridClass]="'col-sm-6 mb-3'" iconClass="fa fa fa-bookmark-o"></app-forms>
+            [gridClass]="'col-sm-6 mb-3'" iconClass="fa fa fa-bookmark-o"></app-forms>
         <div class="m-1 text-center">
             <button class="btn btn-success mt-3" (click)="sendQuestion()">
                 {{"ASK" |translate}}
             </button>
         </div>
+    </div>
+    <div *ngIf="targetComponent=='faqs'">
+        <form (ngSubmit)="onConfirmFaqs()">
+            <div class="form-group mb-2">
+                <label for="TitleNameAr">{{"TitleNameAr"|translate}}</label>
+                <textarea id="TitleNameAr" class="form-control" [(ngModel)]="FaqsObj.TitleNameAr" name="TitleNameAr"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"TitleNameEn"|translate}}</label>
+                <textarea id="TitleNameEn" class="form-control" [(ngModel)]="FaqsObj.TitleNameEn" name="TitleNameEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescAr"|translate}}</label>
+                <textarea id="DescAr" class="form-control" [(ngModel)]="FaqsObj.DescAr" name="DescAr"
+                    rows="2"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescEn"|translate}}</label>
+                <textarea id="DescEn" class="form-control" [(ngModel)]="FaqsObj.DescEn" name="DescEn"
+                    rows="2"></textarea>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="Question">{{"Question"|translate}}</label>
+                <textarea id="Question" class="form-control" [(ngModel)]="FaqsObj.Question" name="Question"
+                    rows="2"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="LoactionAr">{{"Answer"|translate}}</label>
+                <textarea id="Answer" class="form-control" [(ngModel)]="FaqsObj.Answer" name="Answer"
+                    rows="5"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="FaqsObj.AskIsActive"
+                        name="AskIsActive" />
+                    <label class="form-check-label" for="AskIsActive">
+                        {{"AskIsActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-4">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="FaqsObj.IsActive" name="IsActive" />
+                    <label class="form-check-label" for="IsActive">
+                        {{"IsActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-4">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="FaqsObj.DefaultStp"
+                        name="DefaultStp" />
+                    <label class="form-check-label" for="DefaultStp">
+                        {{"DefaultStp" | translate}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">{{"CONFIRM"|translate}}</button>
+
+            </div>
+        </form>
     </div>
 </ng-template>
 <app-modal [content]="modalTemplate" [title]="componentTitle"></app-modal>
