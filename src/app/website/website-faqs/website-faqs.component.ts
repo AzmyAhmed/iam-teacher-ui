@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Iapp_Sections_Data } from '../../shared/service/app-sections-data.service';
 import { Subject, takeUntil } from 'rxjs';
-import { WebsiteSectionsDataService } from '../website-sections-data.service';
+import { IWebsite_Sections_Data, WebsiteSectionsDataService } from '../website-sections-data.service';
 import { ModalComponent } from '../../shared/component/modal/modal.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsComponent } from "../../shared/component/forms/forms.component";
@@ -31,7 +31,7 @@ export class WebsiteFaqsComponent {
     }
 
   }
-  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  websiteSectionsDataObj: IWebsite_Sections_Data = <IWebsite_Sections_Data>{}
   Website_Sections_DataLoad() {
     this.websiteSectionsDataObj.App_Links_Stp = 33;
     this._WebsiteSectionsDataService.Website_Sections_DataLoad(this.websiteSectionsDataObj)

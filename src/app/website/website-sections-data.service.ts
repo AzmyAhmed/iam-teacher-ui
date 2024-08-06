@@ -18,6 +18,11 @@ export interface IWebsite_Sections_Data {
   FaceBookLink: string;
   LinkedInLink: string;
   TwitterLink: string;
+  WhatApp: string;
+  Email: string;
+  Messenger: string;
+  LoactionAr: string;
+  LoactionEn: string;
   IsActive?: number;
   BookDemoActive?: boolean;
   LiveViewActive?: boolean;
@@ -25,6 +30,10 @@ export interface IWebsite_Sections_Data {
   TwitterActive?: boolean;
   LinkedinActive?: boolean;
   Sort?: number;
+  Discount?: number;
+  Price?: number;
+  FinalPrice?: number;
+  DiscountPercent?:number;
   ImgSrc: string;
   App_Links_Stp?: number;
   ReturnCode?: number;
@@ -86,4 +95,17 @@ export class WebsiteSectionsDataService {
     return data;
 
   }
+  Website_ContactUs_DataSave(link: IWebsite_Sections_Data) {
+    var data =
+      this.http.generalPost(`${Website_Sections_Data}/Website_ContactUs_DataSave`, link);
+    return data;
+
+  }
+  Website_Pricing_DataSave(link: IWebsite_Sections_Data) {
+    var data =
+      this.http.generalPost(`${Website_Sections_Data}/Website_Pricing_DataSave`, link);
+    return data;
+
+  }
+
 }

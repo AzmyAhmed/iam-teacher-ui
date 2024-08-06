@@ -63,8 +63,6 @@ export class AdminHeaderComponent {
   gotoIamTeacherWebsite() {
     sessionStorage.removeItem("linkFromAdmin")
     this.router.navigate(['/website/website-landingpage']);
-
-
   }
   sysLinks: any = {};
   stream: Subject<void> = new Subject();

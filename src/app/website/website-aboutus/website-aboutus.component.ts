@@ -26,7 +26,7 @@ export class WebsiteAboutusComponent {
     this.adminLink = link ? JSON.parse(link) : null;
     console.log("adminLink To  About Us = ", this.adminLink);
   }
-  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  websiteSectionsDataObj: IWebsite_Sections_Data = <IWebsite_Sections_Data>{}
   stream: Subject<void> = new Subject();
   aboutObj: any = {};
   Website_Sections_DataLoad() {

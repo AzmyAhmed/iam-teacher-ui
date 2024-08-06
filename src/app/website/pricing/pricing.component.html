@@ -1,7 +1,10 @@
 <section data-aos="zoom-in" data-aos-delay="100">
     <header class="pricing-header mt-4">
         <h1>
-
+            <a class="btn-sm  text-center mx-1 mt-5" (click)="openModalTemplate('pricing','ADDPRICING');onAddPricing()"
+                *ngIf="adminLink&&adminLink.Serial==10">
+                <i class="fa fa-plus-square-o" style="color: #007bff;font-size: x-large;"></i>
+            </a>
             {{translate.currentLang=='ar'?'خطط الأسعار':'Pricing Plans'}}
         </h1>
         <p>
@@ -12,11 +15,88 @@
     <div class="pricing-container">
 
         <div *ngFor="let plan of pricingPlans" class="pricing-card" [ngClass]="plan.ClassName">
-            <h2>{{translate.currentLang=='ar'?plan.TitleNameAr:plan.TitleNameEn }}</h2>
-            <p class="price">{{ plan.Price }} L.E</p>
-            <p class="discount">{{ plan.Discount }}% {{translate.currentLang=='ar'?'الخصم':'Discount'}} Discount</p>
-            <p class="final-price">{{ plan.FinalPrice }} L.E</p>
+            <h2>
+                <a class="btn-sm  text-center mx-1 d-inline-flex"
+                    *ngIf="pricingPlans.length>0 && adminLink&&adminLink.Serial==10"
+                    (click)="openModalTemplate('pricing','EDITPRICING');onEditPricing(plan)">
+                    <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;"></i>
+                </a>
+                <a class="btn-sm  text-center d-inline-flex"
+                    *ngIf="pricingPlans.length>0 && adminLink&&adminLink.Serial==10"
+                    (click)="openModalTemplate('pricing','DELETEPRICING');onDeletePricing(plan)">
+                    <i class="fa fa-trash-o" style="color: #dc3545;font-size: x-large;"></i>
+                </a>
+                {{translate.currentLang=='ar'?plan.TitleNameAr:plan.TitleNameEn }}
+            </h2>
+            <p class="price">{{ plan.Price }} {{'LE'|translate}}</p>
+            <p class="discount">{{ plan.DiscountPercent }}% {{translate.currentLang=='ar'?'الخصم':'Discount'}}</p>
+
+            <p class="discount">{{ plan.Discount }} {{translate.currentLang=='ar'?'الخصم':'Discount'}}
+                {{'LE'|translate}}</p>
+            <p class="final-price">{{ plan.FinalPrice }} {{'LE'|translate}}</p>
             <button>{{translate.currentLang=='ar'?'أختر الشريحة':' Choose Plan'}}</button>
         </div>
     </div>
 </section>
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='pricing'">
+        <form (ngSubmit)="onConfirmPricing()">
+            <div class="form-group mb-2">
+                <label for="TitleNameAr">{{"TitleNameAr"|translate}}</label>
+                <textarea id="TitleNameAr" class="form-control" [(ngModel)]="PricingObj.TitleNameAr" name="TitleNameAr"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"TitleNameEn"|translate}}</label>
+                <textarea id="TitleNameEn" class="form-control" [(ngModel)]="PricingObj.TitleNameEn" name="TitleNameEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"PRICE"|translate}}</label>
+
+                <input type="number" class="form-control form-control-sm" [(ngModel)]="PricingObj.Price"
+                    (keyup)="onNumberChange(PricingObj)" name="Price" />
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DISCOUNTPERCENT"|translate}}</label>
+
+                <input type="number" class="form-control form-control-sm" [(ngModel)]="PricingObj.DiscountPercent"
+                    (keyup)="onNumberChange(PricingObj)" name="DiscountPercent" />
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DISCOUNT"|translate}}</label>
+
+                <input type="number" class="form-control form-control-sm" [(ngModel)]="PricingObj.Discount"
+                    (keyup)="onDiscountChange(PricingObj)" name="Discount" />
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"FINALPRICE"|translate}}</label>
+
+                <input type="number" class="form-control form-control-sm" [(ngModel)]="PricingObj.FinalPrice"
+                    name="FinalPrice" />
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="PricingObj.IsActive" name="IsActive" />
+                    <label class="form-check-label" for="IsActive">
+                        {{"IsActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="PricingObj.DefaultStp"
+                        name="DefaultStp" />
+                    <label class="form-check-label" for="DefaultStp">
+                        {{"DefaultStp" | translate}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">{{"CONFIRM"|translate}}</button>
+
+            </div>
+        </form>
+    </div>
+
+</ng-template>
+<app-modal [content]="modalTemplate" #Modal [title]="componentTitle"></app-modal>

@@ -3,7 +3,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subject, takeUntil } from 'rxjs';
 import { Iapp_Sections_Data } from '../../shared/service/app-sections-data.service';
 import { CommonModule } from '@angular/common';
-import { WebsiteSectionsDataService } from '../website-sections-data.service';
+import { IWebsite_Sections_Data, WebsiteSectionsDataService } from '../website-sections-data.service';
 import { ModalComponent } from '../../shared/component/modal/modal.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
@@ -32,7 +32,7 @@ export class WebsiteFeaturesComponent {
     this.adminLink = link ? JSON.parse(link) : null;
     console.log("adminLink To  Features = ", this.adminLink);
   }
-  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  websiteSectionsDataObj: IWebsite_Sections_Data = <IWebsite_Sections_Data>{}
   stream: Subject<void> = new Subject();
   Website_Sections_DataLoad() {
     this.websiteSectionsDataObj.App_Links_Stp = 3;

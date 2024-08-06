@@ -2,7 +2,7 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { TrackingService } from '../../shared/service/tracking.service';
 import { WebsiteTrackingVisitsService } from '../services/website-tracking-visits.service';
-import { WebsiteSectionsDataService } from '../website-sections-data.service';
+import { IWebsite_Sections_Data, WebsiteSectionsDataService } from '../website-sections-data.service';
 import { Iapp_Sections_Data } from '../../shared/service/app-sections-data.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class WebsiteLandingpageComponent implements OnInit, OnDestroy {
   faqContent: any = [];
   lastContent: any = [];
   teamContent: any = [];
-  websiteSectionsDataObj: Iapp_Sections_Data = <Iapp_Sections_Data>{}
+  websiteSectionsDataObj: IWebsite_Sections_Data = <IWebsite_Sections_Data>{}
   constructor(private _WebsiteSectionsDataService: WebsiteSectionsDataService) { }
   ngOnInit(): void {
     this.Website_Sections_DataLoad();

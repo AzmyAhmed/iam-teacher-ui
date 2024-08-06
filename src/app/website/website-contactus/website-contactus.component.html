@@ -2,15 +2,33 @@
 <section id="contact" class="padd-section" data-aos="zoom-in" data-aos-delay="100" *ngIf="contactUsSerial==0">
     <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
-            <h2> {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.TitleNameAr:
-                websiteSectionsDataResult[0]?.TitleNameEn}}</h2>
+            <h2>
+                <a class="btn-sm  text-center mx-1 mt-5"
+                    (click)="openModalTemplate('contact','ADDCONTACT');onAddContactUs()"
+                    *ngIf="adminLink&&adminLink.Serial==9 &&!this.ContactUsObj">
+                    <i class="fa fa-plus-square-o" style="color: #007bff;font-size: x-large;"></i>
+                </a>
+                {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.TitleNameAr:
+                websiteSectionsDataResult[0]?.TitleNameEn}}
+            </h2>
             <p class="separator">
                 {{translate.currentLang=='ar'?websiteSectionsDataResult[0]?.DescAr:
                 websiteSectionsDataResult[0]?.DescEn}}
             </p>
         </div>
         <div class="row justify-content-center">
-
+            <div>
+                <a class="btn-sm  text-center mx-1 d-inline-flex"
+                    *ngIf="websiteSectionsDataResult.length>0 && adminLink&&adminLink.Serial==9"
+                    (click)="openModalTemplate('contact','EDITCONTACTUS');onEditContactUs()">
+                    <i class="fa fa-pencil-square-o" style="color: #198754;font-size: x-large;"></i>
+                </a>
+                <a class="btn-sm  text-center d-inline-flex"
+                    *ngIf="websiteSectionsDataResult.length>0 && adminLink&&adminLink.Serial==9"
+                    (click)="openModalTemplate('contact','DELETECONTACTUS');onDeleteContactUs()">
+                    <i class="fa fa-trash-o" style="color: #dc3545;font-size: x-large;"></i>
+                </a>
+            </div>
             <div class="col-lg-4 col-md-4">
 
                 <div class="info">
@@ -59,12 +77,11 @@
                     <form [formGroup]="emailForm" (ngSubmit)="sendWebsite_ContactUs()" class="php-email-form">
                         <div class="form-group">
                             <input type="text" formControlName="FullName" class="form-control" id="fullName"
-                            placeholder="{{ 'FULLNAME' | translate }}"
-                                required>
+                                placeholder="{{ 'FULLNAME' | translate }}" required>
                             <div *ngIf="emailForm.get('FullName')?.invalid && (emailForm.get('FullName')?.dirty || emailForm.get('FullName')?.touched)"
                                 class="alert alert-danger">
                                 <div *ngIf="emailForm.get('FullName')?.errors?.['required']">
-                                    
+
                                     {{"FULLNAMEREQUIRED"|translate}}
 
                                 </div>
@@ -72,16 +89,16 @@
                         </div>
                         <div class="form-group mt-3">
                             <input type="email" formControlName="Email" class="form-control" id="email"
-                            placeholder="{{ 'EMAIL' | translate }}" required>
+                                placeholder="{{ 'EMAIL' | translate }}" required>
                             <div *ngIf="emailForm.get('Email')?.invalid && (emailForm.get('Email')?.dirty || emailForm.get('Email')?.touched)"
                                 class="alert alert-danger">
                                 <div *ngIf="emailForm.get('Email')?.errors?.['required']">
-                                    
+
                                     {{"EMAILREQUIRED"|translate}}
 
                                 </div>
                                 <div *ngIf="emailForm.get('Email')?.errors?.['email']">
-                                    
+
                                     {{"INVALIDEMAIL"|translate}}
 
                                 </div>
@@ -89,11 +106,11 @@
                         </div>
                         <div class="form-group mt-3">
                             <input type="text" formControlName="Address" class="form-control" id="address"
-                            placeholder="{{ 'ADDRESS' | translate }}" required>
+                                placeholder="{{ 'ADDRESS' | translate }}" required>
                             <div *ngIf="emailForm.get('Address')?.invalid && (emailForm.get('Address')?.dirty || emailForm.get('Address')?.touched)"
                                 class="alert alert-danger">
                                 <div *ngIf="emailForm.get('Address')?.errors?.['required']">
-                                    
+
                                     {{"ADDRESSREQUIRED"|translate}}
 
                                 </div>
@@ -101,7 +118,7 @@
                         </div>
                         <div class="form-group mt-3">
                             <input type="text" formControlName="PhoneNumber" class="form-control" id="phoneNumber"
-                            placeholder="{{ 'PHONENUMBER' | translate }}" required>
+                                placeholder="{{ 'PHONENUMBER' | translate }}" required>
                             <div *ngIf="emailForm.get('PhoneNumber')?.invalid && (emailForm.get('PhoneNumber')?.dirty || emailForm.get('PhoneNumber')?.touched)"
                                 class="alert alert-danger">
                                 <div *ngIf="emailForm.get('PhoneNumber')?.errors?.['required']">
@@ -109,7 +126,7 @@
 
                                 </div>
                                 <div *ngIf="emailForm.get('PhoneNumber')?.errors?.['pattern']">
-                                    
+
 
                                     {{"INVALIDPHONENUMBER"|translate}}
 
@@ -118,7 +135,7 @@
                         </div>
                         <div class="form-group mt-3">
                             <textarea formControlName="Message" class="form-control" rows="5" id="message"
-                            placeholder="{{ 'MESSAGE' | translate }}" required></textarea>
+                                placeholder="{{ 'MESSAGE' | translate }}" required></textarea>
                             <div *ngIf="emailForm.get('Message')?.invalid && (emailForm.get('Message')?.dirty || emailForm.get('Message')?.touched)"
                                 class="alert alert-danger">
                                 <div *ngIf="emailForm.get('Message')?.errors?.['required']">
@@ -143,6 +160,83 @@
         </div>
     </div>
 </section>
+<ng-template #modalTemplate>
+    <div *ngIf="targetComponent=='contact'">
+        <form (ngSubmit)="onConfirmContactUs()">
+
+            <div class="form-group mb-2">
+                <label for="TitleNameAr">{{"TitleNameAr"|translate}}</label>
+                <textarea id="TitleNameAr" class="form-control" [(ngModel)]="ContactUsObj.TitleNameAr"
+                    name="TitleNameAr" rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"TitleNameEn"|translate}}</label>
+                <textarea id="TitleNameEn" class="form-control" [(ngModel)]="ContactUsObj.TitleNameEn"
+                    name="TitleNameEn" rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescAr"|translate}}</label>
+                <textarea id="DescAr" class="form-control" [(ngModel)]="ContactUsObj.DescAr" name="DescAr"
+                    rows="2"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"DescEn"|translate}}</label>
+                <textarea id="DescEn" class="form-control" [(ngModel)]="ContactUsObj.DescEn" name="DescEn"
+                    rows="2"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"WhatApp"|translate}}</label>
+                <textarea id="WhatApp" class="form-control" [(ngModel)]="ContactUsObj.WhatApp" name="WhatApp"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="Email">{{"Email"|translate}}</label>
+                <textarea id="Email" class="form-control" [(ngModel)]="ContactUsObj.Email" name="Email"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="description">{{"Messenger"|translate}}</label>
+                <textarea id="Messenger" class="form-control" [(ngModel)]="ContactUsObj.Messenger" name="Messenger"
+                    rows="1"></textarea>
+            </div>
+            <div class="form-group mb-2">
+                <label for="LoactionAr">{{"LoactionAr"|translate}}</label>
+                <textarea id="LoactionAr" class="form-control" [(ngModel)]="ContactUsObj.LoactionAr" name="LoactionAr"
+                    rows="1"></textarea>
+            </div>
+
+
+            <div class="form-group mb-2">
+                <label for="LoactionEn">{{"LoactionEn"|translate}}</label>
+                <textarea id="LoactionEn" class="form-control" [(ngModel)]="ContactUsObj.LoactionEn" name="LoactionEn"
+                    rows="1"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="ContactUsObj.IsActive"
+                        name="IsActive" />
+                    <label class="form-check-label" for="IsActive">
+                        {{"IsActive" | translate}}
+                    </label>
+                </div>
+                <div class="col-sm-6">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="ContactUsObj.DefaultStp"
+                        name="DefaultStp" />
+                    <label class="form-check-label" for="DefaultStp">
+                        {{"DefaultStp" | translate}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">{{"CONFIRM"|translate}}</button>
+
+            </div>
+        </form>
+    </div>
+
+</ng-template>
+<app-modal [content]="modalTemplate" #Modal [title]="componentTitle"></app-modal>
 <!-- <section *ngIf="contactUsSerial>0">
     <app-website-contactus-confirmation></app-website-contactus-confirmation>
 
