@@ -33,5 +33,10 @@ export class HeaderService {
     return data;
 
   }
+  sysActivateLinksSave(link: ISysLink) {
+    var data =
+      this.http.generalPost(`${sysLinksUrl}/SysActivateLinksSave`, link);
+    return data;
 
+  }
 }

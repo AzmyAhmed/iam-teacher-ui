@@ -143,5 +143,24 @@ export class AdminHeaderComponent {
         });
     }
   }
+  activateLinks() {
+      this.LinkData.IsActive = this.LinkData.IsActive ? 1 : 0;
+      this._headerSer.sysActivateLinksSave(this.LinkData)
+        .pipe(takeUntil(this.stream))
+        .subscribe({
+          next: (value) => {
+            // Assuming value is an array
+          },
+          error: (err) => this.snack.showDbErrorSnackBar("ERROR", "ALERT")
+          ,
+          complete: () => {
+            this.snack.showDbSucessSnackBar("OPERATIONSUCCESS", "ALERT");
+            this.getLinks(this.activeLink);
+            this.modal.close();
+          }
+
+        });
+    
+  }
 
 }

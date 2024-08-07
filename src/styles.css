@@ -479,7 +479,7 @@ span {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(80vh - 40px);
+  height: calc(95vh - 40px) !important;
   /* background: url(../img/hero-bg.png) center bottom no-repeat; */
   background-size: 100%;
   position: relative;

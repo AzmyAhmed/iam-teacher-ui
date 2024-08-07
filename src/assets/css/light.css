@@ -27,19 +27,30 @@ body {
   height: max-content;
   padding: 10px;
   border-bottom: 1px solid rgb(221, 220, 220);
+  height: 106.6667px;
+}
+.t-admin-header{
+  position: fixed;
+  top: 0;
+  background: #fdfdfd;
+  /* border: 1px solid #e7e7e7; */
+  z-index: 10000;
+  height: max-content;
+  padding: 10px;
+  border-bottom: 1px solid rgb(221, 220, 220);
   height: 65.6667px;
 }
-
 .t-footer {
   padding: 10px;
   z-index: 10000;
 }
 
 .t-first-section {
-  background: linear-gradient(329deg, rgb(27 73 65 / 10%), rgb(28 64 36 / 52%) 0%, #055160);
-  height: 60vh;
-  ;
-  height: 80vh;
+  /* background: linear-gradient(329deg, rgb(27 73 65 / 10%), rgb(28 64 36 / 52%) 0%, #055160); */
+  background-image: url(/assets/images/shared/f-content.png);
+  background-repeat: no-repeat;
+background-size: cover; /* or 'contain' depending on your needs */
+  height: 100vh;
 
   h1,
   h2,

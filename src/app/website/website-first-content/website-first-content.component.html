@@ -1,4 +1,4 @@
-<section id="hero">
+<section id="hero" *ngIf="firstContent.length>0">
     <!-- style="background:url(&quot;assets/images/slider/silde1.png&quot;);height: 75vh;direction: ltr !important;" -->
     <div class="t-first-section" data-aos="zoom-out" data-aos-delay="100">
         <div>
@@ -46,32 +46,7 @@
         </div>
     </div>
 </section><!-- End Hero Section -->
-<div class="btns text-center mt-3 text-muted p-2 ">
-    <div class="btns text-center mt-3 text-muted p-2 ">
-        <a [href]="socialMediaContent[0]?.FaceBookLink" target="_blank" class="mx-2"><i
-                class="fa fa-facebook fa-2x"></i>FaceBook</a>
-        <a [href]="socialMediaContent[0]?.TwitterLink" target="_blank" class="mx-2"><i
-                class="fa fa-linkedin fa-2x"></i>LinkedIn</a>
-        <a [href]="socialMediaContent[0]?.LinkedInLink" target="_blank" class="mx-2"><i
-                class="fa fa-twitter fa-2x"></i>Twitter</a>
-        <div class="d-inline-flex tex" *ngIf="adminLink&&adminLink.Serial==29">
 
-            <a class="btn-sm  text-center mx-1" *ngIf="socialMediaContent.length==0"
-                (click)="openModalTemplate('editWebsiteSocilaMedia','ADD')">
-                <i class="fa fa-plus-square-o"></i>
-            </a>
-            <a class="btn-sm  text-center mx-1" *ngIf="socialMediaContent.length>0"
-                (click)="openModalTemplate('editWebsiteSocilaMedia','EDIT')">
-                <i class="fa fa-pencil-square-o "></i>
-            </a>
-            <a class="btn-sm  text-center" *ngIf="socialMediaContent.length>0"
-                (click)="openModalTemplate('editWebsiteSocilaMedia','DELETE')">
-                <i class="fa fa-trash-o"></i>
-            </a>
-
-        </div>
-    </div>
-</div>
 
 <!-- Sof Modal area  23-7-2024-->
 <ng-template #modalTemplate>

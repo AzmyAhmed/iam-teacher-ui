@@ -1,8 +1,17 @@
 :host {
     display: block;
     height: 100vh; /* Ensure the component takes the full height of the viewport */
-    background-image: url('/assets/jsonFiles/Development/images/login-bg.jpg'); /* Adjust the path as needed */
-    background-size: cover;
+    background-image: url(/assets/images/shared/f-content.png);
     background-repeat: no-repeat;
+  background-size: cover; /* or 'contain' depending on your needs */
     background-position: center;
   }
+  .card{
+    background-color: #184941 !important;
+    color: white !important;
+  }
+  
+.avatar {
+  border-radius: 10px !important;
+  
+}
