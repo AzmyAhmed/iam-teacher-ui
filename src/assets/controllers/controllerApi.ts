@@ -10,6 +10,7 @@ export class Controller {
         App_Sections_Data: `App_Sections_DataConroller`,
         App_Trackig_Visits: `App_Sections_DataConroller`,
         Website_Trackig_Visits: `Website_Tracking_VisitsConroller`,
+        Website_User: `Website_UserConroller`,
         Website_Sections_Data: `Website_Sections_DataConroller`,
         Website_BookDemo: `Website_BookDemoConroller`,
         Website_ContactUs: `Website_ContactUsConroller`,

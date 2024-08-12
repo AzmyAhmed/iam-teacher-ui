@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormsComponent } from '../../shared/component/forms/forms.component';
 import { ModalComponent } from '../../shared/component/modal/modal.component';
 import { AccessToJsonService } from '../../shared/service/access-to-json.service';
+import { WebsiteUserSignupService } from '../services/website-user-signup.service';
 
 @Component({
   selector: 'app-website-signup',
@@ -13,9 +14,10 @@ import { AccessToJsonService } from '../../shared/service/access-to-json.service
 export class WebsiteSignupComponent {
   teacherId: any;
   isReadTerms: boolean = false;
-  options: any = []
+  options: any = [];
+  userObj: any = {};
   constructor(
-    public translate: TranslateService, private router: Router,private accessToJsonService: AccessToJsonService) {
+    public translate: TranslateService, private router: Router, private userSer: WebsiteUserSignupService, private accessToJsonService: AccessToJsonService) {
     this.teacherId = localStorage.getItem('teacherId');
     if (!this.teacherId) {
       this.teacherId = 1;
@@ -49,6 +51,7 @@ export class WebsiteSignupComponent {
   }
   confirmTeacherSignUp(): void {
     this.dynamicForm.submitForm();
+    this.userObj = this.dynamicForm.form.value;
     this.router.navigate(['/website/website-signup-confirmation'])
   }
   gotoIamTeacherWebsite() {
@@ -67,5 +70,21 @@ export class WebsiteSignupComponent {
   }
   onSelectedOptionChange(selectedOption: any) {
     console.log('Selected option:', selectedOption);
+  }
+  onUserSignUp() {
+    if (this.dynamicForm.form.valid) {
+      this.userSer.Website_UserSignupAuthenticate(this.userObj).subscribe({
+        next(value) {
+          alert(value.MessageAr)
+        },
+        error(err) {
+          alert(err.error.MessageAr)
+
+        },
+        complete() {
+
+        },
+      })
+    }
   }
 }
